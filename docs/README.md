@@ -31,3 +31,11 @@ SelfieGram is a web application with inspiration from Instagram and people's lov
 - Timestamp of Photo Upload (BONUS)
 - Collapse Comments (BONUS)
 - Videos (BONUS)
+
+## Design Docs
+
+- [View Wireframes](wireframes)
+- [React Components](component-hierarchy.md)
+- [API Endpoints](api-endpoints.md)
+- [DB Schema](schema.md)
+- [Sample State](sample-state.md)
