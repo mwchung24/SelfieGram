@@ -34,7 +34,7 @@ SelfieGram is a web application with inspiration from Instagram and people's lov
 
 ## Design Docs
 
-- [View Wireframes](/wireframes)
+- [View Wireframes](https://github.com/mwchung24/instagramClone/tree/master/docs/wireframes)
 - [React Components](component-hierarchy.md)
 - [API Endpoints](api-endpoints.md)
 - [DB Schema](schema.md)
