@@ -25,7 +25,7 @@ SelfieGram is a web application with inspiration from Instagram and people's lov
 - Delete a Comment
 - Search
 - Uploading/Deleting/Editing a Photo
-- Infinite Scroll (BONUS)
+- Infinite Scroll
 - Direct Messaging (BONUS)
 - Hash Tags (BONUS)
 - Timestamp of Photo Upload (BONUS)
@@ -39,3 +39,33 @@ SelfieGram is a web application with inspiration from Instagram and people's lov
 - [API Endpoints](api-endpoints.md)
 - [DB Schema](schema.md)
 - [Sample State](sample-state.md)
+
+## Implementation Timeline
+
+### Phase 1: Backend and Frontend Authentication (2 days)
+**Objective:** Create a functioning web application with frontend authentication.
+
+### Phase 2: Images Model, API, and Components (2 days)
+**Objective:** Images can be uploaded and deleted through the API (the upload photo feature will be housed in the application header).  Images will display on User Profile and Photo Feed Page.
+
+### Phase 3: Liking and Unliking (1 day)
+**Objective:** Images can be liked or unliked with a count of likes.
+
+### Phase 4: Adding and Deleting Comments (1 day)
+**Objective:** Commented can be added or deleted with all comments.
+
+### Phase 5: Followers and Following (1 day)
+**Objective:** Users can follow other users and others can follow the user.  User Profile will have a count of followers and following.
+
+### Phase 6: Search (1 day)
+**Objective:** The application header will have a search capability that will fetch users upon every keystroke.
+
+### Phase 7: Infinite Scroll (1 day)
+**Objective:** The Photo Feed page will have an infinite scroll capability.  50 photos will initially load and more will load/render when the user reaches the bottom of the list of photos.
+
+### Bonus Features:
+- Direct Messaging
+- Hash Tags
+- Timestamp of Photo Upload
+- Collapse Comments
+- Videos
