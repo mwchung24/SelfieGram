@@ -109,4 +109,3 @@ User has the ability to change the profile picture, username and profile descrip
 | `/` | `PageContainer`, `PhotoFeedContainer` |
 | `/:username` | `PageContainer`, `UserProfileContainer` |
 | `/:username/edit` | `PageContainer`, `EditUserContainer` |
-| `/:username/images/:id` | `PageContainer`, `UserPhotoContainer`, `UserPhotoDetailContainer` |
