@@ -100,3 +100,13 @@ User has the ability to change the profile picture, username and profile descrip
 ### LikesContainer
 - LikeItem
   - like
+
+## Routes
+| Path | Component |
+| --- | --- |
+| `/sign-up` | `AuthFormContainer` |
+| `/sign-in` | `AuthFormContainer` |
+| `/` | `PageContainer`, `PhotoFeedContainer` |
+| `/:username` | `PageContainer`, `UserProfileContainer` |
+| `/:username/edit` | `PageContainer`, `EditUserContainer` |
+| `/:username/images/:id` | `PageContainer`, `UserPhotoContainer`, `UserPhotoDetailContainer` |
