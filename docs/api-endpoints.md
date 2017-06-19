@@ -46,6 +46,8 @@
 | `DELETE` | `/api/comments/:id` | Delete a comment |
 
 ### Follows
+| Method | URI | Description |
+| --- | --- | --- |
 | `GET` | `/api/users/:user_id/following` | Get all followings of a user |
 | `GET` | `/api/users/:user_id/followers` | Get all followers of a user |
 | `POST` | `/api/users/:user_id/follows` | Follow a user |
