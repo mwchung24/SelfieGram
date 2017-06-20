@@ -59,13 +59,13 @@ class LoginForm extends React.Component {
     return (
       <section className="login-form">
 
-
+        <h1 className="selfiegram">SelfieGram</h1>
         <form onSubmit={this.handleSubmit}>
-          <label>
+          <label className="for-margin">
             <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
           </label>
           <br/>
-          <label>
+          <label className="for-margin">
             <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
           </label>
           <br/>

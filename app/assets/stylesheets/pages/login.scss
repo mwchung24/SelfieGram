@@ -1,0 +1,75 @@
+body {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.login-form {
+  font-family: sans-serif;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+
+}
+
+.link-to-signup {
+  font-size: 15px;
+}
+
+.signup-link {
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.login-button {
+  width: 268px;
+  height: 28px;
+  background-color: #3897f0;
+  border-color: #3897f0;
+  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
+  /*line-height: 26px;*/
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /*width: 100%;*/
+  color: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 0 8px;
+  margin: 0 40px 6px;
+}
+
+.login-form form label input {
+  width: 268px;
+  height: 36px;
+  background: 0;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  -webkit-appearance: none;
+  margin: 6px 40px 6px;
+  /*width: 100%*/
+}
+
+.selfiegram {
+  // margin: 22px auto 8px;
+  background-position: 0 0;
+  height: 51px;
+  width: 175px;
+  display: block;
+  font-size: 45px;
+  font-family: 'Lobster Two', cursive;
+  // overflow: hidden;
+  // text-indent: 110%;
+  // white-space: nowrap;
+}

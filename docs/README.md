@@ -2,7 +2,7 @@
 
 [SelfieGram live][heroku]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://selfiegram-app.herokuapp.com
 
 [Instagram][instagram]
 
