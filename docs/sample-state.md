@@ -104,21 +104,21 @@
     photos: {
       5: {
         id: 5,
-        urlMedium: "martin_selfie_2.png",
+        url: "martin_selfie_2.png",
         createdAt: "2017-05-21T11:59:59:00",
         likesCount: 5,
         commentsCount: 0
       },
       3: {
         id: 3,
-        urlMedium: "hanna_selfie.png",
+        url: "hanna_selfie.png",
         createdAt: "2017-05-07T11:59:59:00",
         likesCount: 2,
         commentsCount: 2
       },
       1: {
         id: 1,
-        urlMedium: "martin_selfie.png",
+        url: "martin_selfie.png",
         createdAt: "2017-05-01T11:59:59:00",
         likesCount: 2,
         commentsCount: 2
@@ -130,7 +130,6 @@
     username: "martin",
     avatar: "martin_pic.png",
     url: "martin_selfie.png",
-    urlMedium: "100/100/martin_selfie.png",
     caption: "I love taking selfies",
     createdAt: "2017-06-18T09:00:00-07:00",
     uploadedAt: "2 days ago",

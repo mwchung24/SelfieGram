@@ -32,6 +32,7 @@
 | `GET` | `/api/photos/:id` | Get photo by id |
 | `DELETE` | `/api/photos/:id` | Delete photo |
 | `GET` | `/api/users/:user_id/photos` | Get all the user's photos |
+| `GET` | `/api/users/:user_id/following/photos` | Get all photos of a user's following (Photo Feed) |
 
 ### Likes
 | Method | URI | Description |

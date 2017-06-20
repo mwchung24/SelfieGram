@@ -31,16 +31,16 @@ The NavBar Container, being a part of the header container will be available to 
 Renders a modal component on top of the current page.
 
 ### PhotoFeedContainer/Home
-- PhotoIndexContainer
+- PhotoFeedIndex
 
-The Photo Feed Container will be the "index" page for the photos and have photos of all the users sorted by upload time.
+The Photo Feed Container will be the "index" page for the photos of a user's followers and have photos of all the users sorted by upload time.
 
-### PhotoIndexContainer
-- PhotoIndexItem
+### PhotoFeedIndex
+- PhotoFeedIndexItem
 
 Will have access to all photos.
 
-### PhotoIndexItem
+### PhotoFeedIndexItem
 - UserDetailContainer
   - UserDetail
     - ProfilePic
