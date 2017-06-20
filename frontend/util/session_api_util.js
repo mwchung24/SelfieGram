@@ -1,16 +1,18 @@
 export const signup = (user) => {
+  // debugger
   return $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: {user: user}
+    data: user
   });
 };
 
 export const login = (user) => {
+  // debugger
   return $.ajax({
     method: 'POST',
     url: '/api/session',
-    data: {user: user}
+    data: user
   });
 };
 

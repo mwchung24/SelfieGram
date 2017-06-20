@@ -22,8 +22,13 @@
     "webpack": "^3.0.0"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+      "postinstall": "webpack"
   },
   "repository": {
     "type": "git",

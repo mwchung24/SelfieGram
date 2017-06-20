@@ -2,14 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const sessionLinks = () => (
-  <nav className="login-signup">
-    <Link to="/login">
-      Log In
-    </Link>
+  <nav>
 
-    <Link to="/signup">
-      Sign Up
-    </Link>
   </nav>
 );
 
