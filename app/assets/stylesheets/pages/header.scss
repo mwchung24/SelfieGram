@@ -1,0 +1,76 @@
+
+.header {
+  transform: translateY(0%) translateZ(0);
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  height: 77px;
+  // position: fixed;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  z-index: 1;
+  transition: 200ms ease-out;
+}
+
+.header-elements {
+  display: flex;
+  align-items: center;
+  height: 77px;
+
+}
+
+.selfieLogo {
+  height: 40px;
+  width: 60px;
+  padding-right: 20px;
+  border-right: 1px solid black;
+}
+
+.selfiegram-header {
+  padding-top: 6px;
+  flex: left;
+  font-family: 'Lobster Two', cursive;
+  font-size: 25px;
+  color: black;
+}
+
+.backToFeed {
+  text-decoration: none;
+  display: flex;
+}
+
+.searchbar {
+  width: 268px;
+  height: 36px;
+  background: 0;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  -webkit-appearance: none;
+  margin: 0px 40px 6px;
+  text-align: center;
+}
+
+.headeror-line {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin: 5px 40px 8px;
+  display: flex;
+  color: black;
+}
+
+.headeror-line-line {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #c7c7c7;
+  height: 1px;
+  position: relative;
+  margin: 7px 0 12px;
+}

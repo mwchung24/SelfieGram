@@ -1,19 +1,18 @@
-body {
-  font-family: arial, helvetica, sans-serif;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  background-color: #fafafa;
-}
+// body {
+//   font-family: arial, helvetica, sans-serif;
+//   font-size: 14px;
+//   display: flex;
+//   justify-content: center;
+//   background-color: #fafafa;
+// }
 
 .main {
+  font-family: arial, helvetica, sans-serif;
+  font-size: 14px;
   color: #262626;
-  -webkit-box-flex: 1;
-  flex-grow: 1;
-  -webkit-box-pack: center;
   justify-content: center;
   margin-top: 40px;
-  max-width: 350px;
+  // width: 350px;
   background-color: #fafafa;
   display: flex;
 }
@@ -39,6 +38,7 @@ body {
   border-radius: 1px;
   margin: 0 0 10px;
   padding: 10px 0;
+  width: 350px;
 
 }
 
