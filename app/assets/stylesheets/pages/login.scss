@@ -1,10 +1,24 @@
 body {
   font-family: arial, helvetica, sans-serif;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
 }
 
-.login-form {
-  font-family: sans-serif;
+.main {
+  color: #262626;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 40px;
+  max-width: 350px;
+  background-color: #fafafa;
+}
+
+.login-form, .signup-form {
+  // font-family: sans-serif;
   background-color: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 1px;
@@ -13,20 +27,33 @@ body {
 
 }
 
+.redirect-to-signup {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
 .link-to-signup {
   font-size: 15px;
 }
 
-.signup-link {
+.signup-link, .login-link {
   font-size: 15px;
   text-decoration: none;
 }
 
-.login-button {
+.login-button-wrap {
+  // margin: 4px;
+}
+
+.login-button, .demo-button, .signup-button {
   width: 268px;
   height: 28px;
   background-color: #3897f0;
   border-color: #3897f0;
+  color: #fff;
   font-weight: 700;
   font-size: 14px;
   font-weight: 600;
@@ -43,7 +70,7 @@ body {
   border-style: solid;
   border-width: 1px;
   padding: 0 8px;
-  margin: 0 40px 6px;
+  margin: 4px 40px 14px;
 }
 
 .login-form form label input {
@@ -57,8 +84,59 @@ body {
   font-size: 14px;
   padding: 9px 8px 7px;
   -webkit-appearance: none;
-  margin: 6px 40px 6px;
+  margin: 0px 40px 6px;
   /*width: 100%*/
+}
+
+.signup-form form label input {
+  width: 268px;
+  height: 36px;
+  background: 0;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 14px;
+  padding: 9px 8px 7px;
+  -webkit-appearance: none;
+  margin: 0px 40px 6px;
+  /*width: 100%*/
+}
+
+.or-line {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  margin: 5px 40px 8px;
+  display: flex;
+}
+
+.or-line-line {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: #c7c7c7;
+  height: 1px;
+  position: relative;
+  margin: 7px 0 12px;
+}
+
+.or-line-or {
+  color: #999;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-weight: 600;
+  line-height: 15px;
+  margin: 0 8px;
+  text-transform: uppercase;
+}
+
+.login-error, .signup-errors {
+  // display: flex;
+  text-align: center;
+  justify-content: center;
+  color: #ed4956;
 }
 
 .selfiegram {
@@ -67,9 +145,46 @@ body {
   height: 51px;
   width: 175px;
   display: block;
+  margin: 22px auto 8px;
   font-size: 45px;
   font-family: 'Lobster Two', cursive;
   // overflow: hidden;
   // text-indent: 110%;
   // white-space: nowrap;
+}
+
+.redirect-to-signup, .redirect-to-login {
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+}
+
+.login-signup, .signup-login {
+  color: #262626;
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+}
+
+.signup-message {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+  color: #999;
+  font-weight: 600;
+}
+
+.terms {
+  color: #999;
+  margin: 10px 60px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.bolded {
+  font-weight: 600;
 }

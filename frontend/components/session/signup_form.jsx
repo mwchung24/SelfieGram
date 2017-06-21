@@ -11,6 +11,7 @@ class SignupForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   errors() {
@@ -36,6 +37,18 @@ class SignupForm extends React.Component {
     .then ( () => this.props.history.push('/'));
   }
 
+  handleDemoLogin(e) {
+    e.preventDefault();
+
+    const user = {
+      username: 'martin123',
+      password: 'martin123'
+    };
+
+    this.props.login({user})
+    .then ( () => this.props.history.push('/'));
+  }
+
   // linkRendered() {
   //   const page = this.props.formType;
   //   if (page === 'login') {
@@ -57,31 +70,49 @@ class SignupForm extends React.Component {
     // const buttonName = this.props.formType === 'signup' ? 'Sign up' : 'Log in';
 
     return (
-      <section className="session-form">
-        <span>Sign up to share your selfies with your friends.</span>
-        
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
-          </label>
-          <br/>
-          <label>
-            <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
-          </label>
-          <br/>
-          <button>Sign up</button>
-          <ul>
+      <section className="main">
+        <div className="signup-form">
+          <h1 className="selfiegram">SelfieGram</h1>
+          <h2 className="signup-message">Sign up to share your selfies with your friends.</h2>
+
+          <div className="or-line">
+            <div className="or-line-line"></div>
+            <div className="or-line-or">OR</div>
+            <div className="or-line-line"></div>
+          </div>
+
+          <button className="demo-button" onClick={this.handleDemoLogin}>Demo Log in</button>
+
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
+            </label>
+
+            <label>
+              <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
+            </label>
+
+            <div className="signup-button-wrap">
+              <button className="signup-button">Sign up</button>
+            </div>
+          </form>
+
+          <ul className="signup-errors">
             {this.errors()}
           </ul>
-        </form>
+          <div className="terms">
+            <nav>By signing up, you agree to our</nav>
+            <nav><a className="bolded">Terms</a> & <a className="bolded">Privacy Policy.</a></nav>
+          </div>
+        </div>
 
-        <nav>By signing up, you agree to our</nav>
-        <nav>Terms & Privacy Policy</nav>
-        <nav className="login-signup">
-          <span>Have an account? </span><Link to="/login">
-            Log In
-          </Link>
-        </nav>
+        <div className="redirect-to-login">
+          <nav className="signup-login">
+            <span>Have an account? </span><Link className="login-link" to="/login">
+              Log In
+            </Link>
+          </nav>
+        </div>
       </section>
     );
   }

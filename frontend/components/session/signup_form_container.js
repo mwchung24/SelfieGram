@@ -13,6 +13,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     signup: (user) => {
       return dispatch(signup(user));
+    },
+    login: (user) => {
+      return dispatch(login(user));
     }
   };
 };

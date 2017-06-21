@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   errors() {
@@ -36,6 +37,18 @@ class LoginForm extends React.Component {
     .then ( () => this.props.history.push('/'));
   }
 
+  handleDemoLogin(e) {
+    e.preventDefault();
+
+    const user = {
+      username: 'martin123',
+      password: 'martin123'
+    };
+
+    this.props.login({user})
+    .then ( () => this.props.history.push('/'));
+  }
+
   // linkRendered() {
   //   const page = this.props.formType;
   //   if (page === 'login') {
@@ -57,31 +70,48 @@ class LoginForm extends React.Component {
     // const buttonName = this.props.formType === 'signup' ? 'Sign up' : 'Log in';
 
     return (
-      <section className="login-form">
 
-        <h1 className="selfiegram">SelfieGram</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label className="for-margin">
-            <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
-          </label>
-          <br/>
-          <label className="for-margin">
-            <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
-          </label>
-          <br/>
-          <button className="login-button">Log in</button>
-          <ul>
-            {this.errors()}
-          </ul>
-        </form>
+        <section className="main">
+          <div className="login-form">
+            <h1 className="selfiegram">SelfieGram</h1>
+            
+            <form className="form" onSubmit={this.handleSubmit}>
+              <label className="for-margin">
+                <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
+              </label>
+
+              <label className="for-margin">
+                <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
+              </label>
+
+              <div className="login-button-wrap">
+                <button className="login-button">Log in</button>
+              </div>
+
+              <div className="or-line">
+                <div className="or-line-line"></div>
+                <div className="or-line-or">OR</div>
+                <div className="or-line-line"></div>
+              </div>
+
+            </form>
+            <button className="demo-button" onClick={this.handleDemoLogin}>Demo Log in</button>
+            <ul className="login-error">
+              {this.errors()}
+            </ul>
+          </div>
+
+          <div className="redirect-to-signup">
+            <nav className="login-signup">
+              <span className="link-to-signup">Don't have an account? </span><Link className="signup-link" to="/signup">
+                Sign Up
+              </Link>
+            </nav>
+          </div>
+
+        </section>
 
 
-        <nav className="login-signup">
-          <span className="link-to-signup">Don't have an account? </span><Link className="signup-link" to="/signup">
-            Sign Up
-          </Link>
-        </nav>
-      </section>
     );
   }
 }
