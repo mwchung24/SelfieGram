@@ -72,41 +72,47 @@ class LoginForm extends React.Component {
     return (
 
         <section className="main">
-          <div className="login-form">
-            <h1 className="selfiegram">SelfieGram</h1>
-            
-            <form className="form" onSubmit={this.handleSubmit}>
-              <label className="for-margin">
-                <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
-              </label>
-
-              <label className="for-margin">
-                <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
-              </label>
-
-              <div className="login-button-wrap">
-                <button className="login-button">Log in</button>
-              </div>
-
-              <div className="or-line">
-                <div className="or-line-line"></div>
-                <div className="or-line-or">OR</div>
-                <div className="or-line-line"></div>
-              </div>
-
-            </form>
-            <button className="demo-button" onClick={this.handleDemoLogin}>Demo Log in</button>
-            <ul className="login-error">
-              {this.errors()}
-            </ul>
+          <div className="session-photo">
+            <img className="photo" src="assets/phones.png" />
           </div>
 
-          <div className="redirect-to-signup">
-            <nav className="login-signup">
-              <span className="link-to-signup">Don't have an account? </span><Link className="signup-link" to="/signup">
-                Sign Up
-              </Link>
-            </nav>
+          <div className="form">
+            <div className="login-form">
+              <h1 className="selfiegram">SelfieGram</h1>
+
+              <form className="input-form" onSubmit={this.handleSubmit}>
+                <label className="for-margin">
+                  <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
+                </label>
+
+                <label className="for-margin">
+                  <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
+                </label>
+
+                <div className="login-button-wrap">
+                  <button className="login-button">Log in</button>
+                </div>
+
+                <div className="or-line">
+                  <div className="or-line-line"></div>
+                  <div className="or-line-or">OR</div>
+                  <div className="or-line-line"></div>
+                </div>
+
+              </form>
+              <button className="demo-button" onClick={this.handleDemoLogin}>Demo Log in</button>
+              <ul className="login-error">
+                {this.errors()}
+              </ul>
+            </div>
+
+            <div className="redirect-to-signup">
+              <nav className="login-signup">
+                <span className="link-to-signup">Don't have an account? </span><Link className="signup-link" to="/signup">
+                  Sign Up
+                </Link>
+              </nav>
+            </div>
           </div>
 
         </section>

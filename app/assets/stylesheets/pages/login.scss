@@ -15,6 +15,21 @@ body {
   margin-top: 40px;
   max-width: 350px;
   background-color: #fafafa;
+  display: flex;
+}
+
+.form {
+  margin-top: 100px;
+}
+
+.photo {
+  align-self: center;
+  background-position: 0 0;
+  background-size: 454px 618px;
+  flex-basis: 454px;
+  height: 618px;
+  margin-left: -35px;
+  margin-right: -15px;
 }
 
 .login-form, .signup-form {
