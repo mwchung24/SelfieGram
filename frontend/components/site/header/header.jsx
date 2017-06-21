@@ -18,12 +18,7 @@ const personalGreeting = (currentUser, logout) => {
       <div className="header-elements">
         <Link className="backToFeed" to="/">
           <div className="logo-photo">
-            <img className="selfieLogo" src="assets/selfieLogo.png" />
-          </div>
-
-          <div className="headeror-line">
-            <div className="headeror-line-line"></div>
-            <div className="headeror-line-line"></div>
+            <img className="selfieLogo" src={ window.images.logo} />
           </div>
 
           <div>

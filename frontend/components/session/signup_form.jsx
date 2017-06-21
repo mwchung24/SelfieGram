@@ -72,7 +72,7 @@ class SignupForm extends React.Component {
     return (
       <section className="main">
         <div className="session-photo">
-          <img className="photo" src="assets/phones.png" />
+          <img className="photo" src={ window.images.phones} />
         </div>
 
         <div className="form">

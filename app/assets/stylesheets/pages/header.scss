@@ -34,6 +34,7 @@
   font-family: 'Lobster Two', cursive;
   font-size: 25px;
   color: black;
+  padding-left: 20px;
 }
 
 .backToFeed {
@@ -42,8 +43,13 @@
 }
 
 .searchbar {
-  width: 268px;
-  height: 36px;
+  // -webkit-box-flex: 0;
+  // flex: 0 1 auto;
+  // min-width: 125px;
+  width: 215px;
+  height: 28px;
+  font-size: 14px;
+  text-align: center;
   background: 0;
   border: 1px solid #efefef;
   border-radius: 3px;
@@ -53,7 +59,6 @@
   padding: 9px 8px 7px;
   -webkit-appearance: none;
   margin: 0px 40px 6px;
-  text-align: center;
 }
 
 .headeror-line {

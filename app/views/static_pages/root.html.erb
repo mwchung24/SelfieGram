@@ -5,6 +5,11 @@
       user: current_user
     ).html_safe %>
   <% end %>
+
+  window.images = {
+    phones: "<%= image_path('phones.png') %>",
+    logo: "<%= image_path('selfieLogo') %>"
+  }
 </script>
 
 
