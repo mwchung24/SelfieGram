@@ -14,7 +14,6 @@ class Site extends React.Component {
     return (
       <header>
         <HeaderContainer />
-        This is the Photo Feed
         <Route path="/users/:id" component={UserContainer} />
       </header>
     );

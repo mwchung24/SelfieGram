@@ -12,6 +12,8 @@
   will-change: transform;
   z-index: 1;
   transition: 200ms ease-out;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .header-elements {
@@ -19,6 +21,8 @@
   align-items: center;
   height: 77px;
   justify-content: space-around;
+  margin-left: 160px;
+  margin-right: 160px;
 }
 
 .selfieLogo {
