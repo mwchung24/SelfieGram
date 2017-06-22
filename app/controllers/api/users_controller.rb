@@ -6,6 +6,7 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find_by_username(params[:id])
     if @user
+      @photos = @user.photos.order('photos.created_at DESC')
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422

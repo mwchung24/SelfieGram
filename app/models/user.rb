@@ -2,18 +2,18 @@
 #
 # Table name: users
 #
-#  id                       :integer          not null, primary key
-#  username                 :string           not null
-#  password_digest          :string           not null
-#  session_token            :string           not null
-#  created_at               :datetime
-#  updated_at               :datetime
-#  name                     :string           default("")
-#  bio                      :text             default("")
-#  profile_pic              :string
-#  profile_pic_content_type :string
-#  profile_pic_file_size    :string
-#  profile_pic_updated_at   :datetime
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime
+#  updated_at         :datetime
+#  name               :string           default("")
+#  bio                :text             default("")
+#  photo_file_name    :string
+#  photo_content_type :string
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
   after_initialize :ensure_session_token
+
+  has_many :photos, dependent: :destroy
 
   has_attached_file :photo, default_url: "default_profile.png"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/

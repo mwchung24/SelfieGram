@@ -8,3 +8,11 @@ export const userArray = (users) => {
     return [];
   }
 };
+
+export const selectAllImages = (images) => {
+  if (images) {
+    return orderBy(values(images), ['createdAt'], ['desc']);
+  } else {
+    return [];
+  }
+};

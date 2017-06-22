@@ -6,14 +6,23 @@ class User extends React.Component {
     super(props);
 
     // this.fetchUser = this.fetchUser.bind(this);
+
   }
 
   componentDidMount() {
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  renderPhoto() {
+    if (this.props.images[0]) {
+      return (<div>{this.props.images[0].images_url}</div>);
+    } else {
+      return (<div> </div>);
+    }
+  }
+
   render() {
-    // debugger
+    debugger
     return (
       <section className="user-profile">
         <div className="main-profile">
@@ -42,6 +51,7 @@ class User extends React.Component {
             </div>
           </section>
         </div>
+        <div>{this.renderPhoto()}</div>
       </section>
     );
   }
