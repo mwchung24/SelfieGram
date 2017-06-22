@@ -18,7 +18,7 @@
   display: flex;
   align-items: center;
   height: 77px;
-
+  justify-content: space-around;
 }
 
 .selfieLogo {
@@ -49,9 +49,9 @@
   width: 215px;
   height: 28px;
   font-size: 14px;
-  text-align: center;
-  background: 0;
-  border: 1px solid #efefef;
+  text-align: left;
+  background: #fafafa;
+  border: 1px solid #dbdbdb;
   border-radius: 3px;
   box-sizing: border-box;
   color: #262626;
@@ -59,6 +59,18 @@
   padding: 9px 8px 7px;
   -webkit-appearance: none;
   margin: 0px 40px 6px;
+}
+
+// .searchbar input::selected {
+//   border: 1px solid blue;
+//   background: white;
+//   text-align: left;
+//   color: blue;
+// }
+
+input::placeholder {
+  color: #999;
+  font-weight: 200;
 }
 
 .headeror-line {
@@ -78,4 +90,45 @@
   height: 1px;
   position: relative;
   margin: 7px 0 12px;
+}
+
+.logoutButton {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.logoutIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.uploadIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.uploadButton {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.profileIcon {
+  height: 20px;
+  width: 20px;
+}
+
+.profileButton {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: none;
+  margin-right: 20px;
+  cursor: pointer;
 }

@@ -14,6 +14,10 @@ class SignupForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  componentDidMount() {
+    this.props.receiveCurrentUser(this.props.user);
+  }
+
   errors() {
     if (this.props.errors) {
       return (

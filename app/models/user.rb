@@ -2,12 +2,18 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                       :integer          not null, primary key
+#  username                 :string           not null
+#  password_digest          :string           not null
+#  session_token            :string           not null
+#  created_at               :datetime
+#  updated_at               :datetime
+#  name                     :string           default("")
+#  bio                      :text             default("")
+#  profile_pic              :string
+#  profile_pic_content_type :string
+#  profile_pic_file_size    :string
+#  profile_pic_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -47,5 +53,5 @@ class User < ActiveRecord::Base
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-  
+
 end

@@ -1,6 +1,6 @@
 import LoginForm from './login_form';
 import { connect } from 'react-redux';
-import { login } from '../../actions/session_actions';
+import { login, receiveCurrentUser } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     login: (user) => {
       return dispatch(login(user));
+    },
+    receiveCurrentUser: (user) => {
+      return dispatch(receiveCurrentUser(user));
     }
   };
 };
