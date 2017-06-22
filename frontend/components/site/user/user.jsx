@@ -18,6 +18,7 @@ class User extends React.Component {
         This is the Profile Page
         {this.props.user.username}
         {this.props.user.name}
+        <img src={this.props.user.photo_url}/>
       </section>
     );
   }
