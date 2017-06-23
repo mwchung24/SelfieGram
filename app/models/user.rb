@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   has_many :photos, dependent: :destroy
 
   has_attached_file :photo, default_url: "default_profile.png"
+  # styles: { large: "600x", medium: "300x300#" }
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   attr_reader :password

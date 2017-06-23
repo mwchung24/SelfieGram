@@ -115,11 +115,12 @@
 .userPhotos {
   // display: flex;
   margin: auto;
-  width: 70%;
+  width: 75%;
   // justify-content: center;
   // max-width: 70%;
   flex-wrap: wrap;
   display: flex;
+  max-width: 940px;
   // justify-content: space-between;
 }
 
@@ -134,11 +135,13 @@
 
 .photoItem {
   margin: auto;
-  height: auto;
+  // height: auto;
   width: 100%;
   max-width: 293px;
   min-width: 80px;
-  overflow: hidden;
+  height: 100%;
+  object-fit: cover;
+  // overflow: hidden;
   // max-height: 100px;
   // margin-right: 28px;
 }
