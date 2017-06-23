@@ -14,6 +14,12 @@ class User extends React.Component {
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      this.props.fetchUser(nextProps.match.params.id);
+    }
+  }
+
   // renderPhoto() {
   //   if (this.props.images[0]) {
   //     for (var i = 0; i < this.props.images.length; i++) {
