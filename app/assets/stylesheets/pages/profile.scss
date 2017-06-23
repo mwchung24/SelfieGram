@@ -135,12 +135,15 @@
 
 .photoItem {
   margin: auto;
-  // height: auto;
   width: 100%;
   max-width: 293px;
-  min-width: 80px;
+  max-height: 293px;
+  // min-width: 80px;
   height: 100%;
   object-fit: cover;
+
+
+  // height: auto;
   // overflow: hidden;
   // max-height: 100px;
   // margin-right: 28px;
