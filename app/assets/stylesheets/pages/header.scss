@@ -126,6 +126,7 @@ input::placeholder {
 .profileIcon {
   height: 20px;
   width: 20px;
+  margin-top: 8px;
 }
 
 .profileButton {
@@ -133,6 +134,12 @@ input::placeholder {
   height: 40px;
   background-color: white;
   border: none;
-  margin-right: 20px;
+  margin-right: 2px;
   cursor: pointer;
+}
+
+.rightNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

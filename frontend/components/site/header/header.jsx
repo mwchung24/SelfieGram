@@ -30,7 +30,7 @@ const personalGreeting = (currentUser, logout) => {
 
         <SearchContainer />
 
-        <nav>
+        <nav className="rightNav">
           <Link className="profileButton" to={`/users/${currentUser.username}`}><img className="profileIcon" src={ window.images.profile } /></Link>
           <button className="uploadButton"><img className="uploadIcon" src={ window.images.upload } /></button>
           <button className="logoutButton" onClick={logout}><img className="logoutIcon" src={ window.images.logout } /></button>
