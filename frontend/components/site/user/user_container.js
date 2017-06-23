@@ -5,7 +5,7 @@ import { logout } from '../../../actions/session_actions';
 import { selectAllImages } from '../../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  //debugger
   return {
     currentUser: state.session.currentUser,
     user: state.user,

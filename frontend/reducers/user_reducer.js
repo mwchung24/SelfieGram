@@ -9,7 +9,7 @@ const defaultState = Object.freeze({
 });
 
 const UserReducer = (state = defaultState, action) => {
-  debugger
+  //debugger
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_USER:

@@ -99,8 +99,27 @@
 .user-profile {
   display: flex;
   justify-content: center;
+  margin-bottom: 44px;
 }
 
 .main-profile {
   width: 975px;
+}
+
+.userPhotoIndex {
+  display: flex;
+}
+
+.userPhotos {
+  display: flex;
+  margin: auto;
+}
+
+.userPhotoItem {
+  margin-right: 28px;
+}
+
+.photoItem {
+  height: 293px;
+  width: 293px;
 }
