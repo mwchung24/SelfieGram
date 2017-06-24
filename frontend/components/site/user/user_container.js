@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../../actions/user_actions';
 import { logout } from '../../../actions/session_actions';
 import { selectAllImages } from '../../../reducers/selectors';
+import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   //debugger
@@ -15,9 +16,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
+  // debugger
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     logout: () => dispatch(logout()),
+    openModal: (component) => dispatch(openModal(component)),
   };
 };
 

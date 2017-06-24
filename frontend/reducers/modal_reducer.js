@@ -6,6 +6,7 @@ const defaultState = {
 };
 
 const ModalReducer = (state = defaultState, action) => {
+  // debugger
   switch (action.type) {
     case OPEN_MODAL:
       return {open: true, component: action.component};

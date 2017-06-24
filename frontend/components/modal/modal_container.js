@@ -4,6 +4,7 @@ import Modal from './modal';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
+  // debugger
   return ({
   open: state.modal.open,
   component: state.modal.component

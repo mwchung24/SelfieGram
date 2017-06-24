@@ -8,8 +8,9 @@ class Modal extends React.Component {
 
   render () {
     if(this.props.open) {
+      // debugger
       return (
-        <div className="fullModal">
+        <div className="fullModal" onClick={ () => this.props.closeModal()}>
           <div className="modalContent">
             {this.props.component}
           </div>
