@@ -46,54 +46,58 @@ class PhotoDetail extends React.Component {
                 </div>
               </div>
               <div className="bodyModal">
-                <div className="caption">
-                  <p>
-                    <Link className="username-link-caption"
-                      to={`/users/${this.props.state.user.username}`}
-                      onClick={ () => this.props.closeModal()}>{this.props.state.user.username}
-                    </Link>
-                    <span className="photo-caption">
-                      {this.props.state.photo.caption}
+                <div>
+                  <div className="caption">
+                    <p>
+                      <Link className="username-link-caption"
+                        to={`/users/${this.props.state.user.username}`}
+                        onClick={ () => this.props.closeModal()}>{this.props.state.user.username}
+                      </Link>
+                      <span className="photo-caption">
+                        {this.props.state.photo.caption}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="comments-wrapper">
+                    <p>
+                      <span className="comments">
+                        This is where comments go.. This is where comments go.. This is where comments go.. This is where comments go..
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="bottom">
+                  <section className="like-comment">
+                    <button className="like-button">
+                      <i className="fa fa-heart-o" aria-hidden="true"></i>
+                    </button>
+                    <button className="liked">
+                      <i className="fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                    <button className="comment-button">
+                      <i className="fa fa-comment-o" aria-hidden="true"></i>
+                    </button>
+                  </section>
+                  <span className="num-of-like-on-photo">
+                    # likes
+                  </span>
+                  <div className="uploadedAt">
+                    <span className="month">
+                      {this.month()}
                     </span>
-                  </p>
-                </div>
-                <div className="comments-wrapper">
-                  <p>
-                    <span className="comments">
-                      This is where comments go.. This is where comments go.. This is where comments go.. This is where comments go..
+                    <span className="day">
+                      {this.props.state.photo.createdAtDay},
                     </span>
-                  </p>
+                    <span className="year">
+                      {this.props.state.photo.createdAtYear}
+                    </span>
+                  </div>
+                  <section className="photo-comment-form">
+                    <form>
+                      <textarea className="add-comment" placeholder="Add a comment..."></textarea>
+                    </form>
+                  </section>
                 </div>
-                <section className="like-comment">
-                  <button className="like-button">
-                    <i className="fa fa-heart-o" aria-hidden="true"></i>
-                  </button>
-                  <button className="liked">
-                    <i className="fa fa-heart" aria-hidden="true"></i>
-                  </button>
-                  <button className="comment-button">
-                    <i className="fa fa-comment-o" aria-hidden="true"></i>
-                  </button>
-                </section>
-                <span className="num-of-like-on-photo">
-                  # likes
-                </span>
-                <div className="uploadedAt">
-                  <span className="month">
-                    {this.month()}
-                  </span>
-                  <span className="day">
-                    {this.props.state.photo.createdAtDay},
-                  </span>
-                  <span className="year">
-                    {this.props.state.photo.createdAtYear}
-                  </span>
-                </div>
-                <section className="photo-comment-form">
-                  <form>
-                    <textarea className="add-comment" placeholder="Add a comment..."></textarea>
-                  </form>
-                </section>
               </div>
             </div>
           </div>
