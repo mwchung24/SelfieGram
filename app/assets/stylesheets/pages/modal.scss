@@ -40,8 +40,6 @@
   height: 78px;
   margin: auto;
   padding: 20px 20px 20px 0;
-  // position: absolute;
-  // right: 24px;
   top: 0;
   width: 287px;
   display: flex;
@@ -83,7 +81,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // cursor: pointer;
 }
 
 .user-username-caption {
@@ -113,40 +110,57 @@
 }
 
 .like-button {
-  margin: 5px 0;
-  font-size: 22px;
+  margin: 5px 17px 0 0;
+  font-size: 27px;
   display: block;
   padding: 0;
   background: none;
   border: none;
   color: inherit;
-  // font: inherit;
+  cursor: pointer;
+}
+
+.liked {
+  color: red;
+  margin: 5px 17px 0 0;
+  font-size: 27px;
+  display: block;
+  padding: 0;
+  background: none;
+  border: red;
+  color: red;
   cursor: pointer;
 }
 
 .comment-button {
   margin: 5px 0;
-  font-size: 22px;
+  font-size: 27px;
   display: block;
   padding: 0;
   background: none;
   border: none;
   color: inherit;
-  // font: inherit;
   cursor: pointer;
 }
-//
+
 .photo-caption {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   font-weight: 400;
-  // margin-left: 5px;
   cursor: default;
 
 }
 
 .caption {
-  // display: flex;
-  // flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.comments-wrapper {
+  height: 52%;
+}
+
+.comments {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 400;
 }
 
 .like-comment {
@@ -158,4 +172,84 @@
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   flex-direction: row;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.num-of-like-on-photo {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+
+}
+
+.uploadedAt {
+  padding: 10px 10px 10px 0;
+  border-bottom: 1px solid #efefef;
+  color: #999;
+  margin-bottom: 5px;
+  font-size: 13px;
+  letter-spacing: .2px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.month, .day {
+  margin-right: 3px;
+}
+
+.photo-comment-form {
+  -webkit-box-ordinal-group: 6;
+  order: 5;
+  padding-right: 26px;
+  margin-top: 4px;
+  color: #999;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 18px;
+  min-height: 56px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.photo-comment-form form {
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  flex-shrink: 1;
+  display: flex;
+  flex-grow: 1;
+}
+
+.add-comment {
+  height: 18px;
+  background: 0 0;
+  border: none;
+  color: #262626;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+  resize: none;
+  max-height: 80px;
+  display: flex;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  line-height: 18px;
+  -webkit-appearance: textarea;
+  -webkit-rtl-ordering: logical;
+  user-select: text;
+  flex-direction: column;
+  cursor: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: start;
+  width: 100%;
+  overflow: hidden;
 }

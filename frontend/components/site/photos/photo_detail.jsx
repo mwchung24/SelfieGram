@@ -11,6 +11,25 @@ class PhotoDetail extends React.Component {
     this.props.fetchPhoto(this.props.id);
   }
 
+  month() {
+    const MONTH = {
+      1: "JANUARY",
+      2: "FEBRUARY",
+      3: "MARCH",
+      4: "APRIL",
+      5: "MAY",
+      6: "JUNE",
+      7: "JULY",
+      8: "AUGUST",
+      9: "SEPTEMBER",
+      10: "OCTOBER",
+      11: "NOVEMBER",
+      12: "DECEMBER"
+    };
+
+    return MONTH[this.props.state.photo.createdAtMonth];
+  }
+
   render () {
     if (this.props.state) {
       return (
@@ -38,13 +57,42 @@ class PhotoDetail extends React.Component {
                     </span>
                   </p>
                 </div>
+                <div className="comments-wrapper">
+                  <p>
+                    <span className="comments">
+                      This is where comments go.. This is where comments go.. This is where comments go.. This is where comments go..
+                    </span>
+                  </p>
+                </div>
                 <section className="like-comment">
                   <button className="like-button">
                     <i className="fa fa-heart-o" aria-hidden="true"></i>
                   </button>
+                  <button className="liked">
+                    <i className="fa fa-heart" aria-hidden="true"></i>
+                  </button>
                   <button className="comment-button">
                     <i className="fa fa-comment-o" aria-hidden="true"></i>
                   </button>
+                </section>
+                <span className="num-of-like-on-photo">
+                  # likes
+                </span>
+                <div className="uploadedAt">
+                  <span className="month">
+                    {this.month()}
+                  </span>
+                  <span className="day">
+                    {this.props.state.photo.createdAtDay},
+                  </span>
+                  <span className="year">
+                    {this.props.state.photo.createdAtYear}
+                  </span>
+                </div>
+                <section className="photo-comment-form">
+                  <form>
+                    <textarea className="add-comment" placeholder="Add a comment..."></textarea>
+                  </form>
                 </section>
               </div>
             </div>
