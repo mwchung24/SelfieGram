@@ -1,6 +1,7 @@
 import PhotoDetail from './photo_detail';
 import { connect } from 'react-redux';
 import { fetchPhoto } from '../../../actions/photo_actions';
+import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
 
@@ -12,6 +13,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPhoto: (photo) => dispatch(fetchPhoto(photo)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 
