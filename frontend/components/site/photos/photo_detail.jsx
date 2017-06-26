@@ -7,7 +7,7 @@ class PhotoDetail extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
+    // //debugger
     this.props.fetchPhoto(this.props.id);
   }
 

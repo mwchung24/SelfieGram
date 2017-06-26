@@ -6,7 +6,7 @@ import { selectAllImages } from '../../../reducers/selectors';
 import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  //debugger
+  ////debugger
   return {
     currentUser: state.session.currentUser,
     user: state.user,
@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // debugger
+  // //debugger
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     logout: () => dispatch(logout()),

@@ -4,7 +4,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def show
-    # debugger
+    # //debugger
     @photo = Photo.find(params[:id])
 
     if @photo
@@ -16,6 +16,7 @@ class Api::PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
+    @photo.user_id = current_user.id
 
     if @photo.save
       render :show
@@ -25,7 +26,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def destroy
-    @photo = Photo.find(params[:id])
+    @photo = current_user.photos.find(params[:id])
 
     if @photo.destroy
       render :show
@@ -37,6 +38,6 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :caption, :user_id)
+    params.require(:photo).permit(:image, :caption)
   end
 end

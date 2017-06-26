@@ -11,7 +11,7 @@ const defaultState = Object.freeze({
 });
 
 const PhotoReducer = (state = defaultState, action) => {
-  //debugger
+  ////debugger
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PHOTO:

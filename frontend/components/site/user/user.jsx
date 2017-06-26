@@ -24,7 +24,7 @@ class User extends React.Component {
   // renderPhoto() {
   //   if (this.props.images[0]) {
   //     for (var i = 0; i < this.props.images.length; i++) {
-  //       //debugger
+  //       ////debugger
   //       return (<div><img src={this.props.images[i]selectAllImages .images_url}/></div>);
   //     }
   //   } else {
@@ -33,11 +33,11 @@ class User extends React.Component {
   // }
 
   render() {
-
+    //debugger
     const photos = selectAllImages(this.props.images);
     let allUserPhotos;
 
-    // //debugger
+    // ////debugger
 
     if (photos) {
       allUserPhotos = photos.map( (photo) => {
