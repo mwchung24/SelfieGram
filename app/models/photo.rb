@@ -2,11 +2,15 @@
 #
 # Table name: photos
 #
-#  id         :integer          not null, primary key
-#  caption    :string           default("")
-#  user_id    :integer          not null
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer          not null, primary key
+#  caption            :string           default("")
+#  user_id            :integer          not null
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class Photo < ActiveRecord::Base
