@@ -24,12 +24,12 @@ class User < ActiveRecord::Base
 
   has_many :photos, dependent: :destroy
 
-  has_many :followers
+  has_many :followers,
   class_name: :Follow,
   primary_key: :id,
   foreign_key: :follower_id
 
-  has_many :followings
+  has_many :followings,
   class_name: :Follow,
   primary_key: :id,
   foreign_key: :followee_id
@@ -64,10 +64,29 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def current_user_follows(current_user)
+    follows = false
+    self.followers.each do |follower|
+      if(follower.follower_id == current_user.id)
+        follows = true
+      end
+    end
+    return follows
+  end
+
+  def current_user_follow_id(current_user)
+    id = nil
+    self.followers.each do |follower|
+      if (follower.follower_id == current_user.id)
+        id = follower.id
+      end
+    end
+    return id
+  end
+
   private
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-
 end
