@@ -44,6 +44,11 @@ class PhotoDetail extends React.Component {
                 <div className="user-username">
                   <div><Link className="username-link" to={`/users/${this.props.state.user.username}`} onClick={ () => this.props.closeModal()}>{this.props.state.user.username}</Link></div>
                 </div>
+                <div className="delete-photo">
+                  <button className="delete-photo-icon">
+                    <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </div>
               </div>
               <div className="bodyModal">
                 <div>

@@ -131,6 +131,29 @@
   cursor: pointer;
 }
 
+.delete-photo {
+  display: flex;
+  align-items: center;
+  margin-left: 35%;
+}
+
+.delete-photo-icon {
+  margin: 5px 0;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  display: block;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fa-trash-o {
+  // color: white;
+}
+
 .liked {
   color: red;
   margin: 5px 17px 0 0;
