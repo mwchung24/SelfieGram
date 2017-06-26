@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { uploadPhoto } from '../../../actions/photo_actions';
 import CreatePhoto from './create_photo';
 import { closeModal } from '../../../actions/modal_actions';
+import { fetchUser } from '../../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     uploadPhoto: (photo) => dispatch(uploadPhoto(photo)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    fetchUser: (user) => dispatch(fetchUser(user)),
   };
 };
 

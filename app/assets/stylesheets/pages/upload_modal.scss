@@ -1,0 +1,44 @@
+.uploadModal {
+  width: 50%;
+  margin: auto;
+}
+
+.uploadForm {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.imagePrev {
+  max-height: 300px;
+  max-width: 300px;
+  object-fit: cover;
+}
+
+.uploadHeader {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  margin: auto;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.captionUpload {
+  padding: 10px;
+  font-size: 16px;
+
+}
+
+.captionUpload::placeholder {
+  // display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  background-color: light-blue;
+  border: none;
+  cursor: pointer;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class CreatePhoto extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +12,16 @@ class CreatePhoto extends React.Component {
 
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
+
+  // componentDidMount () {
+  //   this.props.receiveCurrentUser(this.props.state.session.currentUser);
+  // }
+
+  // componentWillReceiveProps() {
+  //   this.props.fetchUser(this.props.state.user);
+  // }
 
   updateBody (e) {
     this.setState({
@@ -34,23 +42,36 @@ class CreatePhoto extends React.Component {
   }
 
   handleSubmit (e) {
+    // debugger
     let formData = new FormData();
     formData.append("photo[caption]", this.state.caption);
     formData.append("photo[image]", this.state.imageFile);
-    this.props.uploadPhoto(formData);
-    this.props.closeModal();
+    this.props.uploadPhoto(formData)
+    .then(() => this.props.closeModal())
+    .then(() => this.props.fetchUser(this.props.state.user.username));
   }
 
-  render () {
-    // //debugger
-    return (
-      <div onClick={(e) => e.stopPropagation()}>
-        Upload an Image!
+  handleCancel (e) {
+    return this.props.closeModal();
+  }
 
-        <input type="text" onChange={this.updateBody} />
-        <input type="file" onChange={this.updateFile} />
-        <button onClick={this.handleSubmit}>Upload Image!</button>
-        <img src={ this.state.imageUrl } />
+
+  render () {
+    // debugger
+    return (
+      <div className="uploadModal" onClick={(e) => e.stopPropagation()}>
+        <div className="uploadForm">
+          <span className="uploadHeader">
+            Upload an Image!
+          </span>
+          <img className="imagePrev" src={ this.state.imageUrl } />
+          <input type="file" onChange={this.updateFile} />
+          <input className="captionUpload" type="text" placeholder="Caption" onChange={this.updateBody} />
+          <div className="buttons">
+            <button onClick={this.handleSubmit}>Upload Image!</button>
+            <button onClick={this.handleCancel}>Cancel</button>
+          </div>
+        </div>
       </div>
     );
   }
