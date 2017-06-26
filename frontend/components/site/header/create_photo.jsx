@@ -66,7 +66,7 @@ class CreatePhoto extends React.Component {
             Upload an Image!
           </span>
           <img className="imagePrev" src={ this.state.imageUrl } />
-          <input type="file" onChange={this.updateFile} />
+          <input className="uploadFile" type="file" onChange={this.updateFile} />
           <input className="captionUpload" type="text" placeholder="Caption" onChange={this.updateCaption} />
           <div className="buttons">
             <button className="uploadFormButton" onClick={this.handleSubmit}>Upload Image!</button>
