@@ -13,6 +13,7 @@ class CreatePhoto extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.updateCaption = this.updateCaption.bind(this);
   }
 
   // componentDidMount () {
@@ -23,9 +24,9 @@ class CreatePhoto extends React.Component {
   //   this.props.fetchUser(this.props.state.user);
   // }
 
-  updateBody (e) {
+  updateCaption (e) {
     this.setState({
-      body: e.target.value
+      caption: e.target.value
     });
   }
 
@@ -66,7 +67,7 @@ class CreatePhoto extends React.Component {
           </span>
           <img className="imagePrev" src={ this.state.imageUrl } />
           <input type="file" onChange={this.updateFile} />
-          <input className="captionUpload" type="text" placeholder="Caption" onChange={this.updateBody} />
+          <input className="captionUpload" type="text" placeholder="Caption" onChange={this.updateCaption} />
           <div className="buttons">
             <button className="uploadFormButton" onClick={this.handleSubmit}>Upload Image!</button>
             <button className="uploadFormCancel" onClick={this.handleCancel}>Cancel</button>

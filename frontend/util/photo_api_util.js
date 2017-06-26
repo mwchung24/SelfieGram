@@ -15,3 +15,10 @@ export const uploadPhoto = (formData) => {
     data: formData,
   });
 };
+
+export const deletePhoto = (photo) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/photos/${photo.id}`
+  });
+};

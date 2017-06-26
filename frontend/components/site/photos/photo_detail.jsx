@@ -11,6 +11,12 @@ class PhotoDetail extends React.Component {
     this.props.fetchPhoto(this.props.id);
   }
 
+  delete() {
+    this.props.deletePhoto(this.props.state.photo)
+    .then(() => this.props.closeModal())
+    .then(() => this.props.fetchUser(this.props.state.user.username));
+  }
+
   month() {
     const MONTH = {
       1: "JANUARY",
@@ -45,7 +51,7 @@ class PhotoDetail extends React.Component {
                   <div><Link className="username-link" to={`/users/${this.props.state.user.username}`} onClick={ () => this.props.closeModal()}>{this.props.state.user.username}</Link></div>
                 </div>
                 <div className="delete-photo">
-                  <button className="delete-photo-icon">
+                  <button className="delete-photo-icon" onClick={ () => this.delete()}>
                     <i className="fa fa-trash-o" aria-hidden="true"></i>
                   </button>
                 </div>
