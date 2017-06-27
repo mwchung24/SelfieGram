@@ -89,7 +89,7 @@ class PhotoDetail extends React.Component {
                     </p>
                   </div>
                 </div>
-                <div className="bottom">
+                <div className="bottom-pic">
                   <section className="like-comment">
                     <button className="like-button">
                       <i className="fa fa-heart-o" aria-hidden="true"></i>

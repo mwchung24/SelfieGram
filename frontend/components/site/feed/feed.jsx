@@ -47,7 +47,7 @@ class Feed extends React.Component {
                 <Link to={`/users/${photo.username}`} className="photoFeedUsername">{photo.username}</Link>
               </div>
               <img className="photo-on-feed" src={photo.images_url}/>
-              <div className="bottom">
+              <div className="bottom bottom-feed">
                 <section className="like-comment">
                   <button className="like-button">
                     <i className="fa fa-heart-o" aria-hidden="true"></i>
