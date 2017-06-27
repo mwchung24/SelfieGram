@@ -1,6 +1,21 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    @photos = []
+    current_user.followees.each do |followee|
+      followee.photos.each do |photo|
+        @photos << photo
+      end
+    end
+
+    current_user.photos.each do |photo|
+      @photos << photo
+    end
+
+    @photos
+
+    # debugger
+
+    render :index
   end
 
   def show

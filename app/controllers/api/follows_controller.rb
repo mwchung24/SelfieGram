@@ -13,7 +13,7 @@ class Api::FollowsController < ApplicationController
 
   def destroy
     @follow = current_user.follows_of_follower.find_by_followee_id(params[:id])
-    # debugger
+    # //debugger
     if @follow.destroy
       render :show
     end

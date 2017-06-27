@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HeaderContainer from './header/header_container';
 import UserContainer from './user/user_container';
+import FeedContainer from './feed/feed_container';
 // import Search from './header/search_container';
 
 // import FeedContainer from './feed/feed_container';
@@ -15,6 +16,7 @@ class Site extends React.Component {
       <header>
         <HeaderContainer />
         <Route path="/users/:id" component={UserContainer} />
+        <Route path="/" component={FeedContainer} />
       </header>
     );
   }

@@ -1,5 +1,5 @@
 export const fetchPhoto = (id) => {
-  //////debugger
+  ////////debugger
   return $.ajax({
     method: 'GET',
     url: `api/photos/${id}`
@@ -20,5 +20,13 @@ export const deletePhoto = (photo) => {
   return $.ajax({
     method: 'DELETE',
     url: `api/photos/${photo.id}`
+  });
+};
+
+export const fetchFeedPhotos = (currentUser_id) => {
+  //debugger
+  return $.ajax({
+    method: 'GET',
+    url: 'api/photos'
   });
 };
