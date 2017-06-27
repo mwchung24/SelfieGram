@@ -7,7 +7,8 @@ import { fetchUser } from '../../../actions/user_actions';
 const mapStateToProps = (state, ownProps) => {
   return {
     photo: state.photo,
-    // currentUsername: state.session.currentUser.username
+    currentUserId: state.session.currentUser.id,
+    userId: state.user.id,
     username: state.user.username,
     photo_url: state.user.photo_url,
     ownProps: ownProps,

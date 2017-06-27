@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
+
+    this.deleteIcon = this.deleteIcon.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +38,18 @@ class PhotoDetail extends React.Component {
     return MONTH[this.props.photo.createdAtMonth];
   }
 
+  deleteIcon() {
+    if (this.props.userId === this.props.currentUserId){
+      return (
+        <button className="delete-photo-icon" onClick={ () => this.delete()}>
+          <i className="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      );
+    } else {
+      return (<div></div>);
+    }
+  }
+
   render () {
     if (this.props.photo) {
       return (
@@ -51,9 +65,7 @@ class PhotoDetail extends React.Component {
                   <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.props.closeModal()}>{this.props.username}</Link></div>
                 </div>
                 <div className="delete-photo">
-                  <button className="delete-photo-icon" onClick={ () => this.delete()}>
-                    <i className="fa fa-trash-o" aria-hidden="true"></i>
-                  </button>
+                  {this.deleteIcon()}
                 </div>
               </div>
               <div className="bodyModal">
