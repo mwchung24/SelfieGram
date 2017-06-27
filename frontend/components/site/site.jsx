@@ -16,7 +16,7 @@ class Site extends React.Component {
       <header>
         <HeaderContainer />
         <Route path="/users/:id" component={UserContainer} />
-        <Route path="/" component={FeedContainer} />
+        <Route exact path="/" component={FeedContainer} />
       </header>
     );
   }

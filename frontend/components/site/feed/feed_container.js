@@ -5,7 +5,7 @@ import { fetchUser } from '../../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
-    state: state,
+    feed: state.feed,
     ownProps: ownProps
   });
 };

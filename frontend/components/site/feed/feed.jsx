@@ -7,24 +7,19 @@ class Feed extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchFeedPhotos(this.props.state.session.currentUser.username);
+    this.props.fetchFeedPhotos();
   }
-
-  // componentWillReceiveProps() {
-  //   this.props.fetchUser(this.props.state.session.currentUser.username);
-  //   // .then ( () => this.props.history.push('/'));
-  // }
 
   render () {
 
-    const feed = selectAllImages(this.props.state.feed);
+    const feed = selectAllImages(this.props.feed);
     let FeedPhotos;
 
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
         return (
-          <li key={photo.id}>
-            <img src={photo.images_url}/>
+          <li className="photo-wrap" key={photo.id}>
+            <img className="photo-on-feed" src={photo.images_url}/>
           </li>
         );
       });

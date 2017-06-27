@@ -1,0 +1,16 @@
+.photo-wrap {
+  height: auto;
+  align-items: center;
+  margin-top: 7%;
+  display: flex;
+  justify-content: center;
+}
+
+.photo-on-feed {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  max-height: 600px;
+  object-fit: cover;
+}
