@@ -1,16 +1,19 @@
 import { connect } from 'react-redux';
 import { fetchFeedPhotos } from '../../../actions/photo_actions';
 import Feed from './feed';
+import { fetchUser } from '../../../actions/user_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    state: state
+    state: state,
+    ownProps: ownProps
   });
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchFeedPhotos: (currentUser_id) => dispatch(fetchFeedPhotos(currentUser_id)),
+    fetchUser: (user) => dispatch(fetchUser(user)),
   };
 };
 

@@ -20,7 +20,7 @@ export const addFollow = follow => dispatch => {
 };
 
 export const deleteFollow = follow => dispatch => {
-  ////debugger
+
   return APIUtil.deleteFollow(follow).then(follow => (
     dispatch(removeFollow(follow))
   ));

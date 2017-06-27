@@ -1,5 +1,5 @@
 require 'time_ago_in_words'
-# //////debugger
+
 # upload_at = (photo.created_at, Time.now)
 # upload_at = (photo.created_at, Time.now)
 json.id photo.id

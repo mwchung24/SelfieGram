@@ -22,7 +22,7 @@ class User extends React.Component {
   }
 
   isCurrentUser () {
-    ////debugger
+
     if(this.props.currentUser.id === this.props.user.id) {
       return (<button className="edit-profile">Edit Profile</button>);
     } else {

@@ -2,7 +2,7 @@ import { RECEIVE_FEED } from '../actions/photo_actions';
 import merge from 'lodash/merge';
 
 const FeedReducer = (state = {}, action) => {
-  //debugger
+
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_FEED:

@@ -7,7 +7,7 @@ import { openModal } from '../../../actions/modal_actions';
 import { addFollow, deleteFollow } from '../../../actions/follow_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  ////////debugger
+
   return {
     currentUser: state.session.currentUser,
     user: state.user,
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // //////debugger
+
   return {
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     logout: () => dispatch(logout()),

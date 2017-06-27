@@ -13,7 +13,7 @@ class Api::PhotosController < ApplicationController
 
     @photos
 
-    # debugger
+
 
     render :index
   end
