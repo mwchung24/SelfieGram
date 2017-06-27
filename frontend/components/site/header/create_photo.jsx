@@ -43,7 +43,6 @@ class CreatePhoto extends React.Component {
   }
 
   handleSubmit (e) {
-
     let formData = new FormData();
     formData.append("photo[caption]", this.state.caption);
     formData.append("photo[image]", this.state.imageFile);
@@ -59,7 +58,6 @@ class CreatePhoto extends React.Component {
 
 
   render () {
-
     return (
       <div className="uploadModal" onClick={(e) => e.stopPropagation()}>
         <div className="uploadForm">

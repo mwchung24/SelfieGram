@@ -4,6 +4,8 @@ import { selectAllImages } from '../../../reducers/selectors';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
   componentDidMount () {

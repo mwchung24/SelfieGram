@@ -151,6 +151,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 1.5%;
+  // position: relative;
 }
 
 .photoItem {
@@ -162,10 +163,21 @@
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  // background-color: black;
 
 
   // height: auto;
   // overflow: hidden;
   // max-height: 100px;
   // margin-right: 28px;
+}
+
+.photoItem:hover {
+  opacity: .6;
+
+  // background-color: black;
+  // color: black;
+  // // opacity: 0.3;
+  // background: rgb(0, 0, 0); opacity: .3;
+  filter: alpha(opacity=60);
 }
