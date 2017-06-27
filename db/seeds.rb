@@ -8,6 +8,7 @@
 
 User.destroy_all
 Photo.destroy_all
+Follow.destroy_all
 
 user1 = User.create({name: "Martin", bio: "I love taking selfies!", username: "martin123", password: "martin123", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/IMG_8232.jpg"})
 user2 = User.create({name: "Hanna", bio: "SelfieGram is the best!", username: "hanna123", password: "hanna123", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/IMG_5384.jpg"})
@@ -38,3 +39,16 @@ Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/ph
 # Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/wada12.jpg", user_id: user4.id, caption: 'testing pictures8'})
 Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/wada300.jpg", user_id: user4.id, caption: 'testing pictures8'})
 Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/taki100.jpg", user_id: user4.id, caption: 'testing pictures8'})
+
+Follow.create({follower_id: user1.id, followee_id: user2.id})
+Follow.create({follower_id: user1.id, followee_id: user3.id})
+Follow.create({follower_id: user1.id, followee_id: user4.id})
+Follow.create({follower_id: user2.id, followee_id: user1.id})
+Follow.create({follower_id: user2.id, followee_id: user3.id})
+Follow.create({follower_id: user2.id, followee_id: user4.id})
+Follow.create({follower_id: user3.id, followee_id: user1.id})
+Follow.create({follower_id: user3.id, followee_id: user2.id})
+Follow.create({follower_id: user3.id, followee_id: user4.id})
+Follow.create({follower_id: user4.id, followee_id: user1.id})
+Follow.create({follower_id: user4.id, followee_id: user2.id})
+Follow.create({follower_id: user4.id, followee_id: user3.id})
