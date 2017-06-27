@@ -10,14 +10,14 @@
 }
 
 .wholeModal {
-  width: 70%;
+  // width: 70%;
   margin: auto;
 }
 
 .modalContent {
-  width: 70%;
+  // width: 70%;
   margin: auto;
-  position: fixed;
+  // position: fixed;
 }
 
 .imageContainer {
@@ -27,6 +27,8 @@
 
 .imageModal {
   margin: right;
+  min-width: 600px;
+  min-height: 600px;
   max-width: 600px;
   max-height: 600px;
   width: 100%;
