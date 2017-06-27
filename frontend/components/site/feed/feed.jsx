@@ -34,7 +34,7 @@ class Feed extends React.Component {
 
   render () {
     // debugger
-    const feed = selectAllImages(this.props.feed);
+    const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
 
     if (feed) {
