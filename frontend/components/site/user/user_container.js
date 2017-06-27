@@ -9,7 +9,7 @@ import { addFollow, deleteFollow } from '../../../actions/follow_actions';
 const mapStateToProps = (state, ownProps) => {
 
   return {
-    currentUser: state.session.currentUser,
+    currentUserId: state.session.currentUser.id,
     user: state.user,
     userId: ownProps.match.params.userId,
     images: selectAllImages(state.user.images),

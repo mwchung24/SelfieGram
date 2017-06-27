@@ -23,12 +23,11 @@ class User extends React.Component {
 
   isCurrentUser () {
 
-    if(this.props.currentUser.id === this.props.user.id) {
+    if(this.props.currentUserId === this.props.user.id) {
       return (<button className="edit-profile">Edit Profile</button>);
     } else {
       if (this.props.user.followers) {
-        // this.props.currentUser.id === this.props.user.followers.51.id
-        if (Object.keys(this.props.user.followers).includes(this.props.currentUser.id.toString())) {
+        if (Object.keys(this.props.user.followers).includes(this.props.currentUserId.toString())) {
           return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Following</button>);
         }
       }

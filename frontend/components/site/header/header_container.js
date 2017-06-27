@@ -5,7 +5,7 @@ import { openModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return {
-    currentUser: state.session.currentUser,
+    username: state.session.currentUser.username,
   };
 };
 

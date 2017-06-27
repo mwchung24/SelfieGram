@@ -4,9 +4,10 @@ import CreatePhoto from './create_photo';
 import { closeModal } from '../../../actions/modal_actions';
 import { fetchUser } from '../../../actions/user_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return ({
-    state: state
+    username: state.session.currentUser.username,
+    history: ownProps.history,
   });
 };
 

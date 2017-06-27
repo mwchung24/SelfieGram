@@ -49,7 +49,8 @@ class CreatePhoto extends React.Component {
     formData.append("photo[image]", this.state.imageFile);
     this.props.uploadPhoto(formData)
     .then(() => this.props.closeModal())
-    .then(() => this.props.fetchUser(this.props.state.user.username));
+    .then(() => this.props.fetchUser(this.props.username))
+    .then(() => this.props.history.push(`/users/${this.props.username}`));
   }
 
   handleCancel (e) {

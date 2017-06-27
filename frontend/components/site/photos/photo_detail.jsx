@@ -12,9 +12,9 @@ class PhotoDetail extends React.Component {
   }
 
   delete() {
-    this.props.deletePhoto(this.props.state.photo)
+    this.props.deletePhoto(this.props.photo)
     .then(() => this.props.closeModal())
-    .then(() => this.props.fetchUser(this.props.state.user.username));
+    .then(() => this.props.fetchUser(this.props.username));
   }
 
   month() {
@@ -33,22 +33,22 @@ class PhotoDetail extends React.Component {
       12: "DECEMBER"
     };
 
-    return MONTH[this.props.state.photo.createdAtMonth];
+    return MONTH[this.props.photo.createdAtMonth];
   }
 
   render () {
-    if (this.props.state) {
+    if (this.props.photo) {
       return (
         <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
           <div className="imageContainer">
-            <img className="imageModal" src={this.props.state.photo.images_url} />
+            <img className="imageModal" src={this.props.photo.images_url} />
             <div className="rightModal">
               <div className="headerModal">
                 <div className="user-profile-modal">
-                  <Link to={`/users/${this.props.state.user.username}`} onClick={ () => this.props.closeModal()}><img className="user-profile-pic" src={this.props.state.user.photo_url}/></Link>
+                  <Link to={`/users/${this.props.username}`} onClick={ () => this.props.closeModal()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
                 </div>
                 <div className="user-username">
-                  <div><Link className="username-link" to={`/users/${this.props.state.user.username}`} onClick={ () => this.props.closeModal()}>{this.props.state.user.username}</Link></div>
+                  <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.props.closeModal()}>{this.props.username}</Link></div>
                 </div>
                 <div className="delete-photo">
                   <button className="delete-photo-icon" onClick={ () => this.delete()}>
@@ -61,11 +61,11 @@ class PhotoDetail extends React.Component {
                   <div className="caption">
                     <p>
                       <Link className="username-link-caption"
-                        to={`/users/${this.props.state.user.username}`}
-                        onClick={ () => this.props.closeModal()}>{this.props.state.user.username}
+                        to={`/users/${this.props.username}`}
+                        onClick={ () => this.props.closeModal()}>{this.props.username}
                       </Link>
                       <span className="photo-caption">
-                        {this.props.state.photo.caption}
+                        {this.props.photo.caption}
                       </span>
                     </p>
                   </div>
@@ -97,10 +97,10 @@ class PhotoDetail extends React.Component {
                       {this.month()}
                     </span>
                     <span className="day">
-                      {this.props.state.photo.createdAtDay},
+                      {this.props.photo.createdAtDay},
                     </span>
                     <span className="year">
-                      {this.props.state.photo.createdAtYear}
+                      {this.props.photo.createdAtYear}
                     </span>
                   </div>
                   <section className="photo-comment-form">

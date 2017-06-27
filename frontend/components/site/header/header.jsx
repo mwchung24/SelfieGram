@@ -10,10 +10,10 @@ const sessionLinks = () => (
 );
 
 const Header = (props) => {
-  return props.currentUser ? personalGreeting(props.currentUser, props.logout, props) : sessionLinks();
+  return props.username ? personalGreeting(props.username, props.logout, props) : sessionLinks();
 };
 
-const personalGreeting = (currentUser, logout, props) => {
+const personalGreeting = (username, logout, props) => {
   return (
     <section className="header">
       <div className="header-elements">
@@ -32,7 +32,7 @@ const personalGreeting = (currentUser, logout, props) => {
         <SearchContainer />
 
         <nav className="rightNav">
-          <Link className="profileButton" to={`/users/${currentUser.username}`}><img className="profileIcon" src={ window.images.profile } /></Link>
+          <Link className="profileButton" to={`/users/${username}`}><img className="profileIcon" src={ window.images.profile } /></Link>
           <button className="uploadButton" onClick={() => props.openModal(<CreatePhotoContainer />)}>
             <img className="uploadIcon" src={ window.images.upload } />
           </button>

@@ -6,7 +6,9 @@ import { fetchUser } from '../../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return {
-    state,
+    photo: state.photo,
+    username: state.user.username,
+    photo_url: state.user.photo_url,
   };
 };
 

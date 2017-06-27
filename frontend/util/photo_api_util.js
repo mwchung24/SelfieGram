@@ -23,7 +23,7 @@ export const deletePhoto = (photo) => {
   });
 };
 
-export const fetchFeedPhotos = (currentUser_id) => {
+export const fetchFeedPhotos = () => {
 
   return $.ajax({
     method: 'GET',

@@ -38,9 +38,9 @@ export const deletePhoto = photo => dispatch => {
   ));
 };
 
-export const fetchFeedPhotos = currentUser_id => dispatch => {
+export const fetchFeedPhotos = () => dispatch => {
 
-  return APIUtil.fetchFeedPhotos(currentUser_id).then(photos => (
+  return APIUtil.fetchFeedPhotos().then(photos => (
     dispatch(receiveFeed(photos))
   ));
 };
