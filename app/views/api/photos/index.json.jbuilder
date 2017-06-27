@@ -8,4 +8,6 @@ json.array! @photos do |photo|
   json.createdAtMonth photo.created_at.month
   json.createdAtDay photo.created_at.day
   json.createdAtYear photo.created_at.year
+
+  json.daysAgo time_ago_in_words(photo.created_at)
 end

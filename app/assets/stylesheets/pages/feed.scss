@@ -1,7 +1,7 @@
 .photo-wrap {
   height: auto;
   align-items: center;
-  margin-top: 7%;
+  margin-top: 5%;
   display: flex;
   justify-content: center;
 }
@@ -13,4 +13,54 @@
   max-width: 600px;
   max-height: 600px;
   object-fit: cover;
+}
+
+.photoFeedImage {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 600px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  // align-items: center;
+}
+
+.photoFeedHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  max-width: 600px;
+  max-height: 600px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.photoFeedProfilePic {
+  height: 35px;
+  width: 35px;
+  margin: 16px 13px 16px 16px;
+}
+
+.photoFeedUsername {
+  text-decoration: none;
+  color: black;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.days-ago {
+  text-transform: uppercase;
+}
+
+.bottom {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.like-on-feed {
+  margin-bottom: 10px;
 }
