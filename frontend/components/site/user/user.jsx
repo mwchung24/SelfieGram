@@ -29,11 +29,11 @@ class User extends React.Component {
       if (this.props.user.followers) {
         // this.props.currentUser.id === this.props.user.followers.51.id
         if (Object.keys(this.props.user.followers).includes(this.props.currentUser.id.toString())) {
-          return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id)}>Following</button>);
+          return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Following</button>);
         }
       }
 
-      return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id)}>Follow</button>);
+      return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Follow</button>);
 
     }
   }
@@ -71,8 +71,8 @@ class User extends React.Component {
                 <div className="second">
                   <div className="user-stats">
                     <div><span className="number-posts">{allUserPhotos.length}</span> posts</div>
-                    <div><span className="number-follow">#</span> followers</div>
-                    <div><span className="number-follow">#</span> following</div>
+                    <div><span className="number-follow">{this.props.user.followers_count}</span> followers</div>
+                    <div><span className="number-follow">{this.props.user.followees_count}</span> following</div>
                   </div>
                 </div>
                 <div className="third">

@@ -39,12 +39,32 @@
   // display: flex;
 }
 
-.edit-profile {
+.edit-profile, .following-button {
   padding: 0 24px;
   cursor: pointer;
   background: 0 0;
   border-color: #dbdbdb;
   color: #262626;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.follow-button {
+  padding: 0 24px;
+  cursor: pointer;
+  background-color: #3897f0;
+  border-color: #3897f0;
+  color: white;
   -webkit-appearance: none;
   border-radius: 3px;
   border-style: solid;
