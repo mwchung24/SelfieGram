@@ -8,7 +8,7 @@ class User extends React.Component {
     super(props);
 
     // this.fetchUser = this.fetchUser.bind(this);
-
+    this.isCurrentUser = this.isCurrentUser.bind(this);
   }
 
   componentDidMount() {
@@ -21,23 +21,27 @@ class User extends React.Component {
     }
   }
 
-  // renderPhoto() {
-  //   if (this.props.images[0]) {
-  //     for (var i = 0; i < this.props.images.length; i++) {
-  //       ////debugger
-  //       return (<div><img src={this.props.images[i]selectAllImages .images_url}/></div>);
-  //     }
-  //   } else {
-  //     return (<div> </div>);
-  //   }
-  // }
+  isCurrentUser () {
+    //debugger
+    if(this.props.currentUser.id === this.props.user.id) {
+      return (<button className="edit-profile">Edit Profile</button>);
+    } else {
+      if (this.props.user.followers) {
+        // this.props.currentUser.id === this.props.user.followers.51.id
+        if (Object.keys(this.props.user.followers).includes(this.props.currentUser.id.toString())) {
+          return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id)}>Following</button>);
+        }
+      }
+
+      return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id)}>Follow</button>);
+
+    }
+  }
 
   render() {
-    //debugger
+
     const photos = selectAllImages(this.props.images);
     let allUserPhotos;
-
-    // ////debugger
 
     if (photos) {
       allUserPhotos = photos.map( (photo) => {
@@ -61,12 +65,12 @@ class User extends React.Component {
                 <div className="first">
                   <div className="profile-username">{this.props.user.username}</div>
                   <div>
-                    <button className="edit-profile">Edit Profile</button>
+                    {this.isCurrentUser()}
                   </div>
                 </div>
                 <div className="second">
                   <div className="user-stats">
-                    <div><span className="number-posts">#</span> posts</div>
+                    <div><span className="number-posts">{allUserPhotos.length}</span> posts</div>
                     <div><span className="number-follow">#</span> followers</div>
                     <div><span className="number-follow">#</span> following</div>
                   </div>

@@ -12,7 +12,26 @@ json.images do
   end
 end
 
-json.followers user.followers.count
-json.following user.followings.count
-json.visitor_follows user.current_user_follows(current_user)
-json.visitor_id user.current_user_follow_id(current_user)
+json.followers_count user.followers.count
+json.followees_count user.followees.count
+json.followers do
+  user.followers.each do |follower|
+    json.set! follower.id do
+      json.id follower.id
+      json.username follower.username
+      json.photo_url asset_path(user.photo.url)
+    end
+  end
+end
+
+json.followees do
+  user.followees.each do |followee|
+    json.set! followee.id do
+      json.id followee.id
+      json.username followee.username
+      json.photo_url asset_path(user.photo.url)
+    end
+  end
+end
+# json.visitor_follows user.current_user_follows(current_user)
+# json.visitor_id user.current_user_follow_id(current_user)

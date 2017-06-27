@@ -16,7 +16,7 @@ class Follow < ActiveRecord::Base
   primary_key: :id,
   foreign_key: :follower_id
 
-  belongs_to :following,
+  belongs_to :followee,
   class_name: :User,
   primary_key: :id,
   foreign_key: :followee_id

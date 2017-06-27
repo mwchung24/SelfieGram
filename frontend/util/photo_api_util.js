@@ -1,5 +1,5 @@
 export const fetchPhoto = (id) => {
-  ////debugger
+  //////debugger
   return $.ajax({
     method: 'GET',
     url: `api/photos/${id}`
