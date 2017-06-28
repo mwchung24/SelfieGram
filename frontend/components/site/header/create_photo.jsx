@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
 
 class CreatePhoto extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class CreatePhoto extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
     this.updateCaption = this.updateCaption.bind(this);
+    this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
 
   // componentDidMount () {
@@ -32,6 +34,18 @@ class CreatePhoto extends React.Component {
 
   updateFile (e) {
     let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
+  updateDraggedFile (e) {
+    let file = e[0];
     let fileReader = new FileReader();
     fileReader.onloadend = function() {
       this.setState({imageFile: file, imageUrl: fileReader.result });
@@ -65,6 +79,8 @@ class CreatePhoto extends React.Component {
             Upload an Image!
           </span>
           <img className="imagePrev" src={ this.state.imageUrl } />
+          <Dropzone className="drag-and-drop" onDrop={this.updateDraggedFile}>Drag and Drop Image Here</Dropzone>
+          <div className="OR">OR</div>
           <input className="uploadFile" type="file" onChange={this.updateFile} />
           <input className="captionUpload" type="text" placeholder="Caption" onChange={this.updateCaption} />
           <div className="buttons">

@@ -23,6 +23,16 @@ json.likes do
     end
   end
 end
+
+json.comments do
+  photo.comments.each do |comment|
+    json.set! comment.id do
+      json.id comment.id
+      json.photo_id comment.photo.id
+      json.body comment.body
+    end
+  end
+end
 # json.uploadedAt uploaded_at
 # json.uploadedAt uploaded_at.ago_in_words
 # json.uploadedAt uploaded_at.gsub(/about/, '').concat(' ago')

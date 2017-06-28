@@ -74,3 +74,20 @@
 .uploadFile, .imagePrev{
   margin: auto;
 }
+
+.drag-and-drop {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #efefef;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+.OR {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  margin: auto;
+  margin-bottom: 10px;
+}
