@@ -13,6 +13,10 @@ class Feed extends React.Component {
     this.props.fetchFeedPhotos();
   }
 
+  // componentWillReceiveProps () {
+  //   this.props.fetchFeedPhotos();
+  // }
+
   // month() {
   //   const MONTH = {
   //     1: "JANUARY",

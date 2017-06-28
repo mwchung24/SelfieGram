@@ -173,9 +173,9 @@
 }
 
 .photoItem:hover {
-  opacity: .6;
+  opacity: 1;
 
-  background-color: black;
+  background-color: rgba(0,0,0,0.5);
   // color: black;
   // // opacity: 0.3;
   // background: rgb(0, 0, 0); opacity: .3;
