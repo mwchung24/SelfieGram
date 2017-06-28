@@ -12,6 +12,8 @@ const defaultState = Object.freeze({
 });
 
 const PhotoReducer = (state = defaultState, action) => {
+
+  const copyState = Object.assign({}, state);
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_PHOTO:

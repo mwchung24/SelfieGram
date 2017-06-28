@@ -19,8 +19,9 @@ export const addLike = photo_id => dispatch => {
   ));
 };
 
-export const deleteLike = photo_id => dispatch => {
-  return APIUtil.deleteLike(photo_id).then(like => (
+export const deleteLike = like_id => dispatch => {
+
+  return APIUtil.deleteLike(like_id).then(like => (
     dispatch(removeLike(like))
   ));
 };

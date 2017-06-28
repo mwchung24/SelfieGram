@@ -11,7 +11,6 @@ const defaultState = Object.freeze({
 });
 
 const UserReducer = (state = defaultState, action) => {
-
   const copyState = Object.assign({}, state);
   Object.freeze(state);
   switch(action.type) {
