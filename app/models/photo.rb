@@ -17,6 +17,8 @@ class Photo < ActiveRecord::Base
   validates :user, presence: true
 
   belongs_to :user
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_attached_file :image, default_url: "images.png"
   # styles: { large: "600x", medium: "300x300#" }
