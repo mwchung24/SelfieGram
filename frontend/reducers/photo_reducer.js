@@ -7,6 +7,7 @@ const defaultState = Object.freeze({
   user_profile: '',
   images_url: '',
   caption: '',
+  likes: {},
   createdAt: '',
   uploadedAt: '',
 });

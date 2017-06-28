@@ -39,28 +39,36 @@ class Feed extends React.Component {
   // }
 
   render () {
-    // debugger
     const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
-
+    let propsprops = this.props;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
-        
         const likeButton = () => {
           if(photo.liked) {
             return (
-              <button className="liked">
+              <button className="liked" onClick={ () => this.props.deleteLike(photo.like_id).then(() => this.props.fetchFeedPhotos())}>
                 <i className="fa fa-heart" aria-hidden="true"></i>
               </button>
             );
           } else {
             return (
-              <button className="like-button">
+              <button className="like-button" onClick={ () => this.props.addLike(photo.id).then(() => this.props.fetchFeedPhotos())}>
                 <i className="fa fa-heart-o" aria-hidden="true"></i>
               </button>
             );
           }
         };
+
+        const likeOrLikes = () => {
+            if(photo) {
+              if (photo.like_count === 1) {
+                return "like";
+              } else {
+                return "likes";
+              }
+            }
+          };
 
         return (
           <li className="photo-wrap" key={photo.id}>
@@ -78,7 +86,7 @@ class Feed extends React.Component {
                   </button>
                 </section>
                 <div className="num-of-like-on-photo like-on-feed">
-                  {photo.like_count} likes
+                  {photo.like_count} {likeOrLikes()}
                 </div>
                 <div>
                   <div className="caption">
