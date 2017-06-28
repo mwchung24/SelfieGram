@@ -6,6 +6,7 @@ class PhotoDetail extends React.Component {
     super(props);
 
     this.deleteIcon = this.deleteIcon.bind(this);
+    this.likeButton = this.likeButton.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +51,22 @@ class PhotoDetail extends React.Component {
     }
   }
 
+  likeButton () {
+    if(this.props.photo.liked) {
+      return (
+        <button className="liked" >
+          <i className="fa fa-heart" aria-hidden="true"></i>
+        </button>
+      );
+    } else {
+      return (
+        <button className="like-button" onClick={ () => this.props.addLike(this.props.photo.id).then(() => this.props.fetchPhoto(this.props.id))}>
+          <i className="fa fa-heart-o" aria-hidden="true"></i>
+        </button>
+      );
+    }
+  }
+
   render () {
     if (this.props.photo) {
       return (
@@ -91,18 +108,13 @@ class PhotoDetail extends React.Component {
                 </div>
                 <div className="bottom-pic">
                   <section className="like-comment">
-                    <button className="like-button">
-                      <i className="fa fa-heart-o" aria-hidden="true"></i>
-                    </button>
-                    <button className="liked">
-                      <i className="fa fa-heart" aria-hidden="true"></i>
-                    </button>
+                    {this.likeButton()}
                     <button className="comment-button">
                       <i className="fa fa-comment-o" aria-hidden="true"></i>
                     </button>
                   </section>
                   <span className="num-of-like-on-photo">
-                    # likes
+                    {this.props.photo.like_count} likes
                   </span>
                   <div className="uploadedAt">
                     <span className="month">

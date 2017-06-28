@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchPhoto, deletePhoto } from '../../../actions/photo_actions';
 import { closeModal } from '../../../actions/modal_actions';
 import { fetchUser } from '../../../actions/user_actions';
+import { addLike, deleteLike } from '../../../actions/like_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -21,6 +22,8 @@ const mapDispatchToProps = dispatch => {
     closeModal: () => dispatch(closeModal()),
     deletePhoto: (photo) => dispatch(deletePhoto(photo)),
     fetchUser: (user) => dispatch(fetchUser(user)),
+    addLike: (like) => dispatch(addLike(like)),
+    deleteLike: (like) => dispatch(deleteLike(like)),
   };
 };
 

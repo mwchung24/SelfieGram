@@ -11,6 +11,18 @@ json.caption photo.caption
 json.createdAtMonth photo.created_at.month
 json.createdAtDay photo.created_at.day
 json.createdAtYear photo.created_at.year
+json.like_count photo.likes.count
+json.liked photo.current_user_liked(current_user)
+json.like_id photo.current_user_like_id(current_user)
+
+json.likes do
+  photo.likes.each do |like|
+    json.set! like.id do
+      json.id like.id
+      json.photo_id like.photo.id
+    end
+  end
+end
 # json.uploadedAt uploaded_at
 # json.uploadedAt uploaded_at.ago_in_words
 # json.uploadedAt uploaded_at.gsub(/about/, '').concat(' ago')

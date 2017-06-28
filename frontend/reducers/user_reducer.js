@@ -1,7 +1,7 @@
 import { RECEIVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
-import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
+
 
 const defaultState = Object.freeze({
   username: '',

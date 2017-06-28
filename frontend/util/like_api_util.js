@@ -2,7 +2,7 @@ export const addLike = (photo_id) => {
   return $.ajax({
     method: 'POST',
     url: 'api/likes',
-    data: photo_id
+    data: {like: {photo_id: photo_id}}
   });
 };
 

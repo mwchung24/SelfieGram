@@ -24,4 +24,24 @@ class Photo < ActiveRecord::Base
   # styles: { large: "600x", medium: "300x300#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   # validates_attachment_presence :photo
+
+  def current_user_liked(current_user)
+    liked = false
+    self.likes.each do |like|
+      if(like.user_id == current_user.id)
+        liked = true
+      end
+    end
+    return liked
+  end
+
+  def current_user_like_id(current_user)
+    id = nil
+    self.likes.each do |like|
+      if(like.user_id == current_user.id)
+        id = like.id
+      end
+    end
+    return id
+  end
 end

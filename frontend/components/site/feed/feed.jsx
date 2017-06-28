@@ -7,6 +7,8 @@ class Feed extends React.Component {
     super(props);
 
     this.state = {};
+
+    // this.likeButton = this.likeButton.bind(this);
   }
 
   componentDidMount () {
@@ -43,6 +45,23 @@ class Feed extends React.Component {
 
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
+        
+        const likeButton = () => {
+          if(photo.liked) {
+            return (
+              <button className="liked">
+                <i className="fa fa-heart" aria-hidden="true"></i>
+              </button>
+            );
+          } else {
+            return (
+              <button className="like-button">
+                <i className="fa fa-heart-o" aria-hidden="true"></i>
+              </button>
+            );
+          }
+        };
+
         return (
           <li className="photo-wrap" key={photo.id}>
             <div className="photoFeedImage">
@@ -53,18 +72,13 @@ class Feed extends React.Component {
               <img className="photo-on-feed" src={photo.images_url}/>
               <div className="bottom bottom-feed">
                 <section className="like-comment">
-                  <button className="like-button">
-                    <i className="fa fa-heart-o" aria-hidden="true"></i>
-                  </button>
-                  <button className="liked">
-                    <i className="fa fa-heart" aria-hidden="true"></i>
-                  </button>
+                  {likeButton()}
                   <button className="comment-button">
                     <i className="fa fa-comment-o" aria-hidden="true"></i>
                   </button>
                 </section>
                 <div className="num-of-like-on-photo like-on-feed">
-                  # likes
+                  {photo.like_count} likes
                 </div>
                 <div>
                   <div className="caption">
