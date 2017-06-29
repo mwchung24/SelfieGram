@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     currentUserId: state.session.currentUser.id,
+    currentUsername: state.session.currentUser.username,
     user: state.user,
     userId: ownProps.match.params.userId,
     images: selectAllImages(state.user.images),

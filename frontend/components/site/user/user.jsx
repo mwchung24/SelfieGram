@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { selectAllImages } from '../../../reducers/selectors';
 import PhotoDetailContainer from '../photos/photo_detail_container';
 
@@ -9,6 +9,7 @@ class User extends React.Component {
 
     // this.fetchUser = this.fetchUser.bind(this);
     this.isCurrentUser = this.isCurrentUser.bind(this);
+    // this.goEdit = this.goEdit.bind(this);
   }
 
   componentDidMount() {
@@ -21,10 +22,15 @@ class User extends React.Component {
     }
   }
 
+  // goEdit() {
+  //
+  // }
+
   isCurrentUser () {
 
     if(this.props.currentUserId === this.props.user.id) {
-      return (<button className="edit-profile">Edit Profile</button>);
+      // return (<button onClick={() => this.props.goEdit()} className="edit-profile">Edit Profile</button>);
+      return (<Link className="edit-profile" to={`/users/${this.props.currentUsername}/edit`}>Edit Profile</Link>);
     } else {
       if (this.props.user.followers) {
         if (Object.keys(this.props.user.followers).includes(this.props.currentUserId.toString())) {
