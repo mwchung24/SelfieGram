@@ -140,9 +140,11 @@ class PhotoDetail extends React.Component {
                 <div className="bottom-pic">
                   <section className="like-comment">
                     {this.likeButton()}
-                    <button className="comment-button">
-                      <i className="fa fa-comment-o" aria-hidden="true"></i>
-                    </button>
+                    <label htmlFor="comment-redirect">
+                      <button className="comment-button">
+                        <i className="fa fa-comment-o" aria-hidden="true"></i>
+                      </button>
+                    </label>
                   </section>
                   <span className="num-of-like-on-photo">
                     {this.props.photo.like_count} {this.likeOrLikes()}
@@ -159,7 +161,7 @@ class PhotoDetail extends React.Component {
                     </span>
                   </div>
                   <section className="photo-comment-form">
-                    <CommentContainer photoId={this.props.photo.id} />
+                    <CommentContainer id="comment-redirect" photoId={this.props.photo.id} />
                   </section>
                 </div>
               </div>
