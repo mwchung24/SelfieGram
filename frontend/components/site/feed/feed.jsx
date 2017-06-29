@@ -41,7 +41,7 @@ class Feed extends React.Component {
   // }
 
   render () {
-    const feed = selectAllImages(this.props.feed);
+    const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
@@ -75,22 +75,35 @@ class Feed extends React.Component {
         let allPhotoComments;
         if (comments) {
           allPhotoComments = comments.map( (comment) => {
+
+            const deleteCommentIcon = () => {
+              if (this.props.username === comment.username) {
+                return (
+                  <button
+                    className="delete-comment">
+                    <i
+                      onClick={() => this.props.deleteComment(comment.id).then(() => this.props.fetchFeedPhotos())}
+                      className="fa fa-times"
+                      aria-hidden="true">
+                    </i>
+                  </button>
+                );
+              } else {
+                return (
+                  <div></div>
+                );
+              }
+            };
+
             return (
               <li key={comment.id} className="comment-item">
                 <div className="comment-username-and-comment">
                   <Link className="username-link-caption username-feed"
-                    to={`/users/${this.props.username}`}>{this.props.username}
+                    to={`/users/${comment.username}`}>{comment.username}
                   </Link>
                   {comment.body}
                 </div>
-                <button
-                  className="delete-comment">
-                  <i
-                    onClick={() => this.props.deleteComment(comment.id).then(() => this.props.fetchFeedPhotos())}
-                    className="fa fa-times"
-                    aria-hidden="true">
-                  </i>
-                </button>
+                {deleteCommentIcon()}
               </li>
             );
           });

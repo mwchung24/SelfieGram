@@ -11,8 +11,11 @@ class Api::PhotosController < ApplicationController
       @photos << photo
     end
 
-    @photos
+    @photos.sort_by! do |photo|
+      photo[:created_at]
+    end
 
+    return @photos
     render :index
   end
 

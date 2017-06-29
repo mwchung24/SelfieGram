@@ -11,6 +11,7 @@ class PhotoDetail extends React.Component {
     this.deleteIcon = this.deleteIcon.bind(this);
     // this.likeButton = this.likeButton.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
+    // this.deleteCommentIcon = this.deleteCommentIcon.bind(this);
   }
 
   componentDidMount() {
@@ -81,9 +82,8 @@ class PhotoDetail extends React.Component {
     }
   }
 
-
-
   render () {
+
     if (this.props.photo) {
 
       const comments = selectAllComments(this.props.photo.comments);
@@ -91,29 +91,42 @@ class PhotoDetail extends React.Component {
 
       if (comments) {
         allPhotoComments = comments.map( (comment) => {
+
+          const deleteCommentIcon = () => {
+            if (this.props.currentUsername === comment.username) {
+              return (
+                <button
+                  className="delete-comment">
+                  <i
+                    onClick={() => this.props.deleteComment(comment.id)}
+                    className="fa fa-times"
+                    aria-hidden="true">
+                  </i>
+                </button>
+              );
+            } else {
+              return (
+                <div></div>
+              );
+            }
+          };
+
           return (
             <li key={comment.id} className="comment-item">
               <div className="comment-username-and-comment">
                 <p className="comment-username">
                   <Link
                     className="username-link"
-                    to={`/users/${this.props.currentUsername}`}
+                    to={`/users/${comment.username}`}
                     onClick={ () => this.props.closeModal()}>
-                    {this.props.currentUsername}
+                    {comment.username}
                   </Link>
                   <span className="comment-body">
                     {comment.body}
                   </span>
                 </p>
               </div>
-              <button
-                className="delete-comment">
-                <i
-                  onClick={() => this.props.deleteComment(comment.id)}
-                  className="fa fa-times"
-                  aria-hidden="true">
-                </i>
-              </button>
+              {deleteCommentIcon()}
             </li>
           );
         });

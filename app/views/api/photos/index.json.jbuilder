@@ -34,6 +34,7 @@ json.array! @photos do |photo|
         json.id comment.id
         json.photo_id comment.photo.id
         json.body comment.body
+        json.username comment.user.username
       end
     end
   end
