@@ -25,6 +25,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+
     @user = User.find_by_id(current_user.id)
 
     if @user.update(user_params)
@@ -37,6 +38,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :name, :bio, :photo_url)
+    params.require(:user).permit(:username, :password, :name, :bio)
   end
 end
