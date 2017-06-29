@@ -31,10 +31,12 @@ class CommentFeed extends React.Component {
   }
 
   render() {
+
     return (
       <section className="photo-comment-form">
         <form onSubmit={this.handleSubmit}>
           <input
+            id={this.props.photoId}
             className="add-comment"
             placeholder="Add a comment..."
             value={this.state.body}

@@ -299,3 +299,27 @@
   // justify-content: flex-end;
   // align-items: flex-end;
 }
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delete-comment {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-times {
+  color: #e6e6e6;
+}
+
+.comment-username-and-comment {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment-username {
+  margin-right: 5px;
+}

@@ -91,8 +91,21 @@ class PhotoDetail extends React.Component {
       if (comments) {
         allPhotoComments = comments.map( (comment) => {
           return (
-            <li key={comment.id}>
-              {comment.body}
+            <li key={comment.id} className="comment-item">
+              <div className="comment-username-and-comment">
+                <div className="user-username comment-username">
+                  <div><Link className="username-link" to={`/users/${this.props.currentUsername}`} onClick={ () => this.props.closeModal()}>{this.props.currentUsername}</Link></div>
+                </div>
+                {comment.body}
+              </div>
+              <button
+                className="delete-comment">
+                <i
+                  onClick={() => this.props.deleteComment(comment.id).then(() => this.props.fetchPhoto(this.props.id))}
+                  className="fa fa-times"
+                  aria-hidden="true">
+                </i>
+              </button>
             </li>
           );
         });
@@ -140,11 +153,9 @@ class PhotoDetail extends React.Component {
                 <div className="bottom-pic">
                   <section className="like-comment">
                     {this.likeButton()}
-                    <label htmlFor="comment-redirect">
-                      <button className="comment-button">
-                        <i className="fa fa-comment-o" aria-hidden="true"></i>
-                      </button>
-                    </label>
+                    <button className="comment-button" onClick={() => {document.getElementById("comment-redirect").focus();}}>
+                      <i className="fa fa-comment-o" aria-hidden="true"></i>
+                    </button>
                   </section>
                   <span className="num-of-like-on-photo">
                     {this.props.photo.like_count} {this.likeOrLikes()}
@@ -161,9 +172,10 @@ class PhotoDetail extends React.Component {
                     </span>
                   </div>
                   <section className="photo-comment-form">
-                    <CommentContainer id="comment-redirect" photoId={this.props.photo.id} />
+                    <CommentContainer photoId={this.props.photo.id} />
                   </section>
                 </div>
+
               </div>
             </div>
           </div>

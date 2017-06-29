@@ -35,6 +35,7 @@ class Comment extends React.Component {
       <section className="photo-comment-form">
         <form onSubmit={this.handleSubmit}>
           <input
+            id="comment-redirect"
             className="add-comment"
             placeholder="Add a comment..."
             value={this.state.body}

@@ -4,6 +4,8 @@ import { fetchPhoto, deletePhoto } from '../../../actions/photo_actions';
 import { closeModal } from '../../../actions/modal_actions';
 import { fetchUser } from '../../../actions/user_actions';
 import { addLike, deleteLike } from '../../../actions/like_actions';
+import { deleteComment } from '../../../actions/comment_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     username: state.user.username,
     photo_url: state.user.photo_url,
     ownProps: ownProps,
+    currentUsername: state.session.currentUser.username,
   };
 };
 
@@ -24,6 +27,7 @@ const mapDispatchToProps = dispatch => {
     fetchUser: (user) => dispatch(fetchUser(user)),
     addLike: (like) => dispatch(addLike(like)),
     deleteLike: (like) => dispatch(deleteLike(like)),
+    deleteComment:(comment_id) => dispatch(deleteComment(comment_id)),
   };
 };
 

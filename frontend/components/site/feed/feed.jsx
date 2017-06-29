@@ -43,7 +43,6 @@ class Feed extends React.Component {
   render () {
     const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
-    let propsprops = this.props;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
         const likeButton = () => {
@@ -74,12 +73,24 @@ class Feed extends React.Component {
 
         const comments = selectAllComments(photo.comments);
         let allPhotoComments;
-
         if (comments) {
           allPhotoComments = comments.map( (comment) => {
             return (
-              <li key={comment.id}>
-                {comment.body}
+              <li key={comment.id} className="comment-item">
+                <div className="comment-username-and-comment">
+                  <Link className="username-link-caption username-feed"
+                    to={`/users/${this.props.username}`}>{this.props.username}
+                  </Link>
+                  {comment.body}
+                </div>
+                <button
+                  className="delete-comment">
+                  <i
+                    onClick={() => this.props.deleteComment(comment.id).then(() => this.props.fetchFeedPhotos())}
+                    className="fa fa-times"
+                    aria-hidden="true">
+                  </i>
+                </button>
               </li>
             );
           });
@@ -96,7 +107,7 @@ class Feed extends React.Component {
               <div className="bottom bottom-feed">
                 <section className="like-comment">
                   {likeButton()}
-                  <button className="comment-button">
+                  <button className="comment-button" onClick={() => {document.getElementById(`${photo.id}`).focus();}}>
                     <i className="fa fa-comment-o" aria-hidden="true"></i>
                   </button>
                 </section>
