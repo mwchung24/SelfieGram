@@ -44,4 +44,14 @@ class Photo < ActiveRecord::Base
     end
     return id
   end
+
+  def current_user_comment_id(current_user)
+    id = nil
+    self.comments.each do |comment|
+      if (comment.user_id == current_user.id)
+        id = comment.id
+      end
+    end
+    return id
+  end
 end

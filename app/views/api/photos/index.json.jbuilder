@@ -17,6 +17,7 @@ json.array! @photos do |photo|
   json.like_count photo.likes.count
   json.liked photo.current_user_liked(current_user)
   json.like_id photo.current_user_like_id(current_user)
+  json.comment_id photo.current_user_comment_id(current_user)
 
   json.likes do
     photo.likes.each do |like|

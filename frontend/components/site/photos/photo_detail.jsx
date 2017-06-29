@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CommentContainer from '../comment/comment_container';
+import { selectAllComments } from '../../../reducers/selectors';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
@@ -78,8 +80,24 @@ class PhotoDetail extends React.Component {
     }
   }
 
+
+
   render () {
     if (this.props.photo) {
+
+      const comments = selectAllComments(this.props.photo.comments);
+      let allPhotoComments;
+
+      if (comments) {
+        allPhotoComments = comments.map( (comment) => {
+          return (
+            <li key={comment.id}>
+              {comment.body}
+            </li>
+          );
+        });
+      }
+
       return (
         <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
           <div className="imageContainer">
@@ -112,7 +130,9 @@ class PhotoDetail extends React.Component {
                   <div className="comments-wrapper">
                     <p>
                       <span className="comments">
-                        This is where comments go.. This is where comments go.. This is where comments go.. This is where comments go..
+                        <ul>
+                          {allPhotoComments}
+                        </ul>
                       </span>
                     </p>
                   </div>
@@ -139,9 +159,7 @@ class PhotoDetail extends React.Component {
                     </span>
                   </div>
                   <section className="photo-comment-form">
-                    <form>
-                      <textarea className="add-comment" placeholder="Add a comment..."></textarea>
-                    </form>
+                    <CommentContainer photoId={this.props.photo.id} />
                   </section>
                 </div>
               </div>

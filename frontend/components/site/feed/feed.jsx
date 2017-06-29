@@ -1,6 +1,8 @@
 import React from 'react';
 import { selectAllImages } from '../../../reducers/selectors';
 import { Link } from 'react-router-dom';
+import CommentFeedContainer from '../comment/comment_feed_container';
+import { selectAllComments } from '../../../reducers/selectors';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -61,14 +63,27 @@ class Feed extends React.Component {
         };
 
         const likeOrLikes = () => {
-            if(photo) {
-              if (photo.like_count === 1) {
-                return "like";
-              } else {
-                return "likes";
-              }
+          if(photo) {
+            if (photo.like_count === 1) {
+              return "like";
+            } else {
+              return "likes";
             }
-          };
+          }
+        };
+
+        const comments = selectAllComments(photo.comments);
+        let allPhotoComments;
+
+        if (comments) {
+          allPhotoComments = comments.map( (comment) => {
+            return (
+              <li key={comment.id}>
+                {comment.body}
+              </li>
+            );
+          });
+        }
 
         return (
           <li className="photo-wrap" key={photo.id}>
@@ -102,7 +117,9 @@ class Feed extends React.Component {
                   <div className="comments-wrapper">
                     <p>
                       <span className="comments">
-                        This is where comments go.. This is where comments go.. This is where comments go.. This is where comments go..
+                        <ul>
+                          {allPhotoComments}
+                        </ul>
                       </span>
                     </p>
                   </div>
@@ -113,9 +130,7 @@ class Feed extends React.Component {
                   </span>
                 </div>
                 <section className="photo-comment-form">
-                  <form>
-                    <textarea className="add-comment" placeholder="Add a comment..."></textarea>
-                  </form>
+                  <CommentFeedContainer photoId={photo.id} />
                 </section>
               </div>
             </div>

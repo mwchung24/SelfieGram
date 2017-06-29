@@ -1,5 +1,6 @@
 import { RECEIVE_PHOTO, REMOVE_PHOTO } from '../actions/photo_actions';
 import { RECEIVE_LIKE, REMOVE_LIKE } from '../actions/like_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 const defaultState = Object.freeze({
@@ -8,6 +9,7 @@ const defaultState = Object.freeze({
   images_url: '',
   caption: '',
   likes: {},
+  comments: {},
   createdAt: '',
   uploadedAt: '',
 });
@@ -25,6 +27,11 @@ const PhotoReducer = (state = defaultState, action) => {
       return merge({}, state, {likes: action.like});
     case REMOVE_LIKE:
       delete copyState.likes[action.like.photo_id];
+      return copyState;
+    case RECEIVE_COMMENT:
+      return merge({}, state, {comments: action.comment});
+    case REMOVE_COMMENT:
+      delete copyState.comments[action.comment.photo_id];
       return copyState;
     default:
       return state;

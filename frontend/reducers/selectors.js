@@ -16,3 +16,11 @@ export const selectAllImages = (images) => {
     return [];
   }
 };
+
+export const selectAllComments = (comments) => {
+  if (comments) {
+    return orderBy(values(comments), ['createdAt'], ['asc']);
+  } else {
+    return [];
+  }
+};

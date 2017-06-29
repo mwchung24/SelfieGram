@@ -1,6 +1,6 @@
-class Api::LikesController < ApplicationController
+class Api::CommentsController < ApplicationController
   def create
-    @comment = Comment.new(photo_id: params[:comment][:photo_id])
+    @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
 
     if @comment.save
@@ -11,7 +11,7 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find_by_id(params[:id])
+    @comment = current_user.comments.find_by_id(params[:id])
 
     if @comment.destroy
       render :show
