@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentContainer from '../comment/comment_container';
 import { selectAllComments } from '../../../reducers/selectors';
+import LikeContainer from '../like/like_container';
 
 class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
 
     this.deleteIcon = this.deleteIcon.bind(this);
-    this.likeButton = this.likeButton.bind(this);
+    // this.likeButton = this.likeButton.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
   }
 
@@ -54,21 +55,21 @@ class PhotoDetail extends React.Component {
     }
   }
 
-  likeButton () {
-    if(this.props.photo.liked) {
-      return (
-        <button className="liked" onClick={ () => this.props.deleteLike(this.props.photo.like_id).then(() => this.props.fetchPhoto(this.props.id))}>
-          <i className="fa fa-heart" aria-hidden="true"></i>
-        </button>
-      );
-    } else {
-      return (
-        <button className="like-button" onClick={ () => this.props.addLike(this.props.photo.id).then(() => this.props.fetchPhoto(this.props.id))}>
-          <i className="fa fa-heart-o" aria-hidden="true"></i>
-        </button>
-      );
-    }
-  }
+  // likeButton () {
+  //   if(this.props.photo.liked) {
+  //     return (
+  //       <button className="liked" onClick={ () => this.props.deleteLike(this.props.photo.like_id).then(() => this.props.fetchPhoto(this.props.id))}>
+  //         <i className="fa fa-heart" aria-hidden="true"></i>
+  //       </button>
+  //     );
+  //   } else {
+  //     return (
+  //       <button className="like-button" onClick={ () => this.props.addLike(this.props.photo.id)}>
+  //         <i className="fa fa-heart-o" aria-hidden="true"></i>
+  //       </button>
+  //     );
+  //   }
+  // }
 
   likeOrLikes () {
     if(this.props.photo) {
@@ -93,15 +94,22 @@ class PhotoDetail extends React.Component {
           return (
             <li key={comment.id} className="comment-item">
               <div className="comment-username-and-comment">
-                <div className="user-username comment-username">
-                  <div><Link className="username-link" to={`/users/${this.props.currentUsername}`} onClick={ () => this.props.closeModal()}>{this.props.currentUsername}</Link></div>
-                </div>
-                {comment.body}
+                <p className="comment-username">
+                  <Link
+                    className="username-link"
+                    to={`/users/${this.props.currentUsername}`}
+                    onClick={ () => this.props.closeModal()}>
+                    {this.props.currentUsername}
+                  </Link>
+                  <span className="comment-body">
+                    {comment.body}
+                  </span>
+                </p>
               </div>
               <button
                 className="delete-comment">
                 <i
-                  onClick={() => this.props.deleteComment(comment.id).then(() => this.props.fetchPhoto(this.props.id))}
+                  onClick={() => this.props.deleteComment(comment.id)}
                   className="fa fa-times"
                   aria-hidden="true">
                 </i>
@@ -110,6 +118,18 @@ class PhotoDetail extends React.Component {
           );
         });
       }
+
+      // <div className="caption">
+      //   <p>
+      //     <Link className="username-link-caption"
+      //       to={`/users/${this.props.username}`}
+      //       onClick={ () => this.props.closeModal()}>{this.props.username}
+      //     </Link>
+      //     <span className="photo-caption">
+      //       {this.props.photo.caption}
+      //     </span>
+      //   </p>
+      // </div>
 
       return (
         <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
@@ -152,7 +172,7 @@ class PhotoDetail extends React.Component {
                 </div>
                 <div className="bottom-pic">
                   <section className="like-comment">
-                    {this.likeButton()}
+                    <LikeContainer />
                     <button className="comment-button" onClick={() => {document.getElementById("comment-redirect").focus();}}>
                       <i className="fa fa-comment-o" aria-hidden="true"></i>
                     </button>

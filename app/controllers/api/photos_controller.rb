@@ -13,8 +13,6 @@ class Api::PhotosController < ApplicationController
 
     @photos
 
-
-
     render :index
   end
 

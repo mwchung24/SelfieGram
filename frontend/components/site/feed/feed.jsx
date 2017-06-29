@@ -41,7 +41,7 @@ class Feed extends React.Component {
   // }
 
   render () {
-    const feed = selectAllImages(this.props.feed).reverse();
+    const feed = selectAllImages(this.props.feed);
     let FeedPhotos;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {

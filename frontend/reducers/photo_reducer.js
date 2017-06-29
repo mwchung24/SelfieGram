@@ -24,14 +24,18 @@ const PhotoReducer = (state = defaultState, action) => {
     case REMOVE_PHOTO:
       return defaultState;
     case RECEIVE_LIKE:
-      return merge({}, state, {likes: action.like});
+      // return merge({}, state, {likes: action.like});
+      return merge({}, state, {likes: {[action.like.id]: action.like}});
     case REMOVE_LIKE:
-      delete copyState.likes[action.like.photo_id];
+      delete copyState.likes[action.like.id];
+      // copyState.liked = false;
       return copyState;
     case RECEIVE_COMMENT:
-      return merge({}, state, {comments: action.comment});
+      // return merge({}, state, {comments: action.comment});
+      return merge({}, state, {comments: { [action.comment.id]: action.comment}});
     case REMOVE_COMMENT:
-      delete copyState.comments[action.comment.photo_id];
+      // delete copyState.comments[action.comment.photo_id];
+      delete copyState.comments[action.comment.id];
       return copyState;
     default:
       return state;

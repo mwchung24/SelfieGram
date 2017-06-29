@@ -25,8 +25,8 @@ class Comment extends React.Component {
     if (this.state.body) {
       const comment = merge({}, this.state, {photo_id: this.props.photoId});
       this.props.addComment(comment)
-        .then(() => this.setState({body: ''}))
-        .then(() => this.props.fetchPhoto(this.props.photoId));
+        .then(() => this.setState({body: ''}));
+        // .then(() => this.props.fetchPhoto(this.props.photoId));
     }
   }
 
