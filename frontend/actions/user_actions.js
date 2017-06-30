@@ -19,3 +19,9 @@ export const updateUser = user => dispatch => {
     dispatch(receiveUser(user))
   ));
 };
+
+export const updateUserPic = formData => dispatch => {
+  return APIUtil.updateUserPic(formData).then(user => (
+    dispatch(receiveUser(user))
+  ));
+};

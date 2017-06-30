@@ -21,7 +21,6 @@ class EditUser extends React.Component {
         username: `${this.props.user.username}`,
         name: `${this.props.user.name}`,
         bio: `${this.props.user.bio}`,
-        photo_url: "",
       });
     });
   }

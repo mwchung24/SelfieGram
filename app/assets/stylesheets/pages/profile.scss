@@ -9,15 +9,15 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  padding-bottom: 2px;
+  border: 1px solid black;
 }
 
 .profile-pic-div {
-  background-color: #D3D3D3;
+  background-color: #fafafa;
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: none;
   color: white;
   cursor: pointer;
   margin-right: 100px;

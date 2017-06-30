@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { selectAllImages } from '../../../reducers/selectors';
 import PhotoDetailContainer from '../photos/photo_detail_container';
+import EditProfilePicContainer from './edit_profile_pic_container';
 
 class User extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class User extends React.Component {
 
     // this.fetchUser = this.fetchUser.bind(this);
     this.isCurrentUser = this.isCurrentUser.bind(this);
+    this.isCurrentUserProfilePic = this.isCurrentUserProfilePic.bind(this);
     // this.goEdit = this.goEdit.bind(this);
   }
 
@@ -22,9 +24,21 @@ class User extends React.Component {
     }
   }
 
-  // goEdit() {
-  //
-  // }
+  isCurrentUserProfilePic () {
+    if(this.props.currentUserId === this.props.user.id) {
+      return (
+        <button className="profile-pic-div" onClick={() => this.props.openModal(<EditProfilePicContainer />)}>
+          <img className="profile-pic" src={this.props.user.photo_url}/>
+        </button>
+      );
+    } else {
+      return (
+        <div className="profile-pic-div">
+          <img className="profile-pic" src={this.props.user.photo_url}/>
+        </div>
+      );
+    }
+  }
 
   isCurrentUser () {
 
@@ -63,8 +77,8 @@ class User extends React.Component {
         <div className="user-profile">
           <div className="main-profile">
             <section className="user-info">
-              <div className="profile-pic-div">
-                <img className="profile-pic" src={this.props.user.photo_url}/>
+              <div>
+                {this.isCurrentUserProfilePic()}
               </div>
               <div className="user-info-top">
                 <div className="first">
