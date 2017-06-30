@@ -43,11 +43,11 @@ class Follower extends React.Component {
 
               <div className="AFollow">
                 <div className="followUser">
-                  <Link to={`${follower.username}`}>
+                  <Link to={`${follower.username}`} onClick={() => this.props.closeModal()}>
                     <img className="profile-pic edit-profile-pic" src={follower.photo_url}/>
                   </Link>
                   <div className="followNames">
-                    <Link className="followUsernameLink" to={`${follower.username}`}>
+                    <Link className="followUsernameLink" to={`${follower.username}`} onClick={() => this.props.closeModal()}>
                       <div className="followUsername">{follower.username}</div>
                     </Link>
                     <div className="followName">{follower.name}</div>
