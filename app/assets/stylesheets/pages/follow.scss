@@ -1,0 +1,79 @@
+.FollowModal {
+  background-color: white;
+  height: auto;
+  width: 600px;
+}
+
+.FollowHeading {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  // margin: 0 0 20px 20px;
+  padding: 10px;
+  border-bottom: 1px solid #efefef;
+}
+
+.FollowModalBody {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #efefef;
+}
+
+.AFollow {
+  margin: 15px 15px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.followUser {
+  display: flex;
+  align-items: center;
+}
+
+.followNames {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  margin-left: 15px;
+}
+
+.followUsername {
+  font-weight: 600;
+  color: black;
+  margin-bottom: 3px;
+}
+
+.followUsernameLink {
+  text-decoration: none;
+  color: black;
+
+}
+
+.followName {
+  color: #999;
+}
+
+.following-on-follow, .follow-on-follow {
+  width: 130px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -24,3 +24,11 @@ export const selectAllComments = (comments) => {
     return [];
   }
 };
+
+export const selectAllFollows = (follow) => {
+  if (follow) {
+    return orderBy(values(follow), ['id'], ['asc']);
+  } else {
+    return [];
+  }
+};

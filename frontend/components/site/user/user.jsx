@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom';
 import { selectAllImages } from '../../../reducers/selectors';
 import PhotoDetailContainer from '../photos/photo_detail_container';
 import EditProfilePicContainer from './edit_profile_pic_container';
+import FollowerContainer from '../follow/follower_container';
+import FolloweeContainer from '../follow/followee_container';
 
 class User extends React.Component {
   constructor(props) {
@@ -89,9 +91,25 @@ class User extends React.Component {
                 </div>
                 <div className="second">
                   <div className="user-stats">
-                    <div><span className="number-posts">{allUserPhotos.length}</span> posts</div>
-                    <div><span className="number-follow">{this.props.user.followers_count}</span> followers</div>
-                    <div><span className="number-follow">{this.props.user.followees_count}</span> following</div>
+                    <div className="number-of-posts"><span className="number-posts">{allUserPhotos.length}</span> posts</div>
+                    <div>
+                      <button className="followButton" onClick={() => this.props.openModal(<FollowerContainer />)}>
+                        <span
+                          className="number-follow"
+                          >
+                          {this.props.user.followers_count}
+                        </span> followers
+                      </button>
+                    </div>
+                    <div>
+                      <button className="followButton" onClick={() => this.props.openModal(<FolloweeContainer />)}>
+                        <span
+                          className="number-follow"
+                          >
+                          {this.props.user.followees_count}
+                        </span> following
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="third">

@@ -19,7 +19,8 @@ json.followers do
     json.set! follower.id do
       json.id follower.id
       json.username follower.username
-      json.photo_url asset_path(user.photo.url)
+      json.name follower.name
+      json.photo_url asset_path(follower.photo.url)
     end
   end
 end
@@ -29,7 +30,8 @@ json.followees do
     json.set! followee.id do
       json.id followee.id
       json.username followee.username
-      json.photo_url asset_path(user.photo.url)
+      json.name followee.name
+      json.photo_url asset_path(followee.photo.url)
     end
   end
 end
