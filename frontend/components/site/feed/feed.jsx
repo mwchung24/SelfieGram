@@ -8,9 +8,12 @@ class Feed extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      liking: false,
+    };
 
     // this.likeButton = this.likeButton.bind(this);
+    this.setState = this.setState.bind(this);
   }
 
   componentDidMount () {
@@ -41,6 +44,7 @@ class Feed extends React.Component {
   // }
 
   render () {
+    console.log(this.state);
     const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
     if (feed) {
@@ -58,6 +62,14 @@ class Feed extends React.Component {
                 <i className="fa fa-heart-o" aria-hidden="true"></i>
               </button>
             );
+          }
+        };
+
+        const photoLiked = () => {
+          if (photo.liked) {
+            return this.props.deleteLike(photo.like_id).then(() => this.props.fetchFeedPhotos()).then(() => this.setState({liking: false}));
+          } else {
+            return this.props.addLike(photo.id).then(() => this.props.fetchFeedPhotos()).then(() => this.setState({liking: false}));
           }
         };
 
@@ -109,6 +121,7 @@ class Feed extends React.Component {
           });
         }
 
+        const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
         return (
           <li className="photo-wrap" key={photo.id}>
             <div className="photoFeedImage">
@@ -116,7 +129,8 @@ class Feed extends React.Component {
                 <Link to={`/users/${photo.username}`}><img className="user-profile-pic photoFeedProfilePic" src={photo.profile_pic}/></Link>
                 <Link to={`/users/${photo.username}`} className="photoFeedUsername">{photo.username}</Link>
               </div>
-              <img className="photo-on-feed" src={photo.images_url}/>
+              <div className="feedHeart"><i className={heartClass} aria-hidden="true"></i></div>
+              <img className="photo-on-feed" src={photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); photoLiked();}}/>
               <div className="bottom bottom-feed">
                 <section className="like-comment">
                   {likeButton()}

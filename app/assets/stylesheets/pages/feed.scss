@@ -13,6 +13,7 @@
   max-width: 600px;
   max-height: 600px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .photoFeedImage {
@@ -69,4 +70,25 @@
   background-color: white;
   border: none;
   height: 10px;
+}
+
+.feedHeart {
+  display: flex;
+  justify-content: center;
+}
+
+.feedHeart {
+  position: relative;
+  top: 250px;
+  height: 1px;
+}
+
+.feedLike {
+  font-size: 100px;
+  color: white;
+  visibility: hidden;
+}
+
+.liking {
+  visibility: visible;
 }
