@@ -83,12 +83,33 @@
   height: 1px;
 }
 
+// .feedLike {
+//   font-size: 100px;
+//   color: white;
+//   visibility: hidden;
+// }
+//
+// .liking {
+//   visibility: visible;
+// }
+
 .feedLike {
   font-size: 100px;
   color: white;
-  visibility: hidden;
+  opacity: 0;
 }
 
 .liking {
-  visibility: visible;
+  animation-duration: .3s;
+  animation-name: easein;
+  opacity: 0;
+}
+
+@keyframes easein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
