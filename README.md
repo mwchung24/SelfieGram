@@ -8,6 +8,12 @@ SelfieGram is a web application that took inspiration from Instagram.  The site 
 
 ## Features
 
+### User Authentication
+
+Users can sign up and log in.  The authentication process uses BCrypt to hash the passwords and ensures user privacy.
+
+![image of log in](docs/images/login.png)
+
 ###
 
 ## Additional Resources
