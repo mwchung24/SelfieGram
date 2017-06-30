@@ -8,6 +8,8 @@ json.images do
       json.id photo.id
       json.images_url asset_path(photo.image.url)
       json.createdAt photo.created_at
+      json.like_count photo.likes.count
+      json.comment_count photo.comments.count
     end
   end
 end
