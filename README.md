@@ -63,6 +63,27 @@ The user can also change their avatar by clicking their profile picture on the u
 ![image of the edit profile page](docs/images/editprofile.png)
 ![image of the edit profile picture modal](docs/images/profilepicupload.png)
 
+## Technologies
+### Backend
+
+[Ruby on Rails](http://rubyonrails.org/) was utilized on the backend to build this app with a [PostgreSQL](https://www.postgresql.org/) database system to store and retrieve data.  
+
+- BCrypt library to hash password to ensure user privacy.
+- Prevent CSRF (Cross-site request forgery) attack.
+- AWS (Amazon Web Services) and paperclip was used to store photos on S3 storage to speed up page load times and to prevent storing all the photos inside the project files themselves.
+- Figaro was used to protect API keys.
+- RESTful routes was used to generate JSON responses.
+- Hosted on Heroku.
+
+### Frontend
+
+[React](https://facebook.github.io/react/)/[Redux](http://redux.js.org) are frontend JavaScript libraries that enable developers create a single-page App.  The two libraries is used for quick re-rendering whenever there is a change to state.  This is done through an algorithm that checks for differences between the DOM and React's virtual DOM.
+
+- NPM (Node Package Manager) manages dependencies.
+- Webpack used to bundle all files.
+- Babel to compile S files for compatible code.
+- SCSS and CSS was used to create the front end design for this app.
+
 ## Additional Resources
 
 - [View Wireframes](https://github.com/mwchung24/instagramClone/tree/master/docs/wireframes)
