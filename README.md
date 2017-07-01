@@ -16,7 +16,7 @@ Users can sign up and log in.  The authentication process uses BCrypt to hash th
 
 ### Header
 
-Give the user the ability to navigate through the site.  The logo on the top-left will navigate the user to the photo feed page.  The buttons on the right are buttons that navigate to user profile, photo upload, and logout, respectively.  The search bar will be implemented in the soon future.
+Gives the user the ability to navigate through the site.  The logo on the top-left will navigate the user to the photo feed page.  The buttons on the right will navigate the user to the user profile page, photo upload modal, and logout, respectively.  The search bar will be implemented in the soon future.
 
 ![image of header](docs/images/header.png)
 
@@ -31,6 +31,27 @@ Photos of the user and their followers will be displayed here.  Images are uploa
 This is the user's profile page which will display all of the user's uploaded photos.  On this page the user can upload photos, edit profile, edit profile pictures, see the user's followers and followees, etc.
 
 ![image of the user profile page](docs/images/userprofile.png)
+
+### Photo Detail
+
+![image of the photo details modal](docs/images/photodetail.png)
+
+### Likes and Comments
+
+![image of likes and comments](docs/images/likescomments.png)
+
+### Follows
+
+![image of the follower/following modals](docs/images/follows.png)
+
+### Upload Photo
+
+![image of the photo upload modal](docs/images/photoupload.png)
+
+### Edit Profile and Avatar
+
+![image of the edit profile page](docs/images/editprofile.png)
+![image of the edit profile picture modal](docs/images/profilepicupload.png)
 
 ## Additional Resources
 
