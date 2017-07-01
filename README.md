@@ -14,7 +14,23 @@ Users can sign up and log in.  The authentication process uses BCrypt to hash th
 
 ![image of log in](docs/images/login.png)
 
-###
+### Header
+
+Give the user the ability to navigate through the site.  The logo on the top-left will navigate the user to the photo feed page.  The buttons on the right are buttons that navigate to user profile, photo upload, and logout, respectively.  The search bar will be implemented in the soon future.
+
+![image of header](docs/images/header.png)
+
+### Photo Feed
+
+Photos of the user and their followers will be displayed here.  Images are uploaded and download using AWS (Amazon Web Services).  The photos are sorted on the photo feed page based on the created_at timestamp.  User can like the photo by clicking the heart icon or by double clicking the image itself.  The uploader's username and profile picture will link the current user to the uploader's user page.
+
+![image of the photo feed](docs/images/photofeed.png)
+
+### Users Profile Page
+
+This is the user's profile page which will display all of the user's uploaded photos.  On this page the user can upload photos, edit profile, edit profile pictures, see the user's followers and followees, etc.
+
+![image of the user profile page](docs/images/userprofile.png)
 
 ## Additional Resources
 
