@@ -34,21 +34,31 @@ This is the user's profile page which will display all of the user's uploaded ph
 
 ### Photo Detail
 
+The photo detail view opens up in a modal which provides the user with a larger 600x600 view of the image.  The modal provides the user the ability to leave a comment, delete their own comments, like or unlike a photo, and delete their own uploaded photos.
+
 ![image of the photo details modal](docs/images/photodetail.png)
 
 ### Likes and Comments
+
+Photos on the photo feed along with photos displayed in the photo detail modal allows the user to add or delete comments or to like or unlike the photo.
 
 ![image of likes and comments](docs/images/likescomments.png)
 
 ### Follows
 
+Users can choose other accounts to follow.  Once a user follows another account, the account's photos will be included in the user's photo feed sorted by creation time.  Below is a followers modal that is opened when follower or following is clicked on a user profile.  Directly inside of the modal a user can choose to follow or unfollow a particular account.
+
 ![image of the follower/following modals](docs/images/follows.png)
 
 ### Upload Photo
 
+Users can upload photos directly from this modal.  This upload form provides users 2 choices to upload photos.  The user can either click the choose file button and navigate to the image, or they can drag and drop the image directly into the upload photo modal.  There is also a place where the user can write a caption for the photo.
+
 ![image of the photo upload modal](docs/images/photoupload.png)
 
 ### Edit Profile and Avatar
+
+The user can also change their avatar by clicking their profile picture on the user show page.  The form is very similar to the photo upload form.  When a user visits another user's show page, next to the user's username, there will be a follows button.  When a user is on their own show page, then the follow button is replaced with a edit profile button which navigates the user to another page where they can edit their name, username, or bio.
 
 ![image of the edit profile page](docs/images/editprofile.png)
 ![image of the edit profile picture modal](docs/images/profilepicupload.png)
