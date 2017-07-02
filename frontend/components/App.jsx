@@ -19,6 +19,19 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
     </section>
+    <section className="footer">
+      <footer>
+        <div className="footer-left">
+          <a href="https://github.com/mwchung24">GitHub</a>
+          <a href="https://github.com/mwchung24">Portfolio</a>
+          <a href="https://www.linkedin.com/in/martin-chung-ba40b2a/">Linkedin</a>
+        </div>
+
+        <div className="footer-right">
+          Martin Chung © 2017 SelfieGram
+        </div>
+      </footer>
+    </section>
   </div>
 );
 

@@ -1,0 +1,26 @@
+.footer footer{
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.footer-right {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: black;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  padding-right: 10px;
+  font-weight: 700;
+}
