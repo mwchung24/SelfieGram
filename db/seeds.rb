@@ -147,7 +147,7 @@ Comment.create({user_id: user2.id, photo_id: photo1.id, body: "Aww Honey! Love t
 Comment.create({user_id: user4.id, photo_id: photo1.id, body: "Cute, cute"})
 Comment.create({user_id: user2.id, photo_id: photo2.id, body: "Mine's better..."})
 Comment.create({user_id: user1.id, photo_id: photo2.id, body: "idk........"})
-Comment.create({user_id: user3.id, photo_id: photo21.id, body: "Honestly, they both look great!"})
+Comment.create({user_id: user3.id, photo_id: photo2.id, body: "Honestly, they both look great!"})
 Comment.create({user_id: user2.id, photo_id: photo4.id, body: "I wanna go back! :("})
 Comment.create({user_id: user2.id, photo_id: photo7.id, body: "Zoraaaaa!!!"})
 Comment.create({user_id: user3.id, photo_id: photo8.id, body: "How was the movie?"})
