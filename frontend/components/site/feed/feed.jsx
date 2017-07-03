@@ -12,7 +12,6 @@ class Feed extends React.Component {
       liking: false,
     };
 
-    // this.likeButton = this.likeButton.bind(this);
     this.setState = this.setState.bind(this);
   }
 
@@ -20,31 +19,7 @@ class Feed extends React.Component {
     this.props.fetchFeedPhotos();
   }
 
-  // componentWillReceiveProps () {
-  //   this.props.fetchFeedPhotos();
-  // }
-
-  // month() {
-  //   const MONTH = {
-  //     1: "JANUARY",
-  //     2: "FEBRUARY",
-  //     3: "MARCH",
-  //     4: "APRIL",
-  //     5: "MAY",
-  //     6: "JUNE",
-  //     7: "JULY",
-  //     8: "AUGUST",
-  //     9: "SEPTEMBER",
-  //     10: "OCTOBER",
-  //     11: "NOVEMBER",
-  //     12: "DECEMBER"
-  //   };
-  //
-  //   return MONTH[this.props.feed.photo.createdAtMonth];
-  // }
-
   render () {
-    console.log(this.state);
     const feed = selectAllImages(this.props.feed).reverse();
     let FeedPhotos;
     if (feed) {

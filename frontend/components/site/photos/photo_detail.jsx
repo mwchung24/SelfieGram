@@ -9,9 +9,7 @@ class PhotoDetail extends React.Component {
     super(props);
 
     this.deleteIcon = this.deleteIcon.bind(this);
-    // this.likeButton = this.likeButton.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
-    // this.deleteCommentIcon = this.deleteCommentIcon.bind(this);
   }
 
   componentDidMount() {
@@ -55,22 +53,6 @@ class PhotoDetail extends React.Component {
       return (<div></div>);
     }
   }
-
-  // likeButton () {
-  //   if(this.props.photo.liked) {
-  //     return (
-  //       <button className="liked" onClick={ () => this.props.deleteLike(this.props.photo.like_id).then(() => this.props.fetchPhoto(this.props.id))}>
-  //         <i className="fa fa-heart" aria-hidden="true"></i>
-  //       </button>
-  //     );
-  //   } else {
-  //     return (
-  //       <button className="like-button" onClick={ () => this.props.addLike(this.props.photo.id)}>
-  //         <i className="fa fa-heart-o" aria-hidden="true"></i>
-  //       </button>
-  //     );
-  //   }
-  // }
 
   likeOrLikes () {
     if(this.props.photo) {
@@ -131,18 +113,6 @@ class PhotoDetail extends React.Component {
           );
         });
       }
-
-      // <div className="caption">
-      //   <p>
-      //     <Link className="username-link-caption"
-      //       to={`/users/${this.props.username}`}
-      //       onClick={ () => this.props.closeModal()}>{this.props.username}
-      //     </Link>
-      //     <span className="photo-caption">
-      //       {this.props.photo.caption}
-      //     </span>
-      //   </p>
-      // </div>
 
       return (
         <div className="wholeModal" onClick={(e) => e.stopPropagation()}>

@@ -1,7 +1,5 @@
 require 'time_ago_in_words'
 
-# upload_at = (photo.created_at, Time.now)
-# upload_at = (photo.created_at, Time.now)
 json.id photo.id
 json.user_id photo.user.id
 json.username photo.user.username
@@ -35,6 +33,3 @@ json.comments do
     end
   end
 end
-# json.uploadedAt uploaded_at
-# json.uploadedAt uploaded_at.ago_in_words
-# json.uploadedAt uploaded_at.gsub(/about/, '').concat(' ago')

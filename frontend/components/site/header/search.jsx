@@ -38,8 +38,6 @@ class Search extends React.Component {
   }
 }
 
-// <i class="fa fa-search" aria-hidden="true"></i>
-
 
 
 export default Search;

@@ -10,8 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // fetchAllUsers: users => dispatch(fetchAllUsers(users)),
-    // removeAllUsers: () => dispatch(removeAllUsers())
+
   };
 };
 

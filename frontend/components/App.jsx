@@ -5,7 +5,6 @@ import LoginFormContainer from './session/login_form_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ModalContainer from './modal/modal_container';
-// import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
   <div>

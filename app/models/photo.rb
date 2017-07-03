@@ -21,9 +21,7 @@ class Photo < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   has_attached_file :image, default_url: "images.png"
-  # styles: { large: "600x", medium: "300x300#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  # validates_attachment_presence :photo
 
   def current_user_liked(current_user)
     liked = false

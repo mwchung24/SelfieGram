@@ -10,10 +10,8 @@ class User extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.fetchUser = this.fetchUser.bind(this);
     this.isCurrentUser = this.isCurrentUser.bind(this);
     this.isCurrentUserProfilePic = this.isCurrentUserProfilePic.bind(this);
-    // this.goEdit = this.goEdit.bind(this);
   }
 
   componentDidMount() {
@@ -141,8 +139,5 @@ class User extends React.Component {
     );
   }
 }
-// <div>
-//   <button className="logoutButton" onClick={logout}><img className="logoutIcon" src={ window.images.logout } /></button>
-// </div>
 
 export default User;

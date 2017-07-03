@@ -5,30 +5,7 @@ class Like extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   body: '',
-    // };
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // update(body) {
-  //   return (e) => {
-  //     e.preventDefault();
-  //
-  //     this.setState({[body]: e.currentTarget.value});
-  //   };
-  // }
-  //
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //
-  //   if (this.state.body) {
-  //     const comment = merge({}, this.state, {photo_id: this.props.photoId});
-  //     this.props.addComment(comment)
-  //       .then(() => this.setState({body: ''}));
-  //       // .then(() => this.props.fetchPhoto(this.props.photoId));
-  //   }
-  // }
 
   render() {
     if(this.props.photo.liked) {

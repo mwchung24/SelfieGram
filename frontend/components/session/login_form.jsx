@@ -53,25 +53,7 @@ class LoginForm extends React.Component {
     .then ( () => this.props.history.push('/'));
   }
 
-  // linkRendered() {
-  //   const page = this.props.formType;
-  //   if (page === 'login') {
-  //     return (
-  //       <Link to="/signup">
-  //         Sign Up
-  //       </Link>
-  //     );
-  //   } else {
-  //     return (
-  //       <Link to="/login">
-  //         Log In
-  //       </Link>
-  //     );
-  //   }
-  // }
-
   render() {
-    // const buttonName = this.props.formType === 'signup' ? 'Sign up' : 'Log in';
 
     return (
 

@@ -39,7 +39,6 @@ class EditUser extends React.Component {
   }
 
   render() {
-    // debugger
     return (
       <div className="editPage">
         <div className="wholeEditPage">

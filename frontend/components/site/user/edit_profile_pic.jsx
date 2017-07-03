@@ -14,24 +14,8 @@ class EditProfilePic extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
-    // this.updateCaption = this.updateCaption.bind(this);
     this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
-
-  // updateCaption (e) {
-  //   this.setState({
-  //     caption: e.target.value
-  //   });
-  // }
-
-  // componentDidMount () {
-  //   this.props.fetchUser(this.props.match.params.id)
-  //   .then(() => {
-  //     this.setState ({
-  //       photo: `${this.props.user.photo}`,
-  //     });
-  //   });
-  // }
 
   updateFile (e) {
     let file = e.currentTarget.files[0];
@@ -58,14 +42,10 @@ class EditProfilePic extends React.Component {
   }
 
   handleSubmit (e) {
-    // debugger
     let formData = new FormData();
-    // formData.append("photo[caption]", this.state.caption);
     formData.append("user[photo]", this.state.imageFile);
     this.props.updateUserPic(formData, this.props.user.id)
     .then(() => this.props.closeModal());
-    // .then(() => this.props.fetchUser(this.props.username));
-    // .then(() => this.props.history.push(`/users/${this.props.username}`));
   }
 
   handleCancel (e) {

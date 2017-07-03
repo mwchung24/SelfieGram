@@ -51,26 +51,6 @@ class Api::PhotosController < ApplicationController
     end
   end
 
-  # def current_user_liked(current_user)
-  #   liked = false
-  #   self.likes.each do |like|
-  #     if(like.user_id == current_user.id)
-  #       liked = true
-  #     end
-  #   end
-  #   return liked
-  # end
-  #
-  # def current_user_like_id(curret_user)
-  #   id = nil
-  #   self.likes.each do |like|
-  #     if(like.user_id == current_user.id)
-  #       id = like.id
-  #     end
-  #   end
-  #   return id
-  # end
-
   private
 
   def photo_params

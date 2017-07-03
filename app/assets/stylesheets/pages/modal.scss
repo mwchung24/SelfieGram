@@ -10,15 +10,11 @@
 }
 
 .wholeModal {
-  // width: 70%;
   margin: auto;
 }
 
 .modalContent {
-  // width: 100%;
   margin: auto;
-
-  // position: fixed;
 }
 
 .imageContainer {
@@ -154,10 +150,6 @@
   cursor: pointer;
 }
 
-.fa-trash-o {
-  // color: white;
-}
-
 .liked {
   color: red;
   margin: 5px 17px 0 0;
@@ -190,11 +182,6 @@
 
 .caption {
   margin-bottom: 10px;
-}
-
-.comments-wrapper {
-  // height: 53%;
-  // width: 100%;
 }
 
 .comments {
@@ -291,13 +278,6 @@
   text-align: start;
   width: 100%;
   overflow: hidden;
-}
-
-.bottom {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-  // align-items: flex-end;
 }
 
 .comment-item {

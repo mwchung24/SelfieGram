@@ -1,5 +1,4 @@
 .uploadModal {
-  // height: auto;
   width: 500px;
   margin: auto;
 
@@ -37,7 +36,6 @@
 }
 
 .captionUpload::placeholder {
-  // display: flex;
   justify-content: center;
 }
 
@@ -55,11 +53,9 @@
 }
 
 .buttons .uploadFormCancel {
-  // background-color: #3897f0;
   border: none;
   cursor: pointer;
   width: 50%;
-  // border: 1px solid #3897f0;
   padding: 5px;
   font-weight: 400;
   color: white;
@@ -68,7 +64,6 @@
 }
 
 .buttons .uploadFormButton {
-  // border-right: 1px solid black;
 }
 
 .uploadFile, .imagePrev{

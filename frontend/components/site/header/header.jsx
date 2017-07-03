@@ -43,6 +43,5 @@ const personalGreeting = (username, logout, props) => {
     </section>
   );
 };
-// <button className="profileButton"><img className="profileIcon" src={ window.images.profile } /></button>
 
 export default Header;

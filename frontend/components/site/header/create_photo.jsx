@@ -18,14 +18,6 @@ class CreatePhoto extends React.Component {
     this.updateDraggedFile = this.updateDraggedFile.bind(this);
   }
 
-  // componentDidMount () {
-  //   this.props.receiveCurrentUser(this.props.state.session.currentUser);
-  // }
-
-  // componentWillReceiveProps() {
-  //   this.props.fetchUser(this.props.state.user);
-  // }
-
   updateCaption (e) {
     this.setState({
       caption: e.target.value

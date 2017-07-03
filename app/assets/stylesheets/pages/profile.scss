@@ -2,7 +2,6 @@
   display: flex;
   margin-top: 70px;
   align-items: center;
-  // justify-content: center;
 }
 
 .profile-pic {
@@ -36,7 +35,6 @@
 .user-info-top {
   align-items: center;
   justify-content: center;
-  // display: flex;
 }
 
 .edit-profile, .following-button {
@@ -138,15 +136,11 @@
 }
 
 .userPhotos {
-  // display: flex;
   margin: auto;
   width: 75%;
-  // justify-content: center;
-  // max-width: 70%;
   flex-wrap: wrap;
   display: flex;
   max-width: 940px;
-  // justify-content: space-between;
 }
 
 .userPhotoItem {
@@ -156,7 +150,6 @@
   justify-content: center;
   align-items: center;
   margin-top: 1.6%;
-  // position: relative;
 }
 
 .photoItem {
@@ -164,18 +157,9 @@
   width: 100%;
   max-width: 293px;
   max-height: 293px;
-  // min-width: 80px;
   height: 100%;
   object-fit: cover;
   cursor: pointer;
-  // z-index: 2;
-  // background-color: black;
-
-
-  // height: auto;
-  // overflow: hidden;
-  // max-height: 100px;
-  // margin-right: 28px;
 }
 
 .userPhotoItem:hover .hover-images{
@@ -186,16 +170,13 @@
   opacity: 1;
   background-color: rgba(0,0,0,0.5);
   filter: brightness(60%);
-  // z-index: -1;
 }
 
 .followButton {
   background-color: #fafafa;
   border: none;
   cursor: pointer;
-  // height: 10px;
   font-size: 16px;
-  // padding-bottom: 10px;
 }
 
 .number-of-posts {
@@ -232,15 +213,10 @@
   justify-content: center;
   position: relative;
   top: 150px;
-  // display: none;
   visibility: hidden;
   z-index: 1000;
   height: 1px;
 }
-
-// .hover-images:hover {
-//   z-index: 100;
-// }
 
 .hover-comment {
   padding-bottom: 3.5px;

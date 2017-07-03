@@ -6,7 +6,6 @@
   background-color: #fff;
   border-bottom: 1px solid rgba(0,0,0,.0975);
   height: 77px;
-  // position: fixed;
   top: 0;
   width: 100%;
   will-change: transform;
@@ -47,9 +46,6 @@
 }
 
 .searchbar {
-  // -webkit-box-flex: 0;
-  // flex: 0 1 auto;
-  // min-width: 125px;
   width: 215px;
   height: 28px;
   font-size: 14px;
@@ -64,13 +60,6 @@
   -webkit-appearance: none;
   margin: 0px 40px 6px;
 }
-
-// .searchbar input::selected {
-//   border: 1px solid blue;
-//   background: white;
-//   text-align: left;
-//   color: blue;
-// }
 
 input::placeholder {
   color: #999;

@@ -37,5 +37,3 @@ json.followees do
     end
   end
 end
-# json.visitor_follows user.current_user_follows(current_user)
-# json.visitor_id user.current_user_follow_id(current_user)

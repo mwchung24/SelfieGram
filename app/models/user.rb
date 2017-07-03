@@ -47,7 +47,6 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   has_attached_file :photo, default_url: "default_profile.png"
-  # styles: { large: "600x", medium: "300x300#" }
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
@@ -75,26 +74,6 @@ class User < ActiveRecord::Base
     self.save!
     self.session_token
   end
-
-  # def current_user_follows(current_user)
-  #   follows = false
-  #   self.followers.each do |follower|
-  #     if(follower.follower_id == current_user.id)
-  #       follows = true
-  #     end
-  #   end
-  #   return follows
-  # end
-  #
-  # def current_user_follow_id(current_user)
-  #   id = nil
-  #   self.followers.each do |follower|
-  #     if (follower.follower_id == current_user.id)
-  #       id = follower.id
-  #     end
-  #   end
-  #   return id
-  # end
 
   private
 
