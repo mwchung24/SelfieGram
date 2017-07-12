@@ -23,7 +23,7 @@ const App = () => (
         <div className="footer-left">
           <a href="https://github.com/mwchung24">GitHub</a>
           <a href="http://www.martinwchung.com/">Portfolio</a>
-          <a href="https://www.linkedin.com/in/martin-chung-ba40b2a/">Linkedin</a>
+          <a href="https://www.linkedin.com/in/martinwchung/">Linkedin</a>
         </div>
 
         <div className="footer-right">
