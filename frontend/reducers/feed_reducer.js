@@ -1,6 +1,7 @@
 import { RECEIVE_FEED } from '../actions/photo_actions';
 import { REMOVE_FEED } from '../actions/session_actions';
 import { RECEIVE_FEED_LIKE, REMOVE_FEED_LIKE } from '../actions/like_actions';
+import { RECEIVE_FEED_COMMENT, REMOVE_FEED_COMMENT } from '../actions/comment_actions';
 import merge from 'lodash/merge';
 
 const FeedReducer = (state = {}, action) => {
@@ -17,10 +18,17 @@ const FeedReducer = (state = {}, action) => {
       newState[action.like.photo_id].liked = true;
       return newState;
     case REMOVE_FEED_LIKE:
-    newState[action.like.photo_id].like_count -= 1;
-    newState[action.like.photo_id].like_id = null;
-    newState[action.like.photo_id].liked = false;
-    return newState;
+      newState[action.like.photo_id].like_count -= 1;
+      newState[action.like.photo_id].like_id = null;
+      newState[action.like.photo_id].liked = false;
+      return newState;
+    case RECEIVE_FEED_COMMENT:
+      newState[action.comment.photo_id].comment_id = action.comment.id;
+      return merge({}, newState, { [action.comment.photo_id]: { comments: {[action.comment.id]: action.comment}}});
+    case REMOVE_FEED_COMMENT:
+      newState[action.comment.photo_id].comment_id = null;
+      delete newState[action.comment.photo_id].comments[action.comment.id];
+      return newState;
     default:
       return state;
   }

@@ -9,7 +9,7 @@ const defaultState = Object.freeze({
   images_url: '',
   caption: '',
   likes: {},
-  comments: {username: ''},
+  comments: {},
   createdAt: '',
   uploadedAt: '',
 });
