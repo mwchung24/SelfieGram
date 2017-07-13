@@ -27,13 +27,17 @@ class Feed extends React.Component {
         const likeButton = () => {
           if(photo.liked) {
             return (
-              <button className="liked" onClick={ () => this.props.deleteLike(photo.like_id).then(() => this.props.fetchFeedPhotos())}>
+              <button className="liked" onClick={ () => this.props.deleteLike(photo.like_id)
+                  // .then(() => this.props.fetchFeedPhotos())
+                }>
                 <i className="fa fa-heart" aria-hidden="true"></i>
               </button>
             );
           } else {
             return (
-              <button className="like-button" onClick={ () => this.props.addLike(photo.id).then(() => this.props.fetchFeedPhotos())}>
+              <button className="like-button" onClick={ () => this.props.addLike(photo.id)
+                  // .then(() => this.props.fetchFeedPhotos())
+                }>
                 <i className="fa fa-heart-o" aria-hidden="true"></i>
               </button>
             );

@@ -21,12 +21,14 @@
   margin: auto;
   display: flex;
   width: 100%;
+  align-items: center;
+  background-color: black;
 }
 
 .imageModal {
   margin: right;
-  min-width: 600px;
-  min-height: 600px;
+  // min-width: 600px;
+  // min-height: 600px;
   max-width: 600px;
   max-height: 600px;
   width: 100%;
@@ -38,7 +40,7 @@
   background-color: white;
   max-width: 330px;
   width: 100%;
-  height: auto;
+  height: 600px;
 }
 
 .headerModal {

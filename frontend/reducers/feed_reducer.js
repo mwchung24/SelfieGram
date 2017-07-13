@@ -1,5 +1,6 @@
 import { RECEIVE_FEED } from '../actions/photo_actions';
 import { REMOVE_FEED } from '../actions/session_actions';
+import { RECEIVE_FEED_LIKE, REMOVE_FEED_LIKE } from '../actions/like_actions';
 import merge from 'lodash/merge';
 
 const FeedReducer = (state = {}, action) => {
