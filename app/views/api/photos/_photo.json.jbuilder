@@ -14,6 +14,8 @@ json.liked photo.current_user_liked(current_user)
 json.like_id photo.current_user_like_id(current_user)
 json.comment_id photo.current_user_comment_id(current_user)
 
+json.daysAgo time_ago_in_words(photo.created_at)
+
 json.likes do
   photo.likes.each do |like|
     json.set! like.id do

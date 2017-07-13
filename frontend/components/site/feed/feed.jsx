@@ -27,7 +27,7 @@ class Feed extends React.Component {
         const likeButton = () => {
           if(photo.liked) {
             return (
-              <button className="liked" onClick={ () => this.props.deleteLike(photo.like_id)
+              <button className="liked" onClick={ () => this.props.deleteFeedLike(photo.like_id)
                   // .then(() => this.props.fetchFeedPhotos())
                 }>
                 <i className="fa fa-heart" aria-hidden="true"></i>
@@ -35,7 +35,7 @@ class Feed extends React.Component {
             );
           } else {
             return (
-              <button className="like-button" onClick={ () => this.props.addLike(photo.id)
+              <button className="like-button" onClick={ () => this.props.addFeedLike(photo.id)
                   // .then(() => this.props.fetchFeedPhotos())
                 }>
                 <i className="fa fa-heart-o" aria-hidden="true"></i>

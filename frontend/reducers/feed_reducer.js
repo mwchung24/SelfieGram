@@ -5,12 +5,22 @@ import merge from 'lodash/merge';
 
 const FeedReducer = (state = {}, action) => {
   Object.freeze(state);
-  const newState = state;
+  const newState = Object.assign({}, state);
   switch(action.type) {
     case RECEIVE_FEED:
       return action.photos;
     case REMOVE_FEED:
       return {};
+    case RECEIVE_FEED_LIKE:
+      newState[action.like.photo_id].like_count += 1;
+      newState[action.like.photo_id].like_id = action.like.id;
+      newState[action.like.photo_id].liked = true;
+      return newState;
+    case REMOVE_FEED_LIKE:
+    newState[action.like.photo_id].like_count -= 1;
+    newState[action.like.photo_id].like_id = null;
+    newState[action.like.photo_id].liked = false;
+    return newState;
     default:
       return state;
   }
