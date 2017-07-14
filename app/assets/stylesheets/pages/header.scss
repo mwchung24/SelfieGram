@@ -164,4 +164,53 @@ input:focus {
 
 .searchUsers {
   position: absolute;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .0975);
+  width: 245px;
+  max-height: 400px;
+  overflow: auto;
+}
+
+.searchUsers li {
+  background-color: white;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.searchUsers li:hover {
+  background-color: #e6e6e6;
+}
+
+.searchResultUsername {
+  font-weight: 700;
+  font-size: 14px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+
+.searchResultName {
+  font-size: 14px;
+  color: #999;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  margin-bottom: 5px;
+}
+
+.searchResultPhoto img {
+  height: 33px;
+  width: 33px;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.usersLinksToRedirect {
+  display: flex;
+  align-items: center;
+}
+
+.UsersListed {
+  padding: 15px 10px;
+}
+
+.searchUsernameName {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
 }

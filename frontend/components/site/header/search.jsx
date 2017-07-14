@@ -16,6 +16,7 @@ class Search extends React.Component {
     this.unfocus = this.unfocus.bind(this);
     this.Users = this.Users.bind(this);
     this.keepLinks = this.keepLinks.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   focus() {
@@ -36,8 +37,10 @@ class Search extends React.Component {
 
   keepLinks(e) {
     e.preventDefault();
-    // this.unfocus();
-    // this.Users();
+  }
+
+  handleClick(e) {
+    this.unfocus();
   }
 
   Users() {
@@ -45,9 +48,17 @@ class Search extends React.Component {
       let users = (this.props.search).map( (user) => {
         return (
           <li className="UsersListed" key={user.id}>
-            <Link onMouseDown={this.keepLinks} className="usersLinksToRedirect" to={`/users/${user.username}`}>
-              <div>
-                {user.username}
+            <Link onClick={this.handleClick} onMouseDown={this.keepLinks} className="usersLinksToRedirect" to={`/users/${user.username}`}>
+              <div className="searchResultPhoto">
+                <img src={user.photo_url}></img>
+              </div>
+              <div className="searchUsernameName">
+                <div className="searchResultUsername">
+                  {user.username}
+                </div>
+                <div className="searchResultName">
+                  {user.name}
+                </div>
               </div>
             </Link>
           </li>

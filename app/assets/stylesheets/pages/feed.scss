@@ -94,6 +94,11 @@
   opacity: 0;
 }
 
+.comments ul {
+  overflow: auto;
+  max-height: 300px;
+}
+
 @keyframes easein {
   from {
     opacity: 0;
