@@ -14,8 +14,8 @@ class Search extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.focus = this.focus.bind(this);
     this.unfocus = this.unfocus.bind(this);
-
     this.Users = this.Users.bind(this);
+    this.keepLinks = this.keepLinks.bind(this);
   }
 
   focus() {
@@ -34,12 +34,18 @@ class Search extends React.Component {
     this.props.fetchUsers(e.currentTarget.value);
   }
 
+  keepLinks(e) {
+    e.preventDefault();
+    // this.unfocus();
+    // this.Users();
+  }
+
   Users() {
     if (this.state.focused) {
       let users = (this.props.search).map( (user) => {
         return (
           <li className="UsersListed" key={user.id}>
-            <Link className="usersLinksToRedirect" to={`/users/${user.username}`}>
+            <Link onMouseDown={this.keepLinks} className="usersLinksToRedirect" to={`/users/${user.username}`}>
               <div>
                 {user.username}
               </div>
