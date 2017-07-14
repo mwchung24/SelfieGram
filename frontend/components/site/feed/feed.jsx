@@ -152,6 +152,10 @@ class Feed extends React.Component {
           </li>
         );
       });
+    } else {
+      return(
+        <div>hi</div>
+      );
     }
 
     return (
