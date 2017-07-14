@@ -32,7 +32,10 @@ class Search extends React.Component {
   }
 
   handleChange(e) {
-    this.props.fetchUsers(e.currentTarget.value);
+    this.setState({keyword: e.currentTarget.value});
+    if (e.currentTarget.value !== "") {
+      this.props.fetchUsers(e.currentTarget.value);
+    }
   }
 
   keepLinks(e) {
@@ -40,11 +43,15 @@ class Search extends React.Component {
   }
 
   handleClick(e) {
-    this.unfocus();
+    this.setState({keyword: ""});
+    $(".searchResults input").val("");
   }
 
   Users() {
     if (this.state.focused) {
+      if (this.state.keyword === "") {
+        return;
+      }
       let users = (this.props.search).map( (user) => {
         return (
           <li className="UsersListed" key={user.id}>
