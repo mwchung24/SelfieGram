@@ -66,6 +66,10 @@
   text-align: left;
 }
 
+.searchResults input:focus {
+  background-color: white;
+}
+
 input:focus {
   outline: none;
 }
@@ -213,4 +217,14 @@ input:focus {
   margin-left: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.compassIcon {
+  width: 23px;
+  height: 23px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-left: 10px;
 }
