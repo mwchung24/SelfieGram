@@ -51,19 +51,43 @@
   font-size: 14px;
   text-align: left;
   background: #fafafa;
+  border: none;
+  color: #262626;
+  -webkit-appearance: none;
+}
+
+.searchResults input::placeholder {
+  color: #999;
+  font-weight: 200;
+  text-align: center;
+}
+
+.searchResults input:focus::placeholder {
+  text-align: left;
+}
+
+input:focus {
+  outline: none;
+}
+
+.fa-search {
+  color: #999;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.search form {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   box-sizing: border-box;
+  background: #fafafa;
   color: #262626;
-  font-size: 14px;
-  padding: 9px 8px 7px;
-  -webkit-appearance: none;
-  margin: 0px 40px 6px;
+  max-height: 32px;
 }
 
-input::placeholder {
-  color: #999;
-  font-weight: 200;
+.search label {
+  display: flex;
+  align-items: center;
 }
 
 .headeror-line {
@@ -131,4 +155,13 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.usersLinksToRedirect {
+  text-decoration: none;
+  color: black;
+}
+
+.searchUsers {
+  position: absolute;
 }

@@ -7,30 +7,74 @@ class Search extends React.Component {
 
     this.state = {
       keyword: '',
-      isSelected: false
+      focused: false
     };
-    this.selected = this.selected.bind(this);
-    this.unselected = this.unselected.bind(this);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.focus = this.focus.bind(this);
+    this.unfocus = this.unfocus.bind(this);
+
+    this.Users = this.Users.bind(this);
   }
 
-  selected(e) {
-  this.setState({isSelected: true});
+  focus() {
+    this.setState({focused: true});
   }
 
-  unselected(e) {
-    this.setState({isSelected: false});
+  unfocus() {
+    this.setState({focused: false});
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
+  handleChange(e) {
+    this.props.fetchUsers(e.currentTarget.value);
+  }
+
+  Users() {
+    if (this.state.focused) {
+      let users = (this.props.search).map( (user) => {
+        return (
+          <li className="UsersListed" key={user.id}>
+            <Link className="usersLinksToRedirect" to={`/users/${user.username}`}>
+              <div>
+                {user.username}
+              </div>
+            </Link>
+          </li>
+        );
+      });
+      return users;
+    } else {
+      return;
+    }
   }
 
   render () {
     return (
-      <section>
+      <section className="searchResults">
         <div className="search">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>
-
-              <input placeholder="Search" className="searchbar" selected={this.focus}/>
+              <i className="fa fa-search" aria-hidden="true"></i>
+              <input type="text"
+                onClick={this.handleChange}
+                onChange={this.handleChange}
+                onFocus={this.focus}
+                onBlur={this.unfocus}
+                placeholder="Search"
+                className="searchbar"
+                />
             </label>
           </form>
+        </div>
+        <div>
+          <ul className="searchUsers">
+            {this.Users()}
+          </ul>
         </div>
       </section>
     );

@@ -4,6 +4,7 @@ import UserReducer from './user_reducer';
 import ModalReducer from './modal_reducer';
 import PhotoReducer from './photo_reducer';
 import FeedReducer from './feed_reducer';
+import SearchReducer from './search_reducer';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   modal: ModalReducer,
   photo: PhotoReducer,
   feed: FeedReducer,
+  search: SearchReducer,
 });
 
 export default rootReducer;
