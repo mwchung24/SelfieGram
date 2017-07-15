@@ -1,10 +1,10 @@
 import Explore from './explore';
 import { connect } from 'react-redux';
-import { fetchUsers } from '../../../actions/search_actions';
+import { fetchUsers } from '../../../actions/user_actions';
 
 const mapStateToProps = (state) => {
   return {
-    users: state.search,
+    users: state.users,
   };
 };
 

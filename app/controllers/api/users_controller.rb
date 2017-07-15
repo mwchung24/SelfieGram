@@ -1,8 +1,13 @@
 class Api::UsersController < ApplicationController
   def index
-    query = params["users"]
-    @users = User
-      .where("username LIKE ? OR name LIKE ?", "%#{query}%", "%#{query}%").all
+
+    if params["users"]
+      query = params["users"]
+      return @users = User
+        .where("username LIKE ? OR name LIKE ?", "%#{query}%", "%#{query}%").all
+    else
+      return @users = User.all
+    end
   end
 
   def show

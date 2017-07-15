@@ -8,6 +8,10 @@ class Explore extends React.Component {
     this.Users = this.Users.bind(this);
   }
 
+  componentDidMount () {
+    this.props.fetchUsers();
+  }
+
   Users() {
     let users = (this.props.users).map( (user) => {
       return (
