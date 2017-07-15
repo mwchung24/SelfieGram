@@ -33,7 +33,7 @@ const personalGreeting = (username, logout, props) => {
 
         <nav className="rightNav">
           <Link className="profileButton" to={`/users/${username}`}><img className="profileIcon" src={ window.images.profile } /></Link>
-          <Link className="exploreButton" to={`/explore`}><img className="compassIcon" src={ window.images.compass } /></Link>
+          <Link className="exploreButton" to={`/users/${username}/explore`}><img className="compassIcon" src={ window.images.compass } /></Link>
           <button className="uploadButton" onClick={() => props.openModal(<CreatePhotoContainer />)}>
             <img className="uploadIcon" src={ window.images.upload } />
           </button>

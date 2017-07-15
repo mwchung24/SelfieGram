@@ -14,7 +14,7 @@ const App = () => (
         <ProtectedRoute exact path="/" component={Site} />
         <ProtectedRoute exact path="/users/:id" component={Site} />
         <ProtectedRoute exact path="/users/:id/edit" component={Site} />
-        <ProtectedRoute exact path="/explore" component={Site}/>
+        <ProtectedRoute exact path="/users/:id/explore" component={Site}/>
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
@@ -22,9 +22,9 @@ const App = () => (
     <section className="footer">
       <footer>
         <div className="footer-left">
-          <a href="https://github.com/mwchung24">GitHub</a>
-          <a href="http://www.martinwchung.com/">Portfolio</a>
-          <a href="https://www.linkedin.com/in/martinwchung/">Linkedin</a>
+          <a target="_blank" href="https://github.com/mwchung24">GitHub</a>
+          <a target="_blank" href="http://www.martinwchung.com/">Portfolio</a>
+          <a target="_blank" href="https://www.linkedin.com/in/martinwchung/">Linkedin</a>
         </div>
 
         <div className="footer-right">

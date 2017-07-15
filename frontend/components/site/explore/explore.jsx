@@ -39,7 +39,10 @@ class Explore extends React.Component {
     return (
       <section className="exploreUsers">
         <div>
-          {this.Users()}
+          <ul>
+            {this.Users()}
+
+          </ul>
         </div>
       </section>
     );
