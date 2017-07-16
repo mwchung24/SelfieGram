@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       return @users = User
         .where("username LIKE ? OR name LIKE ?", "%#{query}%", "%#{query}%").all
     else
-      return @users = User.all
+      @users = User.all - [current_user]
     end
   end
 

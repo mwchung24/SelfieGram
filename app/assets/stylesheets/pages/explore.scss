@@ -46,3 +46,23 @@
   display: flex;
   flex-direction: column;
 }
+
+.ExploreLinks {
+  text-decoration: none;
+  color: black;
+}
+
+.ExploreLinksName {
+  color: #999;
+}
+
+.explorebutton {
+  width: 130px;
+  height: 30px;
+}
+
+.UsersListed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

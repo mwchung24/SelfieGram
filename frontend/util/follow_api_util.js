@@ -7,7 +7,13 @@ export const addFollow = (id) => {
 };
 
 export const deleteFollow = (follow) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `api/follows/${follow}`
+  });
+};
 
+export const deleteExploreFollow = (follow) => {
   return $.ajax({
     method: 'DELETE',
     url: `api/follows/${follow}`
