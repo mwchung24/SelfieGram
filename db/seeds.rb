@@ -16,7 +16,7 @@ user1 = User.create({name: "Martin", bio: "I love taking selfies!", username: "m
 user2 = User.create({name: "Hanna", bio: "SelfieGram is the best!", username: "hanna123", password: "hanna123", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/hanna_profile.jpg"})
 user3 = User.create({name: "Taki", bio: "I selfie, you selfie, we all selfie!", username: "takitaki", password: "takitaki", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/taki_profile.jpg"})
 user4 = User.create({name: "Wadah", bio: "SelfieGrammmmm", username: "wadah321", password: "wadah321", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/wada_profile.jpg"})
-user5 = User.create({name: "Jaxon", bio: "I love greenies, bully sticks and SelfieGram!", username: "JaxonDaLabradoodle", password: "JaxonDaLabradoodle", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/jaxon_profile.png"})
+user5 = User.create({name: "Jaxon", bio: "I love greenies, bully sticks and SelfieGram!", username: "jaxonDaLabradoodle", password: "jaxonDaLabradoodle", photo: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/jaxon_profile.png"})
 
 photo5 = Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/martinphoto5.JPG", user_id: user1.id, caption: 'Nice selfie with the wife and I.'})
 photo22 = Photo.create({image: "https://s3.us-east-2.amazonaws.com/selfiegram-dev/users/photos/000/000/002/original/jaxonphoto1.jpg", user_id: user5.id, caption: 'Me relaxing in the park!'})
