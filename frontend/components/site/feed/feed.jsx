@@ -44,9 +44,11 @@ class Feed extends React.Component {
 
         const photoLiked = () => {
           if (photo.liked) {
-            return this.props.deleteLike(photo.like_id).then(() => this.props.fetchFeedPhotos()).then(() => this.setState({liking: false}));
+            return this.props.deleteFeedLike(photo.like_id)
+            .then(() => setTimeout( () => this.setState({liking: false}), 1000));
           } else {
-            return this.props.addLike(photo.id).then(() => this.props.fetchFeedPhotos()).then(() => this.setState({liking: false}));
+            return this.props.addFeedLike(photo.id)
+            .then(() => setTimeout( () => this.setState({liking: false}), 1000));
           }
         };
 
@@ -152,7 +154,7 @@ class Feed extends React.Component {
           </li>
         );
       });
-    } 
+    }
 
     return (
       <section>

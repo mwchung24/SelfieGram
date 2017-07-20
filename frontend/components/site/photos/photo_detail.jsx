@@ -8,12 +8,17 @@ class PhotoDetail extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      liking: false,
+    };
+
     this.deleteIcon = this.deleteIcon.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
+    this.photoLiked = this.photoLiked.bind(this);
+    this.setState = this.setState.bind(this);
   }
 
   componentDidMount() {
-
     this.props.fetchPhoto(this.props.id);
   }
 
@@ -61,6 +66,16 @@ class PhotoDetail extends React.Component {
       } else {
         return "likes";
       }
+    }
+  }
+
+  photoLiked () {
+    if (this.props.photo.liked) {
+      return this.props.deleteLike(this.props.photo.like_id)
+      .then(() => setTimeout( () => this.setState({liking: false}), 1000));
+    } else {
+      return this.props.addLike(this.props.photo.id)
+      .then(() => setTimeout( () => this.setState({liking: false}), 1000));
     }
   }
 
@@ -114,10 +129,12 @@ class PhotoDetail extends React.Component {
         });
       }
 
+      const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
       return (
         <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
           <div className="imageContainer">
-            <img className="imageModal" src={this.props.photo.images_url} />
+            <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
+            <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
             <div className="rightModal">
               <div className="headerModal">
                 <div className="user-profile-modal">

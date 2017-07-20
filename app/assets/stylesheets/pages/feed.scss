@@ -74,9 +74,6 @@
 .feedHeart {
   display: flex;
   justify-content: center;
-}
-
-.feedHeart {
   position: relative;
   top: 250px;
   height: 1px;
@@ -89,21 +86,22 @@
 }
 
 .liking {
-  animation-duration: .3s;
-  animation-name: easein;
+  animation-duration: 1s;
+  animation-name: ease;
   opacity: 0;
 }
 
-.comments ul {
-  overflow: auto;
-  max-height: 300px;
-}
 
-@keyframes easein {
+@keyframes ease {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
   }
+}
+
+.comments ul {
+  overflow: auto;
+  max-height: 300px;
 }
