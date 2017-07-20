@@ -5,19 +5,45 @@ import CommentFeedContainer from '../comment/comment_feed_container';
 import { selectAllComments } from '../../../reducers/selectors';
 import InfiniteScroll from 'react-infinite-scroll';
 
+window.bottom = false;
+
 class Feed extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       liking: false,
+      start: 0,
+      end: 4,
     };
 
     this.setState = this.setState.bind(this);
+    this.fetchMorePhotos = this.fetchMorePhotos.bind(this);
   }
 
   componentDidMount () {
-    this.props.fetchFeedPhotos();
+    window.addEventListener("scroll", this.fetchMorePhotos);
+    this.props.fetchFeedPhotos(this.state.start, this.state.end);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.fetchMorePhotos);
+  }
+
+  fetchMorePhotos() {
+    $(window).scroll(function() {
+      if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+       window.bottom = true;
+     }
+    });
+    if(window.bottom) {
+      window.removeEventListener("scroll", this.fetchMorePhotos);
+      window.bottom = false;
+      this.state.end += 5;
+      this.props.fetchFeedPhotos(this.state.start, this.state.end);
+
+      window.addEventListener("scroll", this.fetchMorePhotos);
+    }
   }
 
   render () {
@@ -168,5 +194,6 @@ class Feed extends React.Component {
     );
   }
 }
+
 
 export default Feed;

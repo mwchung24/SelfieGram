@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchFeedPhotos: () => dispatch(fetchFeedPhotos()),
+    fetchFeedPhotos: (start, end) => dispatch(fetchFeedPhotos(start, end)),
     fetchUser: (user) => dispatch(fetchUser(user)),
     addFeedLike: (like) => dispatch(addFeedLike(like)),
     deleteFeedLike: (like) => dispatch(deleteFeedLike(like)),

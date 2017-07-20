@@ -38,9 +38,9 @@ export const deletePhoto = photo => dispatch => {
   ));
 };
 
-export const fetchFeedPhotos = () => dispatch => {
+export const fetchFeedPhotos = (start, end) => dispatch => {
 
-  return APIUtil.fetchFeedPhotos().then(photos => (
+  return APIUtil.fetchFeedPhotos(start, end).then(photos => (
     dispatch(receiveFeed(photos))
   ));
 };

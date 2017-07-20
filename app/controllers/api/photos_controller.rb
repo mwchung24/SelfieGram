@@ -11,17 +11,14 @@ class Api::PhotosController < ApplicationController
       @photos << photo
     end
 
-
     @photos.sort_by! do |photo|
       photo[:created_at]
     end
-
-    return @photos
+    return @photos = @photos.reverse[photo_params[:start].to_i..photo_params[:end].to_i]
     render :index
   end
 
   def show
-
     @photo = Photo.find(params[:id])
 
     if @photo
@@ -55,6 +52,6 @@ class Api::PhotosController < ApplicationController
   private
 
   def photo_params
-    params.require(:photo).permit(:image, :caption)
+    params.require(:photo).permit(:image, :caption, :start, :end)
   end
 end

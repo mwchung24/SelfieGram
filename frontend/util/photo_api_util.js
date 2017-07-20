@@ -23,9 +23,10 @@ export const deletePhoto = (photo) => {
   });
 };
 
-export const fetchFeedPhotos = () => {
+export const fetchFeedPhotos = (start, end) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/photos'
+    url: 'api/photos',
+    data: {photo: {start, end}}
   });
 };
