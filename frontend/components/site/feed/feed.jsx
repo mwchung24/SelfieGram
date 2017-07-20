@@ -3,6 +3,7 @@ import { selectAllImages } from '../../../reducers/selectors';
 import { Link } from 'react-router-dom';
 import CommentFeedContainer from '../comment/comment_feed_container';
 import { selectAllComments } from '../../../reducers/selectors';
+import InfiniteScroll from 'react-infinite-scroll';
 
 class Feed extends React.Component {
   constructor(props) {

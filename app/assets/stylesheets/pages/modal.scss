@@ -27,6 +27,8 @@
 
 .imageModal {
   margin: right;
+  display: flex;
+  justify-content: center;
   max-width: 600px;
   max-height: 600px;
   width: 100%;
@@ -319,6 +321,7 @@
   justify-content: center;
   position: relative;
   top: -50px;
-  left: 350px;
+  left: 310px;
   height: 1px;
+  width: 0px;
 }
