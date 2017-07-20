@@ -5,8 +5,6 @@ import CommentFeedContainer from '../comment/comment_feed_container';
 import { selectAllComments } from '../../../reducers/selectors';
 import InfiniteScroll from 'react-infinite-scroll';
 
-window.bottom = false;
-
 class Feed extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +12,8 @@ class Feed extends React.Component {
     this.state = {
       liking: false,
       start: 0,
-      end: 4,
+      end: -1,
+      endingIndex: 4,
     };
 
     this.setState = this.setState.bind(this);
@@ -22,6 +21,7 @@ class Feed extends React.Component {
   }
 
   componentDidMount () {
+    window.bottom = false;
     window.addEventListener("scroll", this.fetchMorePhotos);
     this.props.fetchFeedPhotos(this.state.start, this.state.end);
   }
@@ -32,22 +32,19 @@ class Feed extends React.Component {
 
   fetchMorePhotos() {
     $(window).scroll(function() {
-      if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+      if ($(window).scrollTop() <= $(document).height() - $(window).height() && $(window).scrollTop() >= $(document).height() - $(window).height() - 200) {
        window.bottom = true;
      }
     });
     if(window.bottom) {
-      window.removeEventListener("scroll", this.fetchMorePhotos);
+      this.setState({endingIndex: this.state.endingIndex + 5});
       window.bottom = false;
-      this.state.end += 5;
-      this.props.fetchFeedPhotos(this.state.start, this.state.end);
-
-      window.addEventListener("scroll", this.fetchMorePhotos);
     }
   }
 
   render () {
-    const feed = selectAllImages(this.props.feed).reverse();
+    const feed = selectAllImages(this.props.feed).reverse()
+    .slice(0, this.state.endingIndex);
     let FeedPhotos;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
