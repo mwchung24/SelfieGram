@@ -63,6 +63,16 @@ The user can also change their avatar by clicking their profile picture on the u
 ![image of the edit profile page](docs/images/editprofile.png)
 ![image of the edit profile picture modal](docs/images/profilepicupload.png)
 
+### Search
+
+The search bar allows users to search the website by username or name.  The search bar makes AJAX requests to the backend and matches the input to usernames and names.  To avoid fetching users on every key stroke, debounce was used with 500ms pause.  When the search bar is not updated in 500ms, the AJAX request is then made.
+
+![image of search](docs/images/search.png)
+
+### Infinite Scroll
+
+The app is initially loaded with 5 photos on feed page for more efficient rendering of the site.  Then when the user scrolls to the bottom of the page 5 more photos are fetched and rendered.
+
 ## Technologies
 ### Backend
 
@@ -95,14 +105,6 @@ The user can also change their avatar by clicking their profile picture on the u
 ## Future Improvements
 
 SelfieGram was designed and built in 10 days and the list below are feature I would like to implement in the future.
-
-### Search
-
-Allow users to search by username or hashtags.
-
-### Infinite Scroll
-
-The app was initially load with 10 photos on the photo feed page and 6 photos on the user show page.  Then when the user scrolls to the bottom of the page more photos will be fetched and rendered.
 
 ### Direct Messaging
 
