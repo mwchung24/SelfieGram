@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import debounce from 'lodash.debounce';
+// const debounce = require('lodash/debounce');
 
 class Search extends React.Component {
   constructor(props) {
@@ -34,7 +36,9 @@ class Search extends React.Component {
   handleChange(e) {
     this.setState({keyword: e.currentTarget.value});
     if (e.currentTarget.value !== "") {
-      this.props.fetchUsers(e.currentTarget.value);
+      debounce((e) => {
+        this.props.fetchUsers(e.currentTarget.value);
+      }, 500);
     }
   }
 
