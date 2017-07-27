@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import debounce from 'lodash.debounce';
-// const debounce = require('lodash/debounce');
+const debounce = require('lodash/debounce');
 
 class Search extends React.Component {
   constructor(props) {
@@ -15,35 +14,31 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.focus = this.focus.bind(this);
-    this.unfocus = this.unfocus.bind(this);
     this.Users = this.Users.bind(this);
-    this.keepLinks = this.keepLinks.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+    this.debouncing = debounce(this.handleSearch, 500);
   }
 
-  focus() {
-    this.setState({focused: true});
-  }
-
-  unfocus() {
-    this.setState({focused: false});
+  focus(boolean) {
+    return (() => {
+      this.setState({focused: boolean});
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
   }
 
+  handleSearch () {
+    this.props.fetchUsers(this.state.keyword);
+  }
+
   handleChange(e) {
     this.setState({keyword: e.currentTarget.value});
     if (e.currentTarget.value !== "") {
-      debounce((e) => {
-        this.props.fetchUsers(e.currentTarget.value);
-      }, 500);
+      this.debouncing();
     }
-  }
-
-  keepLinks(e) {
-    e.preventDefault();
   }
 
   handleClick(e) {
@@ -59,7 +54,7 @@ class Search extends React.Component {
       let users = (this.props.search).map( (user) => {
         return (
           <li className="UsersListed" key={user.id}>
-            <Link onClick={this.handleClick} onMouseDown={this.keepLinks} className="usersLinksToRedirect" to={`/users/${user.username}`}>
+            <Link onClick={this.handleClick} onMouseDown={this.handleSubmit} className="usersLinksToRedirect" to={`/users/${user.username}`}>
               <div className="searchResultPhoto">
                 <img src={user.photo_url}></img>
               </div>
@@ -91,8 +86,8 @@ class Search extends React.Component {
               <input type="text"
                 onClick={this.handleChange}
                 onChange={this.handleChange}
-                onFocus={this.focus}
-                onBlur={this.unfocus}
+                onFocus={this.focus(true)}
+                onBlur={this.focus(false)}
                 placeholder="Search"
                 className="searchbar"
                 />
