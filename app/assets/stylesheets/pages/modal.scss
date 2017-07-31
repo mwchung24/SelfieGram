@@ -35,6 +35,10 @@
   height: 100%;
   object-fit: cover;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .rightModal {
