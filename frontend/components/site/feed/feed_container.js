@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     feed: state.feed,
     username: state.session.currentUser.username,
+    followers: state.session.currentUser.followers_count,
   });
 };
 

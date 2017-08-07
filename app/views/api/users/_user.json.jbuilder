@@ -1,5 +1,6 @@
 json.extract! user, :id, :username, :name, :bio
 json.photo_url asset_path(user.photo.url)
+json.photos_count user.photos.length
 
 json.images({})
 json.images do
