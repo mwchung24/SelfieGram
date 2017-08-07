@@ -45,6 +45,13 @@ class Feed extends React.Component {
   render () {
     const feed = selectAllImages(this.props.feed).reverse()
     .slice(0, this.state.endingIndex);
+
+    if (feed.length === 0) {
+      return(
+        <div className="rainbow-progress-bar"></div>
+      );
+    }
+
     let FeedPhotos;
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
