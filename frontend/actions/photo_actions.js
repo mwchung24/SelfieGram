@@ -38,6 +38,10 @@ export const deletePhoto = photo => dispatch => {
   ));
 };
 
+export const deletePhotoFromState = () => dispatch => {
+  dispatch(removePhoto());
+};
+
 export const fetchFeedPhotos = (start, end) => dispatch => {
 
   return APIUtil.fetchFeedPhotos(start, end).then(photos => (

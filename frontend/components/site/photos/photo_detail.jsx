@@ -16,6 +16,7 @@ class PhotoDetail extends React.Component {
     this.likeOrLikes = this.likeOrLikes.bind(this);
     this.photoLiked = this.photoLiked.bind(this);
     this.setState = this.setState.bind(this);
+    this.modalClose = this.modalClose.bind(this);
   }
 
   componentDidMount() {
@@ -26,6 +27,11 @@ class PhotoDetail extends React.Component {
     this.props.deletePhoto(this.props.photo)
     .then(() => this.props.closeModal())
     .then(() => this.props.fetchUser(this.props.username));
+  }
+
+  modalClose() {
+    this.props.closeModal();
+    this.props.deletePhotoFromState();
   }
 
   month() {
@@ -115,7 +121,7 @@ class PhotoDetail extends React.Component {
                   <Link
                     className="username-link"
                     to={`/users/${comment.username}`}
-                    onClick={ () => this.props.closeModal()}>
+                    onClick={ () => this.modalClose()}>
                     {comment.username}
                   </Link>
                   <span className="comment-body">
@@ -138,10 +144,10 @@ class PhotoDetail extends React.Component {
             <div className="rightModal">
               <div className="headerModal">
                 <div className="user-profile-modal">
-                  <Link to={`/users/${this.props.username}`} onClick={ () => this.props.closeModal()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
+                  <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
                 </div>
                 <div className="user-username">
-                  <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.props.closeModal()}>{this.props.username}</Link></div>
+                  <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
                 </div>
                 <div className="delete-photo">
                   {this.deleteIcon()}
@@ -153,7 +159,7 @@ class PhotoDetail extends React.Component {
                     <p>
                       <Link className="username-link-caption"
                         to={`/users/${this.props.username}`}
-                        onClick={ () => this.props.closeModal()}>{this.props.username}
+                        onClick={ () => this.modalClose()}>{this.props.username}
                       </Link>
                       <span className="photo-caption">
                         {this.props.photo.caption}
