@@ -46,7 +46,7 @@ class Feed extends React.Component {
     const feed = selectAllImages(this.props.feed).reverse()
     .slice(0, this.state.endingIndex);
 
-    if (this.props.followers !== 0) {
+    if (this.props.followees !== 0) {
       if (feed.length === 0) {
         return(
           <div className="progress-bar"></div>
