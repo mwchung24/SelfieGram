@@ -62,6 +62,12 @@ class User extends React.Component {
     const photos = selectAllImages(this.props.images);
     let allUserPhotos;
 
+    if (photos.length === 0) {
+      return(
+        <div className="rainbow-progress-bar"></div>
+      );
+    }
+
     if (photos) {
       allUserPhotos = photos.map( (photo) => {
         return (
