@@ -14,6 +14,13 @@ class Explore extends React.Component {
   }
 
   Users() {
+
+    if (this.props.users.length === 0) {
+      return(
+        <div className="progress-bar"></div>
+      );
+    }
+
     let users = (this.props.users).map( (user) => {
       return (
         <li className="UsersListed" key={user.id}>
@@ -62,13 +69,6 @@ class Explore extends React.Component {
         Follow
       </button>
     );
-    // if (this.props.user.followers) {
-    //   if (Object.keys(this.props.user.followers).includes(this.props.currentUserId.toString())) {
-    //     return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Following</button>);
-    //   }
-    // }
-    //
-    // return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Follow</button>);
   }
 
   render() {

@@ -64,7 +64,7 @@ class User extends React.Component {
 
     if (photos.length === 0) {
       return(
-        <div className="rainbow-progress-bar"></div>
+        <div className="progress-bar"></div>
       );
     }
 
