@@ -16,6 +16,7 @@ class Search extends React.Component {
     this.focus = this.focus.bind(this);
     this.Users = this.Users.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.handleListClick = this.handleListClick.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.debouncing = debounce(this.handleSearch, 500);
   }
@@ -46,6 +47,12 @@ class Search extends React.Component {
     $(".searchResults input").val("");
   }
 
+  handleListClick(e) {
+    this.setState({keyword: ""});
+    $(".searchResults input").val("");
+
+  }
+
   Users() {
     if (this.state.focused) {
       if (this.state.keyword === "") {
@@ -53,7 +60,7 @@ class Search extends React.Component {
       }
       let users = (this.props.search).map( (user) => {
         return (
-          <li className="UsersListed" key={user.id}>
+          <li className="UsersListed" key={user.id} onClick={this.handleListClick}>
             <Link onClick={this.handleClick} onMouseDown={this.handleSubmit} className="usersLinksToRedirect" to={`/users/${user.username}`}>
               <div className="searchResultPhoto">
                 <img src={user.photo_url}></img>
