@@ -18,7 +18,7 @@ class Search extends React.Component {
     this.handleClick = this.handleClick.bind(this);
     this.handleListClick = this.handleListClick.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
-    this.debouncing = debounce(this.handleSearch, 500);
+    this.debouncing = debounce(this.handleSearch, 300);
   }
 
   focus(boolean) {
