@@ -50,7 +50,7 @@ class Search extends React.Component {
   handleListClick(e) {
     this.setState({keyword: ""});
     $(".searchResults input").val("");
-
+    this.props.clearUsers();
   }
 
   Users() {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Search from './search';
 import { userArray } from '../../../reducers/selectors';
-import { fetchUsers } from '../../../actions/search_actions';
+import { fetchUsers, clearUsers } from '../../../actions/search_actions';
 
 const mapStateToProps = state => {
   return {
@@ -12,6 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUsers: (users) => dispatch(fetchUsers(users)),
+    clearUsers: () => dispatch(clearUsers()),
   };
 };
 
