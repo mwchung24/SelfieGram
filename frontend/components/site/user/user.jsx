@@ -12,6 +12,7 @@ class User extends React.Component {
 
     this.isCurrentUser = this.isCurrentUser.bind(this);
     this.isCurrentUserProfilePic = this.isCurrentUserProfilePic.bind(this);
+    this.userPhotos = this.userPhotos.bind(this);
   }
 
   componentDidMount() {
@@ -41,9 +42,7 @@ class User extends React.Component {
   }
 
   isCurrentUser () {
-
     if(this.props.currentUserId === this.props.user.id) {
-      // return (<button onClick={() => this.props.goEdit()} className="edit-profile">Edit Profile</button>);
       return (<Link className="edit-profile" to={`/users/${this.props.currentUsername}/edit`}>Edit Profile</Link>);
     } else {
       if (this.props.user.followers) {
@@ -51,10 +50,28 @@ class User extends React.Component {
           return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Following</button>);
         }
       }
-
       return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Follow</button>);
-
     }
+  }
+
+  userPhotos(photo) {
+    return (
+      <li key={photo.id} className='userPhotoItem'>
+        <div className="hover-images">
+          <div className="likes-and-comments">
+            <div className="likes-and-count">
+              <div><i className="fa fa-heart hover-heart" aria-hidden="true"></i></div>
+              <div className="hover-heart-count">{photo.like_count}</div>
+            </div>
+            <div className="comments-and-count">
+              <div><i className="fa fa-comment hover-comment" aria-hidden="true"></i></div>
+              <div className="hover-comment-count">{photo.comment_count}</div>
+            </div>
+          </div>
+        </div>
+        <img className='photoItem' src={photo.images_url} onClick={() => this.props.openModal(<PhotoDetailContainer id={photo.id}/>)} />
+      </li>
+    );
   }
 
   render() {
@@ -72,23 +89,7 @@ class User extends React.Component {
 
     if (photos) {
       allUserPhotos = photos.map( (photo) => {
-        return (
-          <li key={photo.id} className='userPhotoItem'>
-            <div className="hover-images">
-              <div className="likes-and-comments">
-                <div className="likes-and-count">
-                  <div><i className="fa fa-heart hover-heart" aria-hidden="true"></i></div>
-                  <div className="hover-heart-count">{photo.like_count}</div>
-                </div>
-                <div className="comments-and-count">
-                  <div><i className="fa fa-comment hover-comment" aria-hidden="true"></i></div>
-                  <div className="hover-comment-count">{photo.comment_count}</div>
-                </div>
-              </div>
-            </div>
-            <img className='photoItem' src={photo.images_url} onClick={() => this.props.openModal(<PhotoDetailContainer id={photo.id}/>)} />
-          </li>
-        );
+        return this.userPhotos(photo);
       });
     }
 
