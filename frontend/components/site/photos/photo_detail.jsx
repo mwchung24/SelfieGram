@@ -17,6 +17,7 @@ class PhotoDetail extends React.Component {
     this.photoLiked = this.photoLiked.bind(this);
     this.setState = this.setState.bind(this);
     this.modalClose = this.modalClose.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
   }
 
   componentDidMount() {
@@ -85,6 +86,25 @@ class PhotoDetail extends React.Component {
     }
   }
 
+  deleteComment (comment) {
+    if (this.props.currentUsername === comment.username) {
+      return (
+        <button
+          className="delete-comment">
+          <i
+            onClick={() => this.props.deleteComment(comment.id)}
+            className="fa fa-times"
+            aria-hidden="true">
+          </i>
+        </button>
+      );
+    } else {
+      return (
+        <div></div>
+      );
+    }
+  }
+
   render () {
 
     if (this.props.photo) {
@@ -96,22 +116,7 @@ class PhotoDetail extends React.Component {
         allPhotoComments = comments.map( (comment) => {
 
           const deleteCommentIcon = () => {
-            if (this.props.currentUsername === comment.username) {
-              return (
-                <button
-                  className="delete-comment">
-                  <i
-                    onClick={() => this.props.deleteComment(comment.id)}
-                    className="fa fa-times"
-                    aria-hidden="true">
-                  </i>
-                </button>
-              );
-            } else {
-              return (
-                <div></div>
-              );
-            }
+            return this.deleteComment(comment);
           };
 
           return (

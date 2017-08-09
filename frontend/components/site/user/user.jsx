@@ -75,7 +75,6 @@ class User extends React.Component {
   }
 
   render() {
-
     const photos = selectAllImages(this.props.images);
     let allUserPhotos;
 
