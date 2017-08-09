@@ -20,6 +20,7 @@ class Feed extends React.Component {
     this.fetchMorePhotos = this.fetchMorePhotos.bind(this);
     this.followButton = this.followButton.bind(this);
     this.photoIsLiked = this.photoIsLiked.bind(this);
+    this.likeOrLikes = this.likeOrLikes.bind(this);
   }
 
   componentDidMount () {
@@ -72,6 +73,16 @@ class Feed extends React.Component {
     }
   }
 
+  likeOrLikes(photo) {
+    if(photo) {
+      if (photo.like_count === 1) {
+        return "like";
+      } else {
+        return "likes";
+      }
+    }
+  }
+
   render () {
     const feed = selectAllImages(this.props.feed).reverse()
     .slice(0, this.state.endingIndex);
@@ -96,13 +107,7 @@ class Feed extends React.Component {
         };
 
         const likeOrLikes = () => {
-          if(photo) {
-            if (photo.like_count === 1) {
-              return "like";
-            } else {
-              return "likes";
-            }
-          }
+          return this.likeOrLikes(photo);
         };
 
         const comments = selectAllComments(photo.comments);
