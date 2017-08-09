@@ -18,6 +18,8 @@ class Feed extends React.Component {
 
     this.setState = this.setState.bind(this);
     this.fetchMorePhotos = this.fetchMorePhotos.bind(this);
+    this.followButton = this.followButton.bind(this);
+    this.photoIsLiked = this.photoIsLiked.bind(this);
   }
 
   componentDidMount () {
@@ -42,6 +44,34 @@ class Feed extends React.Component {
     }
   }
 
+  followButton(photo) {
+    if(photo.liked) {
+      return (
+        <button className="liked" onClick={ () => this.props.deleteFeedLike(photo.like_id)
+          }>
+          <i className="fa fa-heart" aria-hidden="true"></i>
+        </button>
+      );
+    } else {
+      return (
+        <button className="like-button" onClick={ () => this.props.addFeedLike(photo.id)
+          }>
+          <i className="fa fa-heart-o" aria-hidden="true"></i>
+        </button>
+      );
+    }
+  }
+
+  photoIsLiked(photo) {
+    if (photo.liked) {
+      return this.props.deleteFeedLike(photo.like_id)
+      .then(() => setTimeout( () => this.setState({liking: false}), 1000));
+    } else {
+      return this.props.addFeedLike(photo.id)
+      .then(() => setTimeout( () => this.setState({liking: false}), 1000));
+    }
+  }
+
   render () {
     const feed = selectAllImages(this.props.feed).reverse()
     .slice(0, this.state.endingIndex);
@@ -58,31 +88,11 @@ class Feed extends React.Component {
     if (feed) {
       FeedPhotos = feed.map( (photo) => {
         const likeButton = () => {
-          if(photo.liked) {
-            return (
-              <button className="liked" onClick={ () => this.props.deleteFeedLike(photo.like_id)
-                }>
-                <i className="fa fa-heart" aria-hidden="true"></i>
-              </button>
-            );
-          } else {
-            return (
-              <button className="like-button" onClick={ () => this.props.addFeedLike(photo.id)
-                }>
-                <i className="fa fa-heart-o" aria-hidden="true"></i>
-              </button>
-            );
-          }
+          return this.followButton(photo);
         };
 
         const photoLiked = () => {
-          if (photo.liked) {
-            return this.props.deleteFeedLike(photo.like_id)
-            .then(() => setTimeout( () => this.setState({liking: false}), 1000));
-          } else {
-            return this.props.addFeedLike(photo.id)
-            .then(() => setTimeout( () => this.setState({liking: false}), 1000));
-          }
+          return this.photoIsLiked(photo);
         };
 
         const likeOrLikes = () => {
