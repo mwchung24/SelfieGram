@@ -13,6 +13,7 @@ class User extends React.Component {
     this.isCurrentUser = this.isCurrentUser.bind(this);
     this.isCurrentUserProfilePic = this.isCurrentUserProfilePic.bind(this);
     this.userPhotos = this.userPhotos.bind(this);
+    this.userProfile = this.userProfile.bind(this);
   }
 
   componentDidMount() {
@@ -74,24 +75,7 @@ class User extends React.Component {
     );
   }
 
-  render() {
-    const photos = selectAllImages(this.props.images);
-    let allUserPhotos;
-
-    if (this.props.user.photos_count !== 0) {
-      if (photos.length === 0) {
-        return(
-          <div className="progress-bar"></div>
-        );
-      }
-    }
-
-    if (photos) {
-      allUserPhotos = photos.map( (photo) => {
-        return this.userPhotos(photo);
-      });
-    }
-
+  userProfile(allUserPhotos) {
     return (
       <section>
         <div className="user-profile">
@@ -145,6 +129,27 @@ class User extends React.Component {
         </div>
       </section>
     );
+  }
+
+  render() {
+    const photos = selectAllImages(this.props.images);
+    let allUserPhotos;
+
+    if (this.props.user.photos_count !== 0) {
+      if (photos.length === 0) {
+        return(
+          <div className="progress-bar"></div>
+        );
+      }
+    }
+
+    if (photos) {
+      allUserPhotos = photos.map( (photo) => {
+        return this.userPhotos(photo);
+      });
+    }
+
+    return this.userProfile(allUserPhotos);
   }
 }
 
