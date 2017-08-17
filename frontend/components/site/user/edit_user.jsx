@@ -57,7 +57,7 @@ class EditUser extends React.Component {
               </div>
               <div className="editUsername">
                 <div>Username</div>
-                <input value={this.state.username} onChange={this.update("username")}></input>
+                <input value={this.state.username} disabled onChange={this.update("username")}></input>
               </div>
               <div className="editBio">
                 <div>Bio</div>
