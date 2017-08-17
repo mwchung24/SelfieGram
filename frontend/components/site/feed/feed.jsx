@@ -27,6 +27,7 @@ class Feed extends React.Component {
     window.bottom = false;
     window.addEventListener("scroll", this.fetchMorePhotos);
     this.props.fetchFeedPhotos(this.state.start, this.state.end);
+    this.props.deleteUser();
   }
 
   componentWillUnmount() {

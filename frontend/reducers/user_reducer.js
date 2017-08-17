@@ -1,4 +1,4 @@
-import { RECEIVE_USER } from '../actions/user_actions';
+import { RECEIVE_USER, REMOVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from '../actions/follow_actions';
 
@@ -16,6 +16,8 @@ const UserReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_USER:
       return action.user;
+    case REMOVE_USER:
+      return defaultState;
     case RECEIVE_FOLLOW:
       return merge({}, state, {followees: action.follow});
     case REMOVE_FOLLOW:
