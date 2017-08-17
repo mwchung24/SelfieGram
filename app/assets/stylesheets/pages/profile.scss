@@ -19,9 +19,12 @@
   border-radius: 50%;
   border: none;
   color: white;
-  cursor: pointer;
   margin-right: 100px;
   margin-left: 80px;
+}
+
+.current-user-profile {
+  cursor: pointer;
 }
 
 .profile-username {

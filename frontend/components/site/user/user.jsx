@@ -29,7 +29,7 @@ class User extends React.Component {
   isCurrentUserProfilePic () {
     if(this.props.currentUserId === this.props.user.id) {
       return (
-        <button className="profile-pic-div" onClick={() => this.props.openModal(<EditProfilePicContainer />)}>
+        <button className="profile-pic-div current-user-profile" onClick={() => this.props.openModal(<EditProfilePicContainer />)}>
           <img className="profile-pic" src={this.props.user.photo_url}/>
         </button>
       );
