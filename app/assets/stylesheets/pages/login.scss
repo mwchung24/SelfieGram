@@ -185,3 +185,9 @@ html {
 .bolded {
   font-weight: 600;
 }
+
+@media screen and (max-width: 800px) {
+  .session-photo {
+    display: none;
+  }
+}
