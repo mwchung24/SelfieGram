@@ -145,7 +145,7 @@
 
 .userPhotos {
   margin: auto;
-  width: 75%;
+  // width: 75%;
   flex-wrap: wrap;
   display: flex;
   max-width: 940px;
@@ -237,5 +237,32 @@
 @media screen and (max-width: 950px) {
   .searchbar, .fa-search, .searchUsers {
     display: none;
+  }
+
+}
+
+@media screen and (max-width: 735px) {
+  .profile-pic, .current-user-profile {
+    height: 100px;
+    width: 100px;
+  }
+
+  .rightNav {
+    margin-left: 20px;
+  }
+
+  .profile-pic-div {
+    margin-right: 50px;
+    margin-left: 40px;
+  }
+
+  .third, .second {
+    display: none;
+  }
+
+  .first {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
