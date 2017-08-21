@@ -9,7 +9,7 @@
   background-color: white;
   margin-top: 60px;
   height: auto;
-  width: 65%;
+  // width: 65%;
   max-width: 932px;
   min-width: 800px;
   justify-content: space-between;
@@ -109,4 +109,118 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 30%;
+}
+
+@media screen and (max-width: 800px) {
+  .editPageLeft {
+    display: none;
+  }
+
+  .editPage {
+    justify-content: center;
+  }
+
+  .editName, .editUsername, .editBio {
+    position: relative;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .editName input, .editUsername input, .editBio textarea {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .wholeEditPage {
+    min-width: 600px;
+  }
+
+  .editHeader {
+    margin-left: 50px;
+  }
+
+  .submitEdit {
+    margin-left: 100px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 535px) {
+  .editPageLeft {
+    display: none;
+  }
+
+  .editPage {
+    justify-content: center;
+  }
+
+  .editName, .editUsername, .editBio {
+    position: relative;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 250px;
+  }
+
+  .editName input, .editUsername input, .editBio textarea {
+    margin-left: 0;
+    margin-top: 5px;
+    width: 310px;
+  }
+
+  .wholeEditPage {
+    min-width: 200px;
+  }
+
+  .editHeader {
+    margin-left: 50px;
+  }
+
+  .submitEdit {
+    margin-left: 140px;
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .editPageLeft {
+    display: none;
+  }
+
+  .editPage {
+    justify-content: center;
+  }
+
+  .editName, .editUsername, .editBio {
+    position: relative;
+    left: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 180px;
+  }
+
+  .editName input, .editUsername input, .editBio textarea {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  .wholeEditPage {
+    min-width: 400px;
+  }
+
+  .editHeader {
+    margin-left: 50px;
+  }
+
+  .submitEdit {
+    margin-left: 180px;
+    width: 100px;
+  }
 }
