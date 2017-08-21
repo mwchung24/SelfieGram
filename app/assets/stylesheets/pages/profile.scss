@@ -233,3 +233,9 @@
 .hover-comment {
   padding-bottom: 3.5px;
 }
+
+@media screen and (max-width: 950px) {
+  .searchbar, .fa-search, .searchUsers {
+    display: none;
+  }
+}
