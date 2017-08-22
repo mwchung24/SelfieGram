@@ -9,7 +9,6 @@
   background-color: white;
   margin-top: 60px;
   height: auto;
-  // width: 65%;
   max-width: 932px;
   min-width: 800px;
   justify-content: space-between;
@@ -181,8 +180,12 @@
     margin-left: 50px;
   }
 
+  .submitEditWrap {
+    padding-left: 40px;
+  }
+
   .submitEdit {
-    margin-left: 140px;
+    margin-left: 180px;
     width: 100px;
   }
 }
@@ -220,7 +223,7 @@
   }
 
   .submitEdit {
-    margin-left: 180px;
+    margin-left: 140px;
     width: 100px;
   }
 }
