@@ -1,7 +1,6 @@
 .uploadModal {
   width: 500px;
   margin: auto;
-
 }
 
 .uploadForm {
@@ -65,6 +64,10 @@
 
 .uploadFile, .imagePrev{
   margin: auto;
+}
+
+.imagePrev {
+  padding-bottom: 15px;
 }
 
 .uploadFile {
