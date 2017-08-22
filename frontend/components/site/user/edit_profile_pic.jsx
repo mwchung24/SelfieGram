@@ -26,6 +26,9 @@ class EditProfilePic extends React.Component {
 
     if (file) {
       fileReader.readAsDataURL(file);
+      $('.drag-and-drop').remove();
+      $('.OR').remove();
+      $('.uploadFile').remove();
     }
   }
 
@@ -38,6 +41,9 @@ class EditProfilePic extends React.Component {
 
     if (file) {
       fileReader.readAsDataURL(file);
+      $('.drag-and-drop').remove();
+      $('.OR').remove();
+      $('.uploadFile').remove();
     }
   }
 
