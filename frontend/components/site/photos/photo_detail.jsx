@@ -203,7 +203,7 @@ class PhotoDetail extends React.Component {
           </div>
         </div>
 
-        <div className="rightModal2">
+        <div className="rightModal2" onClick={(e) => e.stopPropagation()}>
           <div className="headerModal">
             <div className="user-profile-modal">
               <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
@@ -266,6 +266,10 @@ class PhotoDetail extends React.Component {
 
           </div>
         </div>
+
+        <section className="photo-comment-form2" onClick={(e) => e.stopPropagation()}>
+          <CommentContainer photoId={this.props.photo.id} />
+        </section>
       </section>
     );
   }

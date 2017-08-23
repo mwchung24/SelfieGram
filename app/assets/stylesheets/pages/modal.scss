@@ -234,7 +234,7 @@
   margin-right: 3px;
 }
 
-.photo-comment-form {
+.photo-comment-form, .photo-comment-form2{
   -webkit-box-ordinal-group: 6;
   order: 5;
   padding-right: 26px;
@@ -249,7 +249,7 @@
   padding: 6px 0;
 }
 
-.photo-comment-form form {
+.photo-comment-form form, .photo-comment-form2 form {
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-orient: horizontal;
@@ -334,6 +334,10 @@
   width: 0px;
 }
 
+.photo-comment-form2 {
+  display: none;
+}
+
 @media screen and (max-width: 950px) {
   .imageContainer {
     display: flex;
@@ -373,6 +377,7 @@
     .bodyModal {
       margin-top: 0;
       padding-top: 20px;
+      padding-bottom: 0;
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -395,7 +400,7 @@
         padding-top: 0;
       }
 
-      .like-button, .comment-button {
+      .like-button, .comment-button, .liked {
         margin-top: 0;
       }
     }
@@ -409,16 +414,32 @@
       display: none;
     }
 
-    // .comments {
-    //   display: flex;
-    //   justify-content: flex-start;
-    //   align-items: flex-start;
-    // }
+    .comments ul {
+      overflow: auto;
+      max-height: 60px;
+    }
 
     .bottom-pic {
       order: 1;
     }
+  }
+  .photo-comment-form2 {
+    display: block;
+    background-color: white;
+    margin-top: 0;
+    padding: 0;
 
+    .photo-comment-form {
+      padding: 0;
+      margin-top: 0;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    input {
+      padding-top: 15px;
+      border-top: 1px solid #efefef;
+    }
   }
 
 }
