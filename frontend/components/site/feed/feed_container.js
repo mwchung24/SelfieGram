@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchFeedPhotos } from '../../../actions/photo_actions';
 import Feed from './feed';
-import { fetchUser, deleteUser } from '../../../actions/user_actions';
+import { fetchUser } from '../../../actions/user_actions';
 import { addLike, deleteLike, addFeedLike, deleteFeedLike } from '../../../actions/like_actions';
 import { deleteFeedComment } from '../../../actions/comment_actions';
 
@@ -20,7 +20,6 @@ const mapDispatchToProps = (dispatch) => {
     addFeedLike: (like) => dispatch(addFeedLike(like)),
     deleteFeedLike: (like) => dispatch(deleteFeedLike(like)),
     deleteFeedComment: (comment_id) => dispatch(deleteFeedComment(comment_id)),
-    deleteUser: () => dispatch(deleteUser()),
   };
 };
 

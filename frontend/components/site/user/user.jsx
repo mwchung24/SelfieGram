@@ -20,6 +20,10 @@ class User extends React.Component {
     this.props.fetchUser(this.props.match.params.id);
   }
 
+  componentWillUnmount() {
+    this.props.deleteUser();
+  }
+
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchUser(nextProps.match.params.id);
