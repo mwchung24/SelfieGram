@@ -11,7 +11,6 @@ class Explore extends React.Component {
 
   componentDidMount () {
     this.props.fetchUsers();
-    this.props.deleteUser();
   }
 
   Users() {
