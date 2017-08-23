@@ -329,3 +329,37 @@
   height: 1px;
   width: 0px;
 }
+
+@media screen and (max-width: 950px) {
+  .imageContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .rightModal {
+    order: 1;
+    height: 70px;
+    width: 100%;
+    max-width: 600px;
+    .bodyModal {
+      display: none;
+    }
+  }
+
+  .headerModal {
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  .delete-photo {
+    margin-left: 65%;
+  }
+
+  .user-username {
+
+  }
+
+  .imageContainer img {
+    order: 2;
+  }
+
+}
