@@ -31,6 +31,7 @@ class Feed extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.fetchMorePhotos);
+    this.props.removeFeed();
   }
 
   fetchMorePhotos() {

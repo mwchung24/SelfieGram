@@ -4,6 +4,7 @@ import Feed from './feed';
 import { fetchUser } from '../../../actions/user_actions';
 import { addLike, deleteLike, addFeedLike, deleteFeedLike } from '../../../actions/like_actions';
 import { deleteFeedComment } from '../../../actions/comment_actions';
+import { removeFeed } from '../../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return ({
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => {
     addFeedLike: (like) => dispatch(addFeedLike(like)),
     deleteFeedLike: (like) => dispatch(deleteFeedLike(like)),
     deleteFeedComment: (comment_id) => dispatch(deleteFeedComment(comment_id)),
+    removeFeed: () => dispatch(removeFeed()),
   };
 };
 
