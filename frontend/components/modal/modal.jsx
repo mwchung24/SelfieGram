@@ -8,7 +8,6 @@ class Modal extends React.Component {
 
   modalClose() {
     this.props.closeModal();
-    this.props.deletePhotoFromState();
   }
 
   render () {

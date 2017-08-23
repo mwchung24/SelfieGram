@@ -25,6 +25,10 @@ class PhotoDetail extends React.Component {
     this.props.fetchPhoto(this.props.id);
   }
 
+  componentWillUnmount() {
+    this.props.deletePhotoFromState();
+  }
+
   delete() {
     this.props.deletePhoto(this.props.photo)
     .then(() => this.props.closeModal())
@@ -33,7 +37,6 @@ class PhotoDetail extends React.Component {
 
   modalClose() {
     this.props.closeModal();
-    this.props.deletePhotoFromState();
   }
 
   month() {

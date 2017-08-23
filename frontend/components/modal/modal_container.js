@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from 'react-redux';
 import Modal from './modal';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { deletePhotoFromState } from '../../actions/photo_actions';
 
 const mapStateToProps = (state) => {
 
@@ -15,7 +14,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return ({
     closeModal: () => dispatch(closeModal()),
-    deletePhotoFromState: () => dispatch(deletePhotoFromState()),
   });
 };
 
