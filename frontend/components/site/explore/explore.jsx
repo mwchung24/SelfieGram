@@ -13,6 +13,10 @@ class Explore extends React.Component {
     this.props.fetchUsers();
   }
 
+  componentWillUnmount () {
+    this.props.deleteUsers();
+  }
+
   Users() {
 
     if (this.props.users.length === 0) {

@@ -1,4 +1,4 @@
-import { RECEIVE_ALL_USERS } from '../actions/user_actions';
+import { RECEIVE_ALL_USERS, REMOVE_USERS } from '../actions/user_actions';
 import { REMOVE_EXPLORE_FOLLOW } from '../actions/follow_actions';
 
 const UsersReducer = (state = [], action) => {
@@ -7,6 +7,8 @@ const UsersReducer = (state = [], action) => {
   switch(action.type) {
     case RECEIVE_ALL_USERS:
       return action.users;
+    case REMOVE_USERS:
+      return [];
     case REMOVE_EXPLORE_FOLLOW:
       for (let i = 0; i < copyState.length; i++) {
         if (copyState[i].id === action.follow.followee_id) {

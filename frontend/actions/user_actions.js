@@ -3,6 +3,7 @@ import * as APIUtil from '../util/user_api_util';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const REMOVE_USER = 'REMOVE_USER';
+export const REMOVE_USERS = 'REMOVE_USERS';
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
@@ -17,6 +18,11 @@ export const receiveUsers = users => ({
 export const removeUser = user => ({
   type: REMOVE_USER,
   user: user
+});
+
+export const removeUsers = users => ({
+  type: REMOVE_USERS,
+  users: users
 });
 
 export const fetchUser = user => dispatch => {
@@ -46,4 +52,8 @@ export const updateUserPic = formData => dispatch => {
 
 export const deleteUser = () => dispatch => {
   dispatch(removeUser());
+};
+
+export const deleteUsers = () => dispatch => {
+  dispatch(removeUsers());
 };

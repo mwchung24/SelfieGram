@@ -1,6 +1,6 @@
 import Explore from './explore';
 import { connect } from 'react-redux';
-import { fetchUsers } from '../../../actions/user_actions';
+import { fetchUsers, deleteUsers } from '../../../actions/user_actions';
 import { addFollow, deleteFollow, deleteExploreFollow } from '../../../actions/follow_actions';
 
 
@@ -18,6 +18,7 @@ const mapDispatchToProps = dispatch => {
     addFollow: (follow) => dispatch(addFollow(follow)),
     deleteFollow: (follow) => dispatch(deleteFollow(follow)),
     deleteExploreFollow: (follow) => dispatch(deleteExploreFollow(follow)),
+    deleteUsers: () => dispatch(deleteUsers()),
   };
 };
 
