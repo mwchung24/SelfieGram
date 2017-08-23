@@ -131,75 +131,142 @@ class PhotoDetail extends React.Component {
   userInfo(allPhotoComments) {
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
     return (
-      <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
-        <div className="imageContainer">
-          <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
-          <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
-          <div className="rightModal">
-            <div className="headerModal">
-              <div className="user-profile-modal">
-                <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
-              </div>
-              <div className="user-username">
-                <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
-              </div>
-              <div className="delete-photo">
-                {this.deleteIcon()}
-              </div>
-            </div>
-            <div className="bodyModal">
-              <div>
-                <div className="caption">
-                  <p>
-                    <Link className="username-link-caption"
-                      to={`/users/${this.props.username}`}
-                      onClick={ () => this.modalClose()}>{this.props.username}
-                    </Link>
-                    <span className="photo-caption">
-                      {this.props.photo.caption}
-                    </span>
-                  </p>
-                </div>
-                <div className="comments-wrapper">
-                  <p>
-                    <span className="comments">
-                      <ul>
-                        {allPhotoComments}
-                      </ul>
-                    </span>
-                  </p>
-                </div>
-              </div>
-              <div className="bottom-pic">
-                <section className="like-comment">
-                  <LikeContainer />
-                  <button className="comment-button" onClick={() => {document.getElementById("comment-redirect").focus();}}>
-                    <i className="fa fa-comment-o" aria-hidden="true"></i>
-                  </button>
-                </section>
-                <span className="num-of-like-on-photo">
-                  {this.props.photo.like_count} {this.likeOrLikes()}
-                </span>
-                <div className="uploadedAt">
-                  <span className="month">
-                    {this.month()}
-                  </span>
-                  <span className="day">
-                    {this.props.photo.createdAtDay},
-                  </span>
-                  <span className="year">
-                    {this.props.photo.createdAtYear}
-                  </span>
-                </div>
-                <section className="photo-comment-form">
-                  <CommentContainer photoId={this.props.photo.id} />
-                </section>
-              </div>
+      <section>
 
+        <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
+          <div className="imageContainer">
+            <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
+            <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
+            <div className="rightModal">
+              <div className="headerModal">
+                <div className="user-profile-modal">
+                  <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
+                </div>
+                <div className="user-username">
+                  <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
+                </div>
+                <div className="delete-photo">
+                  {this.deleteIcon()}
+                </div>
+              </div>
+              <div className="bodyModal">
+                <div>
+                  <div className="caption">
+                    <p>
+                      <Link className="username-link-caption"
+                        to={`/users/${this.props.username}`}
+                        onClick={ () => this.modalClose()}>{this.props.username}
+                      </Link>
+                      <span className="photo-caption">
+                        {this.props.photo.caption}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="comments-wrapper">
+                    <p>
+                      <span className="comments">
+                        <ul>
+                          {allPhotoComments}
+                        </ul>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <div className="bottom-pic">
+                  <section className="like-comment">
+                    <LikeContainer />
+                    <button className="comment-button" onClick={() => {document.getElementById("comment-redirect").focus();}}>
+                      <i className="fa fa-comment-o" aria-hidden="true"></i>
+                    </button>
+                  </section>
+                  <span className="num-of-like-on-photo">
+                    {this.props.photo.like_count} {this.likeOrLikes()}
+                  </span>
+                  <div className="uploadedAt">
+                    <span className="month">
+                      {this.month()}
+                    </span>
+                    <span className="day">
+                      {this.props.photo.createdAtDay},
+                    </span>
+                    <span className="year">
+                      {this.props.photo.createdAtYear}
+                    </span>
+                  </div>
+                  <section className="photo-comment-form">
+                    <CommentContainer photoId={this.props.photo.id} />
+                  </section>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="rightModal2">
+          <div className="headerModal">
+            <div className="user-profile-modal">
+              <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photo_url}/></Link>
+            </div>
+            <div className="user-username">
+              <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
+            </div>
+            <div className="delete-photo">
+              {this.deleteIcon()}
+            </div>
+          </div>
+          <div className="bodyModal">
+            <div>
+              <div className="caption">
+                <p>
+                  <Link className="username-link-caption"
+                    to={`/users/${this.props.username}`}
+                    onClick={ () => this.modalClose()}>{this.props.username}
+                  </Link>
+                  <span className="photo-caption">
+                    {this.props.photo.caption}
+                  </span>
+                </p>
+              </div>
+              <div className="comments-wrapper">
+                <p>
+                  <span className="comments">
+                    <ul>
+                      {allPhotoComments}
+                    </ul>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div className="bottom-pic">
+              <section className="like-comment">
+                <LikeContainer />
+                <button className="comment-button" onClick={() => {document.getElementById("comment-redirect").focus();}}>
+                  <i className="fa fa-comment-o" aria-hidden="true"></i>
+                </button>
+              </section>
+              <span className="num-of-like-on-photo">
+                {this.props.photo.like_count} {this.likeOrLikes()}
+              </span>
+              <div className="uploadedAt">
+                <span className="month">
+                  {this.month()}
+                </span>
+                <span className="day">
+                  {this.props.photo.createdAtDay},
+                </span>
+                <span className="year">
+                  {this.props.photo.createdAtYear}
+                </span>
+              </div>
+              <section className="photo-comment-form">
+                <CommentContainer photoId={this.props.photo.id} />
+              </section>
+            </div>
+
+          </div>
+        </div>
+      </section>
     );
   }
 

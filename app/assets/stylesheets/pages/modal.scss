@@ -41,11 +41,15 @@
   user-select: none;
 }
 
-.rightModal {
+.rightModal, .rightModal2 {
   background-color: white;
   max-width: 330px;
   width: 100%;
   height: 600px;
+}
+
+.rightModal2 {
+  display: none;
 }
 
 .headerModal {
@@ -351,15 +355,70 @@
   }
 
   .delete-photo {
-    margin-left: 65%;
-  }
-
-  .user-username {
-
+    margin-left: 67%;
   }
 
   .imageContainer img {
     order: 2;
+  }
+
+  .rightModal2 {
+    display: block;
+    max-width: 600px;
+    height: 100%;
+    .headerModal {
+      display: none;
+    }
+
+    .bodyModal {
+      margin-top: 0;
+      padding-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100px;
+
+      div:first-child {
+        order: 2;
+      }
+
+      .photo-comment-form {
+        display: none;
+      }
+
+      .uploadedAt {
+        border-bottom: none;
+      }
+
+      .like-comment {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .like-button, .comment-button {
+        margin-top: 0;
+      }
+    }
+
+    .comment-item {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .delete-comment {
+      display: none;
+    }
+
+    // .comments {
+    //   display: flex;
+    //   justify-content: flex-start;
+    //   align-items: flex-start;
+    // }
+
+    .bottom-pic {
+      order: 1;
+    }
+
   }
 
 }
