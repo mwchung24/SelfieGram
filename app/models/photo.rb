@@ -20,10 +20,8 @@ class Photo < ActiveRecord::Base
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  has_attached_file :image, default_url: "images.png"
-  has_attached_file :image, :styles => {:resize => "600x"}
+  has_attached_file :image, default_url: "images.png", styles: {:resize => "600x"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
-  # validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
 
   def current_user_liked(current_user)
     liked = false
