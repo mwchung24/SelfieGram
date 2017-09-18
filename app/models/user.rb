@@ -47,7 +47,9 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
 
   has_attached_file :photo, default_url: "default_profile.png"
+  has_attached_file :photo, :styles => {:resize => "600x"}
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\z/
+  # validates_with AttachmentSizeValidator, attributes: :photo, less_than: 5.megabytes
 
   attr_reader :password
 

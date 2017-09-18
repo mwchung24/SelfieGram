@@ -1,5 +1,9 @@
 json.extract! user, :id, :username, :name, :bio
-json.photo_url asset_path(user.photo.url)
+if user.photo_file_size > 200000
+  json.photo_url asset_path(user.photo.url(:resize))
+else
+  json.photo_url asset_path(user.photo.url)
+end
 json.photos_count user.photos.length
 
 json.images({})
@@ -7,7 +11,11 @@ json.images do
   user.photos.each do |photo|
     json.set! photo.id do
       json.id photo.id
-      json.images_url asset_path(photo.image.url)
+      if photo.image_file_size > 200000
+        json.images_url asset_path(photo.image.url(:resize))
+      else
+        json.images_url asset_path(photo.image.url)
+      end
       json.createdAt photo.created_at
       json.like_count photo.likes.count
       json.comment_count photo.comments.count

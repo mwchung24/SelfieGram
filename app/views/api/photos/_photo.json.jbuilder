@@ -3,8 +3,17 @@ require 'time_ago_in_words'
 json.id photo.id
 json.user_id photo.user.id
 json.username photo.user.username
-json.profile_pic asset_path(photo.user.photo.url)
-json.images_url asset_path(photo.image.url)
+if photo.user.photo_file_size > 200000
+  json.profile_pic asset_path(photo.user.photo.url(:resize))
+else
+  json.profile_pic asset_path(photo.user.photo.url)
+end
+
+if photo.image_file_size > 200000
+  json.images_url asset_path(photo.image.url(:resize))
+else
+  json.images_url asset_path(photo.image.url)
+end
 json.caption photo.caption
 json.createdAtMonth photo.created_at.month
 json.createdAtDay photo.created_at.day
