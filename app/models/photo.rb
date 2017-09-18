@@ -22,6 +22,7 @@ class Photo < ActiveRecord::Base
 
   has_attached_file :image, default_url: "images.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+  validates_with AttachmentSizeValidator, attributes: :image, less_than: 5.megabytes
 
   def current_user_liked(current_user)
     liked = false
