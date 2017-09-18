@@ -41,9 +41,8 @@ class Api::PhotosController < ApplicationController
 
   def destroy
     @photo = current_user.photos.find(params[:id])
-
     if @photo.destroy
-      render :show
+      render :index
     else
       render json: @photo.errors.full_messages, status: 422
     end
