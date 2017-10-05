@@ -54,40 +54,32 @@ class SignupForm extends React.Component {
   }
 
   render() {
-
     return (
       <section className="main">
         <div className="session-photo">
           <img className="photo" src={ window.images.phones} />
         </div>
-
         <div className="form">
           <div className="signup-form">
             <h1 className="selfiegram">SelfieGram</h1>
             <h2 className="signup-message">Sign up to share your selfies with your friends.</h2>
-
             <div className="or-line">
               <div className="or-line-line"></div>
               <div className="or-line-or">OR</div>
               <div className="or-line-line"></div>
             </div>
-
             <button className="demo-button" onClick={this.handleDemoLogin}>Demo Log in</button>
-
             <form onSubmit={this.handleSubmit}>
               <label>
                 <input placeholder="Username" onChange={this.update("username")} value={this.state.username}/>
               </label>
-
               <label>
                 <input placeholder="Password" onChange={this.update("password")} value={this.state.password} type="password"/>
               </label>
-
               <div className="signup-button-wrap">
                 <button className="signup-button">Sign up</button>
               </div>
             </form>
-
             <ul className="signup-errors">
               {this.errors()}
             </ul>
@@ -96,7 +88,6 @@ class SignupForm extends React.Component {
               <nav><a className="bolded">Terms</a> & <a className="bolded">Privacy Policy.</a></nav>
             </div>
           </div>
-
           <div className="redirect-to-login">
             <nav className="signup-login">
               <span>Have an account? </span><Link className="login-link" to="/login">
@@ -104,9 +95,7 @@ class SignupForm extends React.Component {
               </Link>
             </nav>
           </div>
-
         </div>
-
       </section>
     );
   }

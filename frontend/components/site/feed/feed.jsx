@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import CommentFeedContainer from '../comment/comment_feed_container';
 import { selectAllComments } from '../../../reducers/selectors';
 import InfiniteScroll from 'react-infinite-scroll';
+import feddIndexItem from './feed_index_item';
 
 class Feed extends React.Component {
   constructor(props) {
