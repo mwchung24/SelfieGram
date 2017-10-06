@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { selectAllImages } from '../../../reducers/selectors';
-import PhotoDetailContainer from '../photos/photo_detail_container';
 import EditProfilePicContainer from './edit_profile_pic_container';
-import FollowerContainer from '../follow/follower_container';
-import FolloweeContainer from '../follow/followee_container';
+import UserInfoOne from './user_info_one';
+import UserInfoTwo from './user_info_two';
+import UserPhotos from './user_photos';
 
 class User extends React.Component {
   constructor(props) {
     super(props);
 
-    this.isCurrentUser = this.isCurrentUser.bind(this);
     this.isCurrentUserProfilePic = this.isCurrentUserProfilePic.bind(this);
-    this.userPhotos = this.userPhotos.bind(this);
     this.userProfile = this.userProfile.bind(this);
   }
 
@@ -46,39 +44,6 @@ class User extends React.Component {
     }
   }
 
-  isCurrentUser () {
-    if(this.props.currentUserId === this.props.user.id) {
-      return (<Link className="edit-profile" to={`/users/${this.props.currentUsername}/edit`}>Edit Profile</Link>);
-    } else {
-      if (this.props.user.followers) {
-        if (Object.keys(this.props.user.followers).includes(this.props.currentUserId.toString())) {
-          return (<button className="following-button" onClick={() => this.props.deleteFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Following</button>);
-        }
-      }
-      return (<button className="follow-button" onClick={() => this.props.addFollow(this.props.user.id).then(() => this.props.fetchUser(this.props.user.username))}>Follow</button>);
-    }
-  }
-
-  userPhotos(photo) {
-    return (
-      <li key={photo.id} className='userPhotoItem'>
-        <div className="hover-images">
-          <div className="likes-and-comments">
-            <div className="likes-and-count">
-              <div><i className="fa fa-heart hover-heart" aria-hidden="true"></i></div>
-              <div className="hover-heart-count">{photo.like_count}</div>
-            </div>
-            <div className="comments-and-count">
-              <div><i className="fa fa-comment hover-comment" aria-hidden="true"></i></div>
-              <div className="hover-comment-count">{photo.comment_count}</div>
-            </div>
-          </div>
-        </div>
-        <img className='photoItem' src={photo.images_url} onClick={() => this.props.openModal(<PhotoDetailContainer id={photo.id}/>)} />
-      </li>
-    );
-  }
-
   userProfile(allUserPhotos) {
     return (
       <section>
@@ -89,35 +54,19 @@ class User extends React.Component {
                 {this.isCurrentUserProfilePic()}
               </div>
               <div className="user-info-top">
-                <div className="first">
-                  <div className="profile-username">{this.props.user.username}</div>
-                  <div>
-                    {this.isCurrentUser()}
-                  </div>
-                </div>
-                <div className="second">
-                  <div className="user-stats">
-                    <div className="number-of-posts"><span className="number-posts">{allUserPhotos.length}</span> posts</div>
-                    <div>
-                      <button className="followButton" onClick={() => this.props.openModal(<FollowerContainer />)}>
-                        <span
-                          className="number-follow"
-                          >
-                          {this.props.user.followers_count}
-                        </span> followers
-                      </button>
-                    </div>
-                    <div>
-                      <button className="followButton" onClick={() => this.props.openModal(<FolloweeContainer />)}>
-                        <span
-                          className="number-follow"
-                          >
-                          {this.props.user.followees_count}
-                        </span> following
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <UserInfoOne
+                  user={this.props.user}
+                  currentUserId={this.props.currentUserId}
+                  currentUsername={this.props.currentUsername}
+                  deleteFollow={this.props.deleteFollow}
+                  addFollow={this.props.addFollow}
+                  fetchUser={this.props.fetchUser}
+                />
+                <UserInfoTwo
+                  allUserPhotos={allUserPhotos}
+                  openModal={this.props.openModal}
+                  user={this.props.user}
+                />
                 <div className="third">
                   <div className="profile-name">{this.props.user.name}</div>
                   <div className="profile-bio">{this.props.user.bio}</div>
@@ -149,7 +98,12 @@ class User extends React.Component {
 
     if (photos) {
       allUserPhotos = photos.map( (photo) => {
-        return this.userPhotos(photo);
+        return (
+          <UserPhotos
+            photo={photo}
+            openModal={this.props.openModal}
+          />
+        );
       });
     }
 
