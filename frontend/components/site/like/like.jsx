@@ -11,7 +11,6 @@ class Like extends React.Component {
     if(this.props.photo.liked) {
       return (
         <button className="liked" onClick={ () => this.props.deleteLike(this.props.photo.like_id)
-            // .then(() => this.props.fetchPhoto(this.props.photo.id))
           }>
           <i className="fa fa-heart" aria-hidden="true"></i>
         </button>
@@ -19,7 +18,6 @@ class Like extends React.Component {
     } else {
       return (
         <button className="like-button" onClick={ () => this.props.addLike(this.props.photo.id)
-            // .then(() => this.props.fetchPhoto(this.props.photo.id))
           }>
           <i className="fa fa-heart-o" aria-hidden="true"></i>
         </button>

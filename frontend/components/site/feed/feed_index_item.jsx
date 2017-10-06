@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentFeedContainer from '../comment/comment_feed_container';
 import PhotoComments from '../comment/photo_comments';
+import Like from '../like/like';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -10,28 +11,9 @@ class FeedIndexItem extends React.Component {
     this.state = {
       liking: false,
     };
-
-    this.followButton = this.followButton.bind(this);
+    
     this.photoIsLiked = this.photoIsLiked.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
-  }
-
-  followButton(photo) {
-    if(photo.liked) {
-      return (
-        <button className="liked" onClick={ () => this.props.deleteFeedLike(photo.like_id)
-          }>
-          <i className="fa fa-heart" aria-hidden="true"></i>
-        </button>
-      );
-    } else {
-      return (
-        <button className="like-button" onClick={ () => this.props.addFeedLike(photo.id)
-          }>
-          <i className="fa fa-heart-o" aria-hidden="true"></i>
-        </button>
-      );
-    }
   }
 
   photoIsLiked(photo) {
@@ -53,10 +35,6 @@ class FeedIndexItem extends React.Component {
   render () {
     const photo = this.props.photo;
 
-    const likeButton = () => {
-      return this.followButton(photo);
-    };
-
     const photoLiked = () => {
       return this.photoIsLiked(photo);
     };
@@ -77,7 +55,11 @@ class FeedIndexItem extends React.Component {
           <img className="photo-on-feed" src={photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); photoLiked();}}/>
           <div className="bottom bottom-feed">
             <section className="like-comment">
-              {likeButton()}
+              <Like
+                photo={photo}
+                deleteLike={this.props.deleteFeedLike}
+                addLike={this.props.addFeedLike}
+              />
               <button className="comment-button" onClick={() => {document.getElementById(`${photo.id}`).focus();}}>
                 <i className="fa fa-comment-o" aria-hidden="true"></i>
               </button>
