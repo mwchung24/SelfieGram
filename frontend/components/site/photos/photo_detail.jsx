@@ -62,7 +62,6 @@ class PhotoDetail extends React.Component {
   render () {
 
     if (this.props.photo) {
-
       const comments = selectAllComments(this.props.photo.comments);
       let allPhotoComments;
 
