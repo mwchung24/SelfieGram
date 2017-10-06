@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentFeedContainer from '../comment/comment_feed_container';
-import { selectAllComments } from '../../../reducers/selectors';
+import PhotoComments from '../comment/photo_comments';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -65,44 +65,6 @@ class FeedIndexItem extends React.Component {
       return this.likeOrLikes(photo);
     };
 
-    const comments = selectAllComments(photo.comments);
-    let allPhotoComments;
-    if (comments) {
-      allPhotoComments = comments.map( (comment) => {
-
-        const deleteCommentIcon = () => {
-          if (this.props.username === comment.username) {
-            return (
-              <button
-                className="delete-comment">
-                <i
-                  onClick={() => this.props.deleteFeedComment(comment.id)}
-                  className="fa fa-times"
-                  aria-hidden="true">
-                </i>
-              </button>
-            );
-          } else {
-            return (
-              <div></div>
-            );
-          }
-        };
-
-        return (
-          <li key={comment.id} className="comment-item">
-            <div className="comment-username-and-comment">
-              <Link className="username-link-caption username-feed"
-                to={`/users/${comment.username}`}>{comment.username}
-              </Link>
-              {comment.body}
-            </div>
-            {deleteCommentIcon()}
-          </li>
-        );
-      });
-    }
-
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
     return (
       <li className="photo-wrap" key={photo.id}>
@@ -137,9 +99,11 @@ class FeedIndexItem extends React.Component {
               <div className="comments-wrapper">
                 <p>
                   <span className="comments">
-                    <ul>
-                      {allPhotoComments}
-                    </ul>
+                    <PhotoComments
+                      photo={photo}
+                      deleteFeedComment={this.props.deleteFeedComment}
+                      username={this.props.username}
+                    />
                   </span>
                 </p>
               </div>
