@@ -10,8 +10,7 @@ class DeleteCommentIcon extends React.Component {
   render() {
     let comment = this.props.comment;
     const deleteCommentIcon = () => {
-
-      if (this.props.currentUsername === comment.username) {
+      if (this.props.username === comment.username) {
         return (
           <button
             className="delete-comment">

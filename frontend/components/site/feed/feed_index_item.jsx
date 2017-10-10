@@ -11,7 +11,7 @@ class FeedIndexItem extends React.Component {
     this.state = {
       liking: false,
     };
-    
+
     this.photoIsLiked = this.photoIsLiked.bind(this);
     this.likeOrLikes = this.likeOrLikes.bind(this);
   }
@@ -79,7 +79,7 @@ class FeedIndexItem extends React.Component {
                 </p>
               </div>
               <div className="comments-wrapper">
-                <p>
+                <div>
                   <span className="comments">
                     <PhotoComments
                       photo={photo}
@@ -87,7 +87,7 @@ class FeedIndexItem extends React.Component {
                       username={this.props.username}
                     />
                   </span>
-                </p>
+                </div>
               </div>
             </div>
             <div className="uploadedAt">

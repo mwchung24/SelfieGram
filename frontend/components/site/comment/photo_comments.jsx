@@ -17,7 +17,7 @@ class PhotoComments extends React.Component {
       allPhotoComments = comments.map( (comment) => {
         return (
           <DeleteCommentIcon
-            currentUsername={this.props.currentUsername}
+            key={comment.id}
             username={this.props.username}
             deleteComment={this.props.deleteFeedComment}
             comment={comment}
