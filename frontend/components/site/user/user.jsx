@@ -100,6 +100,7 @@ class User extends React.Component {
       allUserPhotos = photos.map( (photo) => {
         return (
           <UserPhotos
+            key={photo.id}
             photo={photo}
             openModal={this.props.openModal}
           />

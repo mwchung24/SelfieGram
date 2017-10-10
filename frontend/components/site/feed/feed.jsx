@@ -63,7 +63,7 @@ class Feed extends React.Component {
             deleteFeedLike={this.props.deleteFeedLike}
             addFeedLike={this.props.addFeedLike}
             deleteFeedComment={this.props.deleteFeedComment}
-            username={this.props.username}
+            currentUsername={this.props.currentUsername}
           />
         );
       });

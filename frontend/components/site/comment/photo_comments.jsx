@@ -18,7 +18,7 @@ class PhotoComments extends React.Component {
         return (
           <DeleteCommentIcon
             key={comment.id}
-            username={this.props.username}
+            currentUsername={this.props.currentUsername}
             deleteComment={this.props.deleteFeedComment}
             comment={comment}
           />

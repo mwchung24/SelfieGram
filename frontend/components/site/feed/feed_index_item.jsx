@@ -84,7 +84,7 @@ class FeedIndexItem extends React.Component {
                     <PhotoComments
                       photo={photo}
                       deleteFeedComment={this.props.deleteFeedComment}
-                      username={this.props.username}
+                      currentUsername={this.props.currentUsername}
                     />
                   </span>
                 </div>

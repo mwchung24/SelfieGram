@@ -9,7 +9,7 @@ import { removeFeed } from '../../../actions/session_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     feed: state.feed,
-    username: state.session.currentUser.username,
+    currentUsername: state.session.currentUser.username,
     followees: state.session.currentUser.followees_count,
   });
 };
