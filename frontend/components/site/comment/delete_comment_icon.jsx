@@ -5,6 +5,11 @@ class DeleteCommentIcon extends React.Component {
   constructor(props) {
     super(props);
 
+    this.modalClose = this.modalClose.bind(this);
+  }
+
+  modalClose() {
+    this.props.closeModal();
   }
 
   render() {

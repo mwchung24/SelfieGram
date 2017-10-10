@@ -28,13 +28,13 @@ class ModalBody extends React.Component {
           </p>
         </div>
         <div className="comments-wrapper">
-          <p>
+          <div>
             <span className="comments">
               <ul>
                 {allPhotoComments}
               </ul>
             </span>
-          </p>
+          </div>
         </div>
       </div>
     );

@@ -31,6 +31,7 @@ class PhotoDetail extends React.Component {
               username={this.props.username}
               deleteComment={this.props.deleteComment}
               comment={comment}
+              closeModal={this.props.closeModal}
             />
           );
         });

@@ -76,6 +76,7 @@ class PhotoInfo extends React.Component {
               allPhotoComments={allPhotoComments}
               username={this.props.username}
               photo={this.props.photo}
+              closeModal={this.props.closeModal}
             />
             <ModalBottom
               photo={this.props.photo}
