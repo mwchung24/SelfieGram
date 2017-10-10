@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CommentFeedContainer from '../comment/comment_feed_container';
-import Like from '../like/like';
 import PhotoComments from '../comment/photo_comments';
+import FeedCaption from './feed_caption';
+import FeedLikeCommentButtons from './feed_like_comment_buttons';
 
 class FeedPhotoBottom extends React.Component {
   constructor(props) {
@@ -26,30 +27,18 @@ class FeedPhotoBottom extends React.Component {
 
     return(
       <div className="bottom bottom-feed">
-        <section className="like-comment">
-          <Like
-            photo={photo}
-            deleteLike={this.props.deleteFeedLike}
-            addLike={this.props.addFeedLike}
-          />
-          <button className="comment-button" onClick={() => {document.getElementById(`${photo.id}`).focus();}}>
-            <i className="fa fa-comment-o" aria-hidden="true"></i>
-          </button>
-        </section>
+        <FeedLikeCommentButtons
+          photo={photo}
+          deleteFeedLike={this.props.deleteFeedLike}
+          addFeedLike={this.props.addFeedLike}
+        />
         <div className="num-of-like-on-photo like-on-feed">
           {photo.like_count} {likeOrLikes()}
         </div>
         <div>
-          <div className="caption">
-            <p>
-              <Link className="username-link-caption username-feed"
-                to={`/users/${photo.username}`}>{photo.username}
-              </Link>
-              <span className="photo-caption">
-                {photo.caption}
-              </span>
-            </p>
-          </div>
+          <FeedCaption
+            photo={photo}
+          />
           <div className="comments-wrapper">
             <div>
               <span className="comments">
