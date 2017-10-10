@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CommentFeedContainer from '../comment/comment_feed_container';
-import PhotoComments from '../comment/photo_comments';
-import Like from '../like/like';
+import FeedPhotoHeader from './feed_header';
+import FeedPhotoBottom from './feed_bottom';
 
 class FeedIndexItem extends React.Component {
   constructor(props) {
@@ -13,7 +12,6 @@ class FeedIndexItem extends React.Component {
     };
 
     this.photoIsLiked = this.photoIsLiked.bind(this);
-    this.likeOrLikes = this.likeOrLikes.bind(this);
   }
 
   photoIsLiked(photo) {
@@ -26,12 +24,6 @@ class FeedIndexItem extends React.Component {
     }
   }
 
-  likeOrLikes(photo) {
-    if(photo) {
-      return photo.like_count === 1 ? "like" : "likes";
-    }
-  }
-
   render () {
     const photo = this.props.photo;
 
@@ -39,66 +31,22 @@ class FeedIndexItem extends React.Component {
       return this.photoIsLiked(photo);
     };
 
-    const likeOrLikes = () => {
-      return this.likeOrLikes(photo);
-    };
-
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
     return (
       <li className="photo-wrap" key={photo.id}>
         <div className="photoFeedImage">
-          <div className="photoFeedHeader">
-            <Link to={`/users/${photo.username}`}><img className="user-profile-pic photoFeedProfilePic" src={photo.profile_pic}/></Link>
-            <Link to={`/users/${photo.username}`} className="photoFeedUsername">{photo.username}</Link>
-          </div>
+          <FeedPhotoHeader
+            photo={photo}
+          />
           <div className="feedHeart"><i className={heartClass} aria-hidden="true"></i></div>
           <img className="photo-on-feed" src={photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); photoLiked();}}/>
-          <div className="bottom bottom-feed">
-            <section className="like-comment">
-              <Like
-                photo={photo}
-                deleteLike={this.props.deleteFeedLike}
-                addLike={this.props.addFeedLike}
-              />
-              <button className="comment-button" onClick={() => {document.getElementById(`${photo.id}`).focus();}}>
-                <i className="fa fa-comment-o" aria-hidden="true"></i>
-              </button>
-            </section>
-            <div className="num-of-like-on-photo like-on-feed">
-              {photo.like_count} {likeOrLikes()}
-            </div>
-            <div>
-              <div className="caption">
-                <p>
-                  <Link className="username-link-caption username-feed"
-                    to={`/users/${photo.username}`}>{photo.username}
-                  </Link>
-                  <span className="photo-caption">
-                    {photo.caption}
-                  </span>
-                </p>
-              </div>
-              <div className="comments-wrapper">
-                <div>
-                  <span className="comments">
-                    <PhotoComments
-                      photo={photo}
-                      deleteFeedComment={this.props.deleteFeedComment}
-                      currentUsername={this.props.currentUsername}
-                    />
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="uploadedAt">
-              <span className="day days-ago">
-                {photo.daysAgo} ago
-              </span>
-            </div>
-            <section className="photo-comment-form">
-              <CommentFeedContainer photoId={photo.id} />
-            </section>
-          </div>
+          <FeedPhotoBottom
+            photo={photo}
+            deleteFeedLike={this.props.deleteFeedLike}
+            addFeedLike={this.props.addFeedLike}
+            deleteFeedComment={this.props.deleteFeedComment}
+            currentUsername={this.props.currentUsername}
+          />
         </div>
       </li>
     );
