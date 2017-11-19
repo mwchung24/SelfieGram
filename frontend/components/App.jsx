@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ModalContainer from './modal/modal_container';
+import Footer from './site/footer/footer';
 
 const App = () => (
   <div>
@@ -19,6 +20,7 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
       </Switch>
     </section>
+    <Footer/>
   </div>
 );
 
