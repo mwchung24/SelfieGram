@@ -91,7 +91,10 @@ class User extends React.Component {
     if (this.props.user.photos_count !== 0) {
       if (photos.length === 0) {
         return(
-          <div className="progress-bar"></div>
+          <div>
+            <div className="progress-bar"></div>
+            <div className="loading"></div>
+          </div>
         );
       }
     }

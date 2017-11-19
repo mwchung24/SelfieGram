@@ -21,7 +21,10 @@ class Explore extends React.Component {
 
     if (this.props.users.length === 0) {
       return(
-        <div className="progress-bar"></div>
+        <div>
+          <div className="progress-bar"></div>
+          <div className="loading"></div>
+        </div>
       );
     }
 

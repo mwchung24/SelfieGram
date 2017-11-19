@@ -49,7 +49,10 @@ class Feed extends React.Component {
     if (this.props.followees !== 0) {
       if (feed.length === 0) {
         return(
-          <div className="progress-bar"></div>
+          <div>
+            <div className="progress-bar"></div>
+            <div className="loading"></div>
+          </div>
         );
       }
     }
@@ -69,7 +72,7 @@ class Feed extends React.Component {
         );
       });
     }
-    
+
     if (feed.length !== 0) {
       return (
         <section>
