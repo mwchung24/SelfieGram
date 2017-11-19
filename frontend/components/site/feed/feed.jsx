@@ -1,8 +1,9 @@
 import React from 'react';
 import { selectAllImages } from '../../../reducers/selectors';
-import { Link } from 'react-router-dom';
+import { Link, Redirect, Route } from 'react-router-dom';
 import InfiniteScroll from 'react-infinite-scroll';
 import FeedIndexItem from './feed_index_item';
+import ExploreContainer from '../explore/explore_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -68,16 +69,27 @@ class Feed extends React.Component {
         );
       });
     }
-
-    return (
-      <section>
-        <div>
-          <ul>
-            {FeedPhotos}
-          </ul>
-        </div>
-      </section>
-    );
+    
+    if (feed.length !== 0) {
+      return (
+        <section>
+          <div>
+            <ul>
+              {FeedPhotos}
+            </ul>
+          </div>
+        </section>
+      );
+    } else {
+      return (
+        <section>
+          <div className = "newUser">
+            <span> Follow Friends below to see their photos! </span>
+          </div>
+          <ExploreContainer />
+        </section>
+      );
+    }
   }
 }
 

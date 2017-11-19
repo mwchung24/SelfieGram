@@ -113,3 +113,17 @@
   overflow: auto;
   max-height: 300px;
 }
+
+.newUser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  max-width: 600px;
+  margin: auto;
+  border: 1px solid #e6e6e6;
+  background-color: white;
+  margin-top: 60px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color: #999;
+}
