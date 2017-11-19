@@ -22,3 +22,11 @@ export const logout = () => {
     url: '/api/session'
   });
 };
+
+export const updateCurrentUser = (user) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: '/api/session',
+    data: {user: user},
+  });
+};

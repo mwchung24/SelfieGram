@@ -23,4 +23,17 @@ class Api::SessionsController < ApplicationController
     end
   end
 
+  def update
+    @user = User.find_by_id(current_user.id);
+    if @user.update(currentUser_params)
+      render "api/users/show"
+    end
+  end
+
+  private
+
+  def currentUser_params
+    params.require(:user).permit(:followees)
+  end
+
 end
