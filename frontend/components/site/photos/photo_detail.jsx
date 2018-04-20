@@ -18,7 +18,6 @@ class PhotoDetail extends React.Component {
   }
 
   render () {
-
     if (this.props.photo) {
       const comments = selectAllComments(this.props.photo.comments);
       let allPhotoComments;
@@ -43,11 +42,15 @@ class PhotoDetail extends React.Component {
           deleteLike={this.props.deleteLike}
           addLike={this.props.addLike}
           closeModal={this.props.closeModal}
+          openModal={this.props.openModal}
           photo={this.props.photo}
           username={this.props.username}
           photoURL={this.props.photo_url}
           deletePhoto={this.props.deletePhoto}
           fetchUser={this.props.fetchUser}
+          photos={this.props.photos}
+          fetchPhoto={this.props.fetchPhoto}
+          id={this.props.photo.id}
         />
       );
     }

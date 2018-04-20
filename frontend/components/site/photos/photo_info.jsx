@@ -4,6 +4,7 @@ import CommentContainer from '../comment/comment_container';
 import ModalHeader from './modal_header';
 import ModalBody from './modal_body';
 import ModalBottom from './modal_bottom';
+import PhotoDetailContainer from './photo_detail_container';
 
 class PhotoInfo extends React.Component {
   constructor(props) {
@@ -15,9 +16,11 @@ class PhotoInfo extends React.Component {
 
     this.setState = this.setState.bind(this);
     this.photoLiked = this.photoLiked.bind(this);
+    this.nextPhoto = this.nextPhoto.bind(this);
+    this.prevPhoto = this.prevPhoto.bind(this);
   }
 
-  photoLiked () {
+  photoLiked() {
     if (this.props.photo.liked) {
       return this.props.deleteLike(this.props.photo.like_id)
       .then(() => setTimeout( () => this.setState({liking: false}), 1000));
@@ -27,10 +30,38 @@ class PhotoInfo extends React.Component {
     }
   }
 
+  nextPhoto(e) {
+    e.stopPropagation();
+    this.props.closeModal();
+    let photos = this.props.photos;
+    let photosIds = [];
+    for (let i = 0; i < photos.length; i++) {
+      photosIds.push(photos[i].id);
+    }
+    let currentPhotoIndex = photosIds.indexOf(this.props.photo.id);
+    let nextPhotoId = photosIds[currentPhotoIndex + 1];
+    this.props.fetchPhoto(nextPhotoId);
+    this.props.openModal(<PhotoDetailContainer id={nextPhotoId} photos={this.props.photos}/>);
+  }
+
+  prevPhoto(e) {
+    e.stopPropagation();
+    this.props.closeModal();
+    let photos = this.props.photos;
+    let photosIds = [];
+    for (let i = 0; i < photos.length; i++) {
+      photosIds.push(photos[i].id);
+    }
+    let currentPhotoIndex = photosIds.indexOf(this.props.photo.id);
+    let nextPhotoId = photosIds[currentPhotoIndex - 1];
+    this.props.fetchPhoto(nextPhotoId);
+    this.props.openModal(<PhotoDetailContainer id={nextPhotoId} photos={this.props.photos}/>);
+  }
+
   render() {
     let allPhotoComments = this.props.allPhotoComments;
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
-
+    console.log(this.props);
     if(!this.props.photo.images_url) {
       return (
         <div>
@@ -41,8 +72,8 @@ class PhotoInfo extends React.Component {
     } else {
       return (
         <section>
-
-          <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
+          <div className="wholeModal modalForArrows" onClick={(e) => e.stopPropagation()}>
+            <div className="prevArrow" onClick={(e) => {this.prevPhoto(e);}}><img className="prevArrow" src={window.images.back} /></div>
             <div className="imageContainer">
               <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
               <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
@@ -64,10 +95,10 @@ class PhotoInfo extends React.Component {
                   <ModalBottom
                     photo={this.props.photo}
                     />
-
                 </div>
               </div>
             </div>
+            <div className="nextArrow" onClick={(e) => {this.nextPhoto(e);}}><img className="nextArrow" src={window.images.next} /></div>
           </div>
 
           <div className="rightModal2" onClick={(e) => e.stopPropagation()}>

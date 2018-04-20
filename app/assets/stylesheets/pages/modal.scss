@@ -337,6 +337,16 @@
   display: none;
 }
 
+.nextArrow, .prevArrow {
+  cursor: pointer;
+  color: #B2B2B2;
+}
+
+.modalForArrows {
+  display: flex;
+  align-items: center;
+}
+
 @media screen and (max-width: 950px) {
   .imageContainer {
     display: flex;

@@ -105,6 +105,7 @@ class User extends React.Component {
           <UserPhotos
             key={photo.id}
             photo={photo}
+            photos={photos}
             openModal={this.props.openModal}
           />
         );

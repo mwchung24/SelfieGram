@@ -24,7 +24,7 @@ class UserPhotos extends React.Component {
             </div>
           </div>
         </div>
-        <img className='photoItem' src={photo.images_url} onClick={() => this.props.openModal(<PhotoDetailContainer id={photo.id}/>)} />
+        <img className='photoItem' src={photo.images_url} onClick={() => this.props.openModal(<PhotoDetailContainer id={photo.id} photos={this.props.photos}/>)} />
       </li>
     );
   }
