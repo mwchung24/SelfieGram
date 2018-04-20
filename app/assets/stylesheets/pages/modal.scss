@@ -59,6 +59,7 @@
   top: 0;
   width: 287px;
   display: flex;
+  justify-content: space-between;
 }
 
 .username-link, .username-link-caption {
@@ -145,7 +146,7 @@
 .delete-photo {
   display: flex;
   align-items: center;
-  margin-left: 35%;
+  // margin-left: 35%;
 }
 
 .delete-photo-icon {
@@ -347,6 +348,10 @@
   align-items: center;
 }
 
+.headerModal1 {
+  display: flex;
+}
+
 @media screen and (max-width: 950px) {
   .imageContainer {
     display: flex;
@@ -368,7 +373,7 @@
   }
 
   .delete-photo {
-    margin-left: 67%;
+    // margin-left: 67%;
   }
 
   .imageContainer img {
@@ -470,5 +475,4 @@
     padding-top: 100px;
     padding-bottom: 200px;
   }
-
 }

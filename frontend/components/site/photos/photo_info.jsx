@@ -85,6 +85,8 @@ class PhotoInfo extends React.Component {
                   deletePhoto={this.props.deletePhoto}
                   fetchUser={this.props.fetchUser}
                   photo={this.props.photo}
+                  currentUserId={this.props.currentUserId}
+                  userId={this.props.userId}
                   />
                 <div className="bodyModal">
                   <ModalBody

@@ -51,6 +51,8 @@ class PhotoDetail extends React.Component {
           photos={this.props.photos}
           fetchPhoto={this.props.fetchPhoto}
           id={this.props.photo.id}
+          currentUserId={this.props.currentUserId}
+          userId={this.props.userId}
         />
       );
     }

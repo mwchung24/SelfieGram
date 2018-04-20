@@ -34,11 +34,13 @@ class ModalHeader extends React.Component {
   render () {
     return (
       <div className="headerModal">
-        <div className="user-profile-modal">
-          <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photoURL}/></Link>
-        </div>
-        <div className="user-username">
-          <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
+        <div className="headerModal1">
+          <div className="user-profile-modal">
+            <Link to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}><img className="user-profile-pic" src={this.props.photoURL}/></Link>
+          </div>
+          <div className="user-username">
+            <div><Link className="username-link" to={`/users/${this.props.username}`} onClick={ () => this.modalClose()}>{this.props.username}</Link></div>
+          </div>
         </div>
         <div className="delete-photo">
           {this.deleteIcon()}
