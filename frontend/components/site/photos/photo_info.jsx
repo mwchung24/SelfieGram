@@ -31,64 +31,75 @@ class PhotoInfo extends React.Component {
     let allPhotoComments = this.props.allPhotoComments;
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
 
-    return (
-      <section>
+    if(!this.props.photo.images_url) {
+      return (
+        <div>
+          <div className="progress-bar"></div>
+          <div className="loading"></div>
+        </div>
+      );
+    } else {
+      return (
+        <section>
 
-        <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
-          <div className="imageContainer">
-            <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
-            <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
-            <div className="rightModal">
-              <ModalHeader
-                username={this.props.username}
-                photoURL={this.props.photoURL}
-                closeModal={this.props.closeModal}
-                deletePhoto={this.props.deletePhoto}
-                fetchUser={this.props.fetchUser}
-                photo={this.props.photo}
-              />
-              <div className="bodyModal">
-                <ModalBody
-                  allPhotoComments={allPhotoComments}
+          <div className="wholeModal" onClick={(e) => e.stopPropagation()}>
+            <div className="imageContainer">
+              <div className="photoDetailHeart"><i className={heartClass} aria-hidden="true"></i></div>
+              <img className="imageModal" src={this.props.photo.images_url} onDoubleClick={ () => {this.setState({liking: true}); this.photoLiked();}} />
+              <div className="rightModal">
+                <ModalHeader
                   username={this.props.username}
+                  photoURL={this.props.photoURL}
+                  closeModal={this.props.closeModal}
+                  deletePhoto={this.props.deletePhoto}
+                  fetchUser={this.props.fetchUser}
                   photo={this.props.photo}
-                />
-                <ModalBottom
-                  photo={this.props.photo}
-                />
+                  />
+                <div className="bodyModal">
+                  <ModalBody
+                    allPhotoComments={allPhotoComments}
+                    username={this.props.username}
+                    photo={this.props.photo}
+                    />
+                  <ModalBottom
+                    photo={this.props.photo}
+                    />
 
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="rightModal2" onClick={(e) => e.stopPropagation()}>
-          <ModalHeader
-            username={this.props.username}
-            photoURL={this.props.photoURL}
-            closeModal={this.props.closeModal}
-            deletePhoto={this.props.deletePhoto}
-            fetchUser={this.props.fetchUser}
-            photo={this.props.photo}
-          />
-          <div className="bodyModal">
-            <ModalBody
-              allPhotoComments={allPhotoComments}
+          <div className="rightModal2" onClick={(e) => e.stopPropagation()}>
+            <ModalHeader
               username={this.props.username}
-              photo={this.props.photo}
+              photoURL={this.props.photoURL}
               closeModal={this.props.closeModal}
-            />
-            <ModalBottom
+              deletePhoto={this.props.deletePhoto}
+              fetchUser={this.props.fetchUser}
               photo={this.props.photo}
-            />
+              />
+            <div className="bodyModal">
+              <ModalBody
+                allPhotoComments={allPhotoComments}
+                username={this.props.username}
+                photo={this.props.photo}
+                closeModal={this.props.closeModal}
+                />
+              <ModalBottom
+                photo={this.props.photo}
+                />
+            </div>
           </div>
-        </div>
 
-        <section className="photo-comment-form2" onClick={(e) => e.stopPropagation()}>
-          <CommentContainer photoId={this.props.photo.id} />
+          <section className="photo-comment-form2" onClick={(e) => e.stopPropagation()}>
+            <CommentContainer photoId={this.props.photo.id} />
+          </section>
         </section>
-      </section>
-    );
+      );
+
+    }
+
   }
 
 
