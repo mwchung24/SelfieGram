@@ -71,7 +71,7 @@ class PhotoInfo extends React.Component {
       );
     } else {
       return (
-        <section>
+        <section className="modalSection">
           <div className="wholeModal modalForArrows" onClick={(e) => e.stopPropagation()}>
             <div className="prevArrow" onClick={(e) => {this.prevPhoto(e);}}><img className="prevArrow" src={window.images.back} /></div>
             <div className="imageContainer">

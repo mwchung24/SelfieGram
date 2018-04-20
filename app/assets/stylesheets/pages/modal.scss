@@ -451,4 +451,24 @@
     }
   }
 
+  .modalSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .photo-comment-form2 {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .modalContent {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    padding-top: 100px;
+    padding-bottom: 200px;
+  }
+
 }
