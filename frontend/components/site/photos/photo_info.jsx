@@ -61,7 +61,6 @@ class PhotoInfo extends React.Component {
   render() {
     let allPhotoComments = this.props.allPhotoComments;
     const heartClass = this.state.liking ? "fa fa-heart feedLike liking" : "fa fa-heart feedLike";
-    console.log(this.props);
     if(!this.props.photo.images_url) {
       return (
         <div>
